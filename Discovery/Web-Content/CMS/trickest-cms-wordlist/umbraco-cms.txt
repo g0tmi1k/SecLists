@@ -1561,26 +1561,9 @@ src/Umbraco.Web.UI.Login/src/index.ts
 src/Umbraco.Web.UI.Login/src/manifests.ts
 src/Umbraco.Web.UI.Login/src/controllers/index.ts
 src/Umbraco.Web.UI.Login/src/controllers/slim-backoffice-initializer.ts
-src/Umbraco.Web.UI.Login/src/api/index.ts
-src/Umbraco.Web.UI.Login/src/api/types.gen.ts
-src/Umbraco.Web.UI.Login/src/api/client.gen.ts
-src/Umbraco.Web.UI.Login/src/api/sdk.gen.ts
-src/Umbraco.Web.UI.Login/src/api/client/index.ts
-src/Umbraco.Web.UI.Login/src/api/client/types.gen.ts
-src/Umbraco.Web.UI.Login/src/api/client/client.gen.ts
-src/Umbraco.Web.UI.Login/src/api/client/utils.gen.ts
-src/Umbraco.Web.UI.Login/src/api/core/types.gen.ts
-src/Umbraco.Web.UI.Login/src/api/core/pathSerializer.gen.ts
-src/Umbraco.Web.UI.Login/src/api/core/queryKeySerializer.gen.ts
-src/Umbraco.Web.UI.Login/src/api/core/bodySerializer.gen.ts
-src/Umbraco.Web.UI.Login/src/api/core/params.gen.ts
-src/Umbraco.Web.UI.Login/src/api/core/auth.gen.ts
-src/Umbraco.Web.UI.Login/src/api/core/utils.gen.ts
-src/Umbraco.Web.UI.Login/src/api/core/serverSentEvents.gen.ts
 src/Umbraco.Web.UI.Login/src/auth.element.ts
 src/Umbraco.Web.UI.Login/src/assets/eye-open.svg
 src/Umbraco.Web.UI.Login/src/assets/eye-closed.svg
-src/Umbraco.Web.UI.Login/src/utils/is-problem-details.function.ts
 src/Umbraco.Web.UI.Login/src/utils/load-custom-view.function.ts
 src/Umbraco.Web.UI.Login/src/vite-env.d.ts
 src/Umbraco.Web.UI.Login/src/contexts/index.ts
@@ -1610,7 +1593,6 @@ src/Umbraco.Web.UI.Login/src/components/layouts/confirmation-layout.element.ts
 src/Umbraco.Web.UI.Login/src/components/back-to-login-button.element.ts
 src/Umbraco.Web.UI.Login/package-lock.json
 src/Umbraco.Web.UI.Login/.nvmrc
-src/Umbraco.Web.UI.Login/openapi-ts.config.ts
 src/Umbraco.Web.UI.Login/devops/tsconfig/index.js
 src/Umbraco.Web.UI.Login/vite.config.ts
 src/Umbraco.Web.UI.Login/.env
@@ -1684,6 +1666,7 @@ src/Umbraco.Web.Common/Middleware/PreviewAuthenticationMiddleware.cs
 src/Umbraco.Web.Common/Middleware/UmbracoRequestLoggingMiddleware.cs
 src/Umbraco.Web.Common/Middleware/UmbracoRequestMiddleware.cs
 src/Umbraco.Web.Common/Middleware/ProtectRecycleBinMediaMiddleware.cs
+src/Umbraco.Web.Common/Middleware/UmbracoBackOfficeCacheHeadersMiddleware.cs
 src/Umbraco.Web.Common/Middleware/BootFailedMiddleware.cs
 src/Umbraco.Web.Common/TagHelpers/CspNonceTagHelper.cs
 src/Umbraco.Web.Common/ModelBinders/HttpQueryStringModelBinder.cs
@@ -3046,6 +3029,7 @@ src/Umbraco.Infrastructure/HealthChecks/Checks/Data/UntrustedDatabaseConstraints
 src/Umbraco.Infrastructure/Media/SvgDimensionExtractor.cs
 src/Umbraco.Infrastructure/HostedServices/RecurringHostedServiceBase.cs
 src/Umbraco.Infrastructure/HostedServices/QueuedHostedService.cs
+src/Umbraco.Infrastructure/HostedServices/CancellationTokenSourceRotation.cs
 src/Umbraco.Infrastructure/HostedServices/BackgroundTaskQueue.cs
 src/Umbraco.Infrastructure/HostedServices/NextExecutionStrategy.cs
 src/Umbraco.Cms.Persistence.EFCore.Sqlite/SqliteMigrationProvider.cs
@@ -8283,6 +8267,7 @@ src/Umbraco.Web.UI.Client/src/packages/tiptap/extensions/anchor/anchor.tiptap-ex
 src/Umbraco.Web.UI.Client/src/packages/tiptap/extensions/italic/manifests.ts
 src/Umbraco.Web.UI.Client/src/packages/tiptap/extensions/italic/italic.tiptap-toolbar-api.ts
 src/Umbraco.Web.UI.Client/src/packages/tiptap/extensions/italic/italic.tiptap-api.ts
+src/Umbraco.Web.UI.Client/src/packages/tiptap/extensions/extension-apis.bundle.ts
 src/Umbraco.Web.UI.Client/src/packages/tiptap/extensions/html-tag-span/index.ts
 src/Umbraco.Web.UI.Client/src/packages/tiptap/extensions/html-tag-span/manifests.ts
 src/Umbraco.Web.UI.Client/src/packages/tiptap/extensions/html-tag-span/html-tag-span.tiptap-api.ts
@@ -8473,6 +8458,8 @@ src/Umbraco.Web.UI.Client/src/packages/tiptap/vite.config.ts
 src/Umbraco.Web.UI.Client/src/packages/tiptap/types.ts
 src/Umbraco.Web.UI.Client/src/packages/tiptap/components/index.ts
 src/Umbraco.Web.UI.Client/src/packages/tiptap/components/input-tiptap/index.ts
+src/Umbraco.Web.UI.Client/src/packages/tiptap/components/input-tiptap/input-tiptap.stories.ts
+src/Umbraco.Web.UI.Client/src/packages/tiptap/components/input-tiptap/input-tiptap.test.ts
 src/Umbraco.Web.UI.Client/src/packages/tiptap/components/input-tiptap/input-tiptap.element.ts
 src/Umbraco.Web.UI.Client/src/packages/tiptap/components/cascading-menu-popover/index.ts
 src/Umbraco.Web.UI.Client/src/packages/tiptap/components/cascading-menu-popover/cascading-menu-popover.element.ts
@@ -9598,8 +9585,11 @@ src/Umbraco.Web.UI.Client/src/packages/media/media/components/input-media/input-
 src/Umbraco.Web.UI.Client/src/packages/media/media/components/input-media/input-media.test.ts
 src/Umbraco.Web.UI.Client/src/packages/media/media/components/input-rich-media/index.ts
 src/Umbraco.Web.UI.Client/src/packages/media/media/components/input-rich-media/input-rich-media.element.ts
+src/Umbraco.Web.UI.Client/src/packages/media/media/item/index.ts
 src/Umbraco.Web.UI.Client/src/packages/media/media/item/manifests.ts
+src/Umbraco.Web.UI.Client/src/packages/media/media/item/media-item-data-resolver.ts
 src/Umbraco.Web.UI.Client/src/packages/media/media/item/media-item-ref.element.ts
+src/Umbraco.Web.UI.Client/src/packages/media/media/item/media-item-data-resolver.test.ts
 src/Umbraco.Web.UI.Client/src/packages/media/media/entry-point.ts
 src/Umbraco.Web.UI.Client/src/packages/media/umbraco-package.ts
 src/Umbraco.Web.UI.Client/src/packages/media/vite.config.ts
@@ -13900,6 +13890,7 @@ src/Umbraco.Web.UI.Client/src/packages/core/themes/index.ts
 src/Umbraco.Web.UI.Client/src/packages/core/themes/manifests.ts
 src/Umbraco.Web.UI.Client/src/packages/core/themes/theme.model.ts
 src/Umbraco.Web.UI.Client/src/packages/core/themes/theme.extension.ts
+src/Umbraco.Web.UI.Client/src/packages/core/themes/constants.ts
 src/Umbraco.Web.UI.Client/src/packages/core/themes/theme.context.ts
 src/Umbraco.Web.UI.Client/src/packages/core/components/index.ts
 src/Umbraco.Web.UI.Client/src/packages/core/components/popover-layout/index.ts
@@ -15292,6 +15283,11 @@ tests/Umbraco.Tests.Common/Extensions/StringExtensions.cs
 tests/Umbraco.Tests.Common/Extensions/ContentBaseExtensions.cs
 tests/Umbraco.Tests.Common/TaskHelper.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Controllers/Manifest/ManifestControllerBaseTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Controllers/Template/Item/SearchTemplateItemControllerTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Controllers/Element/Item/SearchElementItemControllerTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Controllers/MemberType/Item/SearchMemberTypeItemControllerTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Controllers/DataType/Item/SearchDataTypeItemControllerTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Controllers/MediaType/Item/SearchMediaTypeItemControllerTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/OpenApi/BackOfficeSecurityRequirementsTransformerTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/OpenApi/ResponseHeaderTransformerTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Middleware/BackOfficeAuthorizationInitializationMiddlewareTests.cs
@@ -15500,6 +15496,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Security/MemberPasswordHash
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Security/BackOfficeUserReaderTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Security/MemberIdentityUserTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/BackgroundJobs/RecurringBackgroundJobHostedServiceTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/BackgroundJobs/RecurringBackgroundJobBaseTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/BackgroundJobs/DelayCalculatorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/BackgroundJobs/Jobs/HealthCheckNotifierJobTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/BackgroundJobs/Jobs/TempFileCleanupJobTests.cs
@@ -16212,6 +16209,7 @@ tests/Umbraco.Tests.Integration/Umbraco.Examine.Lucene/UmbracoExamine/TestFiles/
 tests/Umbraco.Tests.Integration/Umbraco.Examine.Lucene/UmbracoExamine/ExamineDemoDataMediaService.cs
 tests/Umbraco.Tests.Integration/Umbraco.Examine.Lucene/UmbracoExamine/ExamineExternalIndexSearcherTest.cs
 tests/Umbraco.Tests.Integration/Umbraco.Examine.Lucene/UmbracoExamine/TestFiles.resx
+tests/Umbraco.Tests.Integration/Umbraco.Web.Common/ApplicationBuilder/UseUmbracoBackOfficeCacheHeadersTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Web.Common/MembersServiceCollectionExtensionsTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Web.Common/Security/MemberManagerTests.cs
 tests/Umbraco.Tests.Integration/Testing/BaseTestDatabase.cs
@@ -16248,6 +16246,7 @@ tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/MemberPropert
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/DocumentHybridCacheVariantsTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/ElementCacheServiceTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/DocumentHybridCacheAncestryTests.cs
+tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/DatabaseCacheRepositoryTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/MediaHybridCacheMediaTypeTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/DocumentHybridCacheMockTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/MediaCacheServiceTests.cs
