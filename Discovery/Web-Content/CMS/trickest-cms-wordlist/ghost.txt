@@ -332,6 +332,7 @@ apps/shade/src/components/ui/chart.stories.tsx
 apps/shade/src/components/ui/metric-value.tsx
 apps/shade/src/components/ui/field.stories.tsx
 apps/shade/src/components/ui/sonner.stories.tsx
+apps/shade/src/components/ui/context-menu.stories.tsx
 apps/shade/src/components/ui/empty-indicator.stories.tsx
 apps/shade/src/components/ui/separator.tsx
 apps/shade/src/components/ui/input-surface.stories.tsx
@@ -384,6 +385,7 @@ apps/shade/src/components/ui/popover.stories.tsx
 apps/shade/src/components/ui/kbd.tsx
 apps/shade/src/components/ui/flag.tsx
 apps/shade/src/components/ui/no-value-label.tsx
+apps/shade/src/components/ui/context-menu.tsx
 apps/shade/src/components/ui/icon.ts
 apps/shade/src/components/ui/skeleton.stories.tsx
 apps/shade/src/components/ui/sidebar.stories.tsx
@@ -780,7 +782,6 @@ apps/admin/src/layout/app-sidebar/hooks/use-navigation-preferences.ts
 apps/admin/src/layout/app-sidebar/hooks/use-sidebar-banner-state.test.tsx
 apps/admin/src/layout/app-sidebar/hooks/use-upgrade-status.ts
 apps/admin/src/layout/app-sidebar/hooks/use-theme-errors.ts
-apps/admin/src/layout/app-sidebar/hooks/use-member-count.ts
 apps/admin/src/layout/app-sidebar/nav-menu-item.tsx
 apps/admin/src/layout/app-sidebar/nav-content.tsx
 apps/admin/src/layout/app-sidebar/app-sidebar-banner.tsx
@@ -1082,6 +1083,7 @@ apps/admin-x-framework/test/setup.ts
 apps/admin-x-framework/test/utils/mock-fetch.ts
 apps/admin-x-framework/test/.eslintrc.cjs
 apps/admin-x-framework/test/unit/api/automated-email-design.test.tsx
+apps/admin-x-framework/test/unit/api/members.test.tsx
 apps/admin-x-framework/test/unit/api/tinybird.test.tsx
 apps/admin-x-framework/test/unit/api/automations.test.ts
 apps/admin-x-framework/test/unit/utils/api/fetch-api.test.tsx
@@ -1844,6 +1846,7 @@ apps/posts/test/unit/utils/filter-normalization.test.ts
 apps/posts/test/unit/utils/get-site-timezone.test.ts
 apps/posts/test/unit/hooks/create-remote-value-source.test.tsx
 apps/posts/test/unit/hooks/with-feature-flag.test.tsx
+apps/posts/test/unit/hooks/use-tier-value-source.test.tsx
 apps/posts/test/unit/hooks/create-combined-value-source.test.tsx
 apps/posts/test/unit/hooks/use-post-success-modal.test.tsx
 apps/posts/test/unit/hooks/create-hybrid-value-source.test.tsx
@@ -1979,6 +1982,7 @@ apps/posts/src/views/Automations/components/email-modal/use-email-preview.ts
 apps/posts/src/views/Automations/components/email-design-button.tsx
 apps/posts/src/views/Automations/components/step-picker.tsx
 apps/posts/src/views/Automations/components/automation-status-badge.tsx
+apps/posts/src/views/Automations/components/types.ts
 apps/posts/src/views/Automations/components/email-design/email-preview.tsx
 apps/posts/src/views/Automations/components/email-design/dirty-confirm-modal.tsx
 apps/posts/src/views/Automations/components/email-design/design-utils.ts
@@ -2589,7 +2593,6 @@ ghost/admin/app/services/limit.js
 ghost/admin/app/services/explore.js
 ghost/admin/app/services/custom-views.js
 ghost/admin/app/services/config-manager.js
-ghost/admin/app/services/tenor.js
 ghost/admin/app/services/notifications.js
 ghost/admin/app/services/members-utils.js
 ghost/admin/app/services/utils.js
@@ -4435,7 +4438,7 @@ ghost/core/test/unit/server/models/permission.test.js
 ghost/core/test/unit/server/models/single-use-token.test.js
 ghost/core/test/unit/server/models/stripe-customer-subscription.test.js
 ghost/core/test/unit/server/models/welcome-email-automation-run.test.js
-ghost/core/test/unit/server/models/set-is-roles.test.js
+ghost/core/test/unit/server/models/set-is-roles.test.ts
 ghost/core/test/unit/server/models/invite.test.js
 ghost/core/test/unit/server/models/member-paid-subscription-event.test.js
 ghost/core/test/unit/server/models/welcome-email-automated-email.test.js
@@ -4568,11 +4571,16 @@ ghost/core/test/unit/server/services/email-service/events/email-unsubscribed-eve
 ghost/core/test/unit/server/services/email-service/events/spam-complaint-event.test.js
 ghost/core/test/unit/server/services/email-service/email-helpers.test.js
 ghost/core/test/unit/server/services/email-service/email-controller.test.js
+ghost/core/test/unit/server/services/notifications/notification-email.test.ts
+ghost/core/test/unit/server/services/notifications/sanitize-email-html.test.ts
+ghost/core/test/unit/server/services/notifications/__snapshots__/sanitize-email-html.test.ts.snap
 ghost/core/test/unit/server/services/notifications/notifications.test.js
 ghost/core/test/unit/server/services/verification-trigger.test.js
 ghost/core/test/unit/server/services/email-rendering/email-design.test.js
 ghost/core/test/unit/server/services/explore-ping/explore-ping-service.test.js
-ghost/core/test/unit/server/services/automations/index.test.js
+ghost/core/test/unit/server/services/automations/automations-api.test.js
+ghost/core/test/unit/server/services/automations/automations-repository.test.ts
+ghost/core/test/unit/server/services/automations/service.test.js
 ghost/core/test/unit/server/services/stats/members.test.js
 ghost/core/test/unit/server/services/stats/posts.test.js
 ghost/core/test/unit/server/services/stats/stats.test.js
@@ -5037,6 +5045,7 @@ ghost/core/core/cli/timetravel.js
 ghost/core/core/cli/command.js
 ghost/core/core/cli/README.md
 ghost/core/core/server/models/outbox.js
+ghost/core/core/server/models/role-utils.ts
 ghost/core/core/server/models/automation.js
 ghost/core/core/server/models/collection.js
 ghost/core/core/server/models/redirect.js
@@ -5104,7 +5113,6 @@ ghost/core/core/server/models/index.js
 ghost/core/core/server/models/tag.js
 ghost/core/core/server/models/recommendation.js
 ghost/core/core/server/models/webhook.js
-ghost/core/core/server/models/role-utils.js
 ghost/core/core/server/models/stripe-customer-subscription.js
 ghost/core/core/server/models/settings.js
 ghost/core/core/server/models/base/bookshelf.js
@@ -5328,7 +5336,7 @@ ghost/core/core/server/lib/package-json/package-json.js
 ghost/core/core/server/lib/bootstrap-socket.js
 ghost/core/core/server/lib/validate-password.js
 ghost/core/core/server/lib/common/events.js
-ghost/core/core/server/lib/common/to-plain.js
+ghost/core/core/server/lib/common/to-plain.ts
 ghost/core/core/server/lib/auto-filling-map.ts
 ghost/core/core/server/lib/mobiledoc.js
 ghost/core/core/server/lib/post-revisions.ts
@@ -5363,11 +5371,9 @@ ghost/core/core/server/services/settings/settings-service.js
 ghost/core/core/server/services/settings/emails/verify-email.js
 ghost/core/core/server/services/settings/index.js
 ghost/core/core/server/services/url/config.js
-ghost/core/core/server/services/url/lazy-url-service.ts
 ghost/core/core/server/services/url/urls.js
 ghost/core/core/server/services/url/url-service-facade.ts
 ghost/core/core/server/services/url/resource.js
-ghost/core/core/server/services/url/lazy-find-resource.ts
 ghost/core/core/server/services/url/local-file-cache.js
 ghost/core/core/server/services/url/resources.js
 ghost/core/core/server/services/url/url-service.js
@@ -5425,6 +5431,7 @@ ghost/core/core/server/services/mail/templates/raw/test.html
 ghost/core/core/server/services/mail/templates/raw/invite-user.html
 ghost/core/core/server/services/mail/templates/raw/reset-password.html
 ghost/core/core/server/services/mail/templates/raw/welcome.html
+ghost/core/core/server/services/mail/templates/notification.html
 ghost/core/core/server/services/mail/templates/invite-user-by-api-key.html
 ghost/core/core/server/services/mail/templates/test.html
 ghost/core/core/server/services/mail/templates/invite-user.html
@@ -5474,7 +5481,9 @@ ghost/core/core/server/services/email-service/events/email-opened-event.js
 ghost/core/core/server/services/email-service/email-event-storage.js
 ghost/core/core/server/services/email-service/helpers/register-helpers.js
 ghost/core/core/server/services/notifications/notifications.js
+ghost/core/core/server/services/notifications/sanitize-email-html.ts
 ghost/core/core/server/services/notifications/index.js
+ghost/core/core/server/services/notifications/notification-email.ts
 ghost/core/core/server/services/email-rendering/email-design.js
 ghost/core/core/server/services/email-rendering/partials/content-styles.hbs
 ghost/core/core/server/services/email-rendering/partials/base-styles.hbs
@@ -5488,8 +5497,9 @@ ghost/core/core/server/services/explore-ping/explore-ping-service.js
 ghost/core/core/server/services/explore-ping/index.js
 ghost/core/core/server/services/verification-trigger.js
 ghost/core/core/server/services/automations/automations-api.ts
-ghost/core/core/server/services/automations/temporary-fake-database.js
+ghost/core/core/server/services/automations/service.js
 ghost/core/core/server/services/automations/poll.ts
+ghost/core/core/server/services/automations/temporary-fake-database.ts
 ghost/core/core/server/services/automations/index.js
 ghost/core/core/server/services/automations/automations-repository.ts
 ghost/core/core/server/services/automations/fake-database-automations-repository.ts
@@ -6511,7 +6521,6 @@ ghost/core/core/frontend/services/routing/controllers/email-post.js
 ghost/core/core/frontend/services/routing/controllers/rss.js
 ghost/core/core/frontend/services/routing/controllers/index.js
 ghost/core/core/frontend/services/routing/controllers/previews.js
-ghost/core/core/frontend/services/routing/config.js
 ghost/core/core/frontend/services/routing/middleware/page-param.js
 ghost/core/core/frontend/services/routing/middleware/index.js
 ghost/core/core/frontend/services/routing/preview-router.js
@@ -6523,6 +6532,7 @@ ghost/core/core/frontend/services/routing/unsubscribe-router.js
 ghost/core/core/frontend/services/routing/taxonomy-router.js
 ghost/core/core/frontend/services/routing/static-routes-router.js
 ghost/core/core/frontend/services/routing/static-pages-router.js
+ghost/core/core/frontend/services/routing/config.ts
 ghost/core/core/frontend/services/routing/router-manager.js
 ghost/core/core/frontend/services/routing/index.js
 ghost/core/core/frontend/services/routing/rss-router.js
