@@ -11443,6 +11443,7 @@ htdocs/ai/ajax/generate_content.php
 htdocs/ai/assistant/download_pdf.php
 htdocs/ai/assistant/execute_tool.php
 htdocs/ai/assistant/parse_intent.php
+htdocs/ai/assistant/popover.php
 htdocs/ai/assistant/index.php
 htdocs/ai/README.md
 htdocs/asset/model/accountancy_codes.php
@@ -13006,6 +13007,7 @@ htdocs/core/login/README.txt
 htdocs/core/customreports.php
 htdocs/core/antispamimage.php
 htdocs/core/upload_page.php
+htdocs/core/ajax/changepositionfields.php
 htdocs/core/ajax/constantonoff.php
 htdocs/core/ajax/ajaxdirpreview.php
 htdocs/core/ajax/updateextrafield.php
@@ -13075,6 +13077,7 @@ htdocs/core/tpl/notes.tpl.php
 htdocs/core/tpl/originsubtotalline.tpl.php
 htdocs/core/tpl/subtotal_ajaxrow.tpl.php
 htdocs/core/tpl/bloc_comment.tpl.php
+htdocs/core/tpl/arrayfield_object_position_fields.tpl.php
 htdocs/core/tpl/admin_extrafields_view.tpl.php
 htdocs/core/tpl/bloc_showhide.tpl.php
 htdocs/core/tpl/filemanager.tpl.php

@@ -589,6 +589,7 @@ browserlist
 .dev/rubocop/cop/zammad/concerns/can_check_gql_operation.rb
 .dev/rubocop/cop/zammad/trigger_from_commit_hooks.rb
 .dev/rubocop/cop/zammad/to_forbid_over_not_to_permit.rb
+.dev/rubocop/cop/zammad/forbid_unprocessable_entity.rb
 .dev/rubocop/cop/zammad/prefer_models_all.rb
 .dev/rubocop/cop/zammad/forbid_loofah_fragment.rb
 .dev/rubocop/cop/zammad/forbid_translatable_marker.rb
@@ -1400,6 +1401,7 @@ lib/text/quote_remover/attribution_pattern/wrote.rb
 lib/text/quote_remover/attribution_pattern/outlook_delimiter.rb
 lib/text/quote_remover/attribution_pattern/posted_by.rb
 lib/text/quote_remover/signature.rb
+lib/text/content_cleanup.rb
 lib/text/quote_remover.rb
 lib/upload_cache.rb
 lib/certificate/x509.rb
@@ -3063,6 +3065,7 @@ app/controllers/integration/idoit_controller.rb
 app/controllers/integration/placetel_controller.rb
 app/controllers/integration/exchange_controller.rb
 app/controllers/integration/ldap_controller.rb
+app/controllers/integration/issue_tracker_controller.rb
 app/controllers/application_controller/has_user.rb
 app/controllers/application_controller/authorizes.rb
 app/controllers/application_controller/prevents_csrf.rb
@@ -4636,6 +4639,9 @@ app/services/service/ai/agent/run/context/instruction.rb
 app/services/service/ai/agent/run/context.rb
 app/services/service/ai/agent/run/perform/agent.rb
 app/services/service/ai/vectordb/reload.rb
+app/services/service/ai/vectordb/content/chunks/strategy/base.rb
+app/services/service/ai/vectordb/content/chunks/strategy/sentence.rb
+app/services/service/ai/vectordb/content/chunks.rb
 app/services/service/ai/vectordb/base.rb
 app/services/service/ai/vectordb/create_table.rb
 app/services/service/ai/vectordb/similarity_search.rb
@@ -5077,6 +5083,7 @@ app/views/mailer/password_reset/de.html.erb
 app/views/mailer/password_reset/lt.html.erb
 app/views/mailer/password_reset/en.html.erb
 app/views/mailer/password_reset/uk.html.erb
+app/views/mailer/password_reset/da.html.erb
 app/views/mailer/password_reset/id.html.erb
 app/views/mailer/password_reset/sr.html.erb
 app/views/mailer/password_reset/nl.html.erb
@@ -5321,6 +5328,7 @@ app/views/mailer/signup_taken_reset/de.html.erb
 app/views/mailer/signup_taken_reset/lt.html.erb
 app/views/mailer/signup_taken_reset/en.html.erb
 app/views/mailer/signup_taken_reset/uk.html.erb
+app/views/mailer/signup_taken_reset/da.html.erb
 app/views/mailer/signup_taken_reset/id.html.erb
 app/views/mailer/signup_taken_reset/sr.html.erb
 app/views/mailer/signup_taken_reset/nl.html.erb
@@ -5346,6 +5354,7 @@ app/views/mailer/ticket_create/de.html.erb
 app/views/mailer/ticket_create/lt.html.erb
 app/views/mailer/ticket_create/en.html.erb
 app/views/mailer/ticket_create/uk.html.erb
+app/views/mailer/ticket_create/da.html.erb
 app/views/mailer/ticket_create/id.html.erb
 app/views/mailer/ticket_create/sr.html.erb
 app/views/mailer/ticket_create/nl.html.erb
@@ -6078,9 +6087,7 @@ app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/ArticleMeta/t
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/ArticleMeta/__tests__/useArticleMeta.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/ArticleMeta/__tests__/ArticleMeta.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TimeAccountingFlyout.vue
-app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/ArticleReplyPinned.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/ArticleReply.vue
-app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/ArticleReplyUnpinned.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/DeliveryMessage.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/SystemMessage.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketDetailTopBar/TicketDetailTopBar.vue
@@ -6105,6 +6112,7 @@ app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketSimpleT
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketSimpleTable/__tests__/TicketSimpleTable.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/ArticleReactionBadge.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/ArticleMore.vue
+app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/ArticleReplyPanel.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketScreenBehavior/behaviorOptions.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketScreenBehavior/TicketScreenBehavior.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketDetailView/TicketScreenBehavior/useTicketScreenBehavior.ts
@@ -6376,6 +6384,7 @@ app/frontend/apps/desktop/initializer/assets/arrow-bar-right.svg
 app/frontend/apps/desktop/initializer/assets/ai-knowledge-base.svg
 app/frontend/apps/desktop/initializer/assets/play-circle.svg
 app/frontend/apps/desktop/initializer/assets/check-circle-outline.svg
+app/frontend/apps/desktop/initializer/assets/lock-fill.svg
 app/frontend/apps/desktop/initializer/assets/files.svg
 app/frontend/apps/desktop/initializer/assets/check-circle-no-ai.svg
 app/frontend/apps/desktop/initializer/assets/image.svg
@@ -6527,6 +6536,7 @@ app/frontend/apps/desktop/initializer/assets/phone-pencil.svg
 app/frontend/apps/desktop/initializer/assets/chat-left-text.svg
 app/frontend/apps/desktop/initializer/assets/calendar-range.svg
 app/frontend/apps/desktop/initializer/assets/ai-agent.svg
+app/frontend/apps/desktop/initializer/assets/plus.svg
 app/frontend/apps/desktop/initializer/assets/phone.svg
 app/frontend/apps/desktop/initializer/assets/delete-column.svg
 app/frontend/apps/desktop/initializer/assets/gear.svg
@@ -6968,11 +6978,11 @@ app/frontend/apps/desktop/components/CommonHistoryFlyout/event-actions/updated.t
 app/frontend/apps/desktop/components/CommonHistoryFlyout/event-actions/received-merge.ts
 app/frontend/apps/desktop/components/CommonHistoryFlyout/event-actions/checklist-item-checked.ts
 app/frontend/apps/desktop/components/CommonHistoryFlyout/event-actions/merged-into.ts
-app/frontend/apps/desktop/components/CommonHistoryFlyout/event-actions/notification.ts
 app/frontend/apps/desktop/components/CommonHistoryFlyout/event-actions/set.ts
 app/frontend/apps/desktop/components/CommonHistoryFlyout/event-actions/email.ts
 app/frontend/apps/desktop/components/CommonHistoryFlyout/event-actions/removed-mention.ts
 app/frontend/apps/desktop/components/CommonHistoryFlyout/event-actions/time-trigger-performed.ts
+app/frontend/apps/desktop/components/CommonHistoryFlyout/event-actions/notified.ts
 app/frontend/apps/desktop/components/CommonHistoryFlyout/event-actions/created-mention.ts
 app/frontend/apps/desktop/components/CommonHistoryFlyout/event-actions/added.ts
 app/frontend/apps/desktop/components/CommonHistoryFlyout/event-actions/created.ts
@@ -8440,6 +8450,7 @@ app/frontend/shared/composables/activity-message/activityMessageBuilder/builders
 app/frontend/shared/composables/activity-message/activityMessageBuilder/types.ts
 app/frontend/shared/composables/activity-message/activityMessageBuilder/__tests__/activityMessageBuilder.spec.ts
 app/frontend/shared/composables/activity-message/useActivityMessage.ts
+app/frontend/shared/composables/activity-message/__tests__/useActivityMessage.spec.ts
 app/frontend/shared/composables/useTraverseOptions.ts
 app/frontend/shared/composables/useImageViewer.ts
 app/frontend/shared/composables/useHtmlLinks.ts
@@ -8778,6 +8789,7 @@ app/frontend/shared/components/Form/__tests__/apps/desktop/form-updater.desktop.
 app/frontend/shared/components/Form/__tests__/apps/mobile/form-updater.mobile.spec.ts
 app/frontend/shared/components/Form/__tests__/mocks/additionalFrontendObjectAttributes.json
 app/frontend/shared/components/Form/__tests__/Form.spec.ts
+app/frontend/shared/components/Form/__tests__/utils.spec.ts
 app/frontend/shared/components/Form/__tests__/useForm.spec.ts
 app/frontend/shared/components/Form/types/field.ts
 app/frontend/shared/components/Form/useForm.ts
@@ -9484,6 +9496,7 @@ db/migrate/20161117000002_ticket_number_generator_issue_427.rb
 db/migrate/20170116000002_fixed_typos_622.rb
 db/migrate/20170130000001_follow_up_possible_check_643.rb
 db/migrate/20250717122734_ticket_summary_generation.rb
+db/migrate/20260610124637_issue6187_rename_postmaster_pre_filter_setting_keys.rb
 db/migrate/20240202122403_issue5028_body_required.rb
 db/migrate/20180919000000_setting_update_pretty_date_format.rb
 db/migrate/20180418000001_setting_third_party_link_account_at_login.rb
@@ -9889,6 +9902,7 @@ spec/models/knowledge_base/category/translation_spec.rb
 spec/models/knowledge_base/answer/translation_spec.rb
 spec/models/knowledge_base/answer/translation/search_with_attachment_spec.rb
 spec/models/knowledge_base/answer/translation/content_spec.rb
+spec/models/knowledge_base/answer/translation/search_spec.rb
 spec/models/knowledge_base/permission_spec.rb
 spec/models/knowledge_base/locale_spec.rb
 spec/models/job_spec.rb
@@ -10207,6 +10221,7 @@ spec/graphql/gql/types/email_address_parsed_type_spec.rb
 spec/graphql/gql/types/ticket/shared_draft_start_type_spec.rb
 spec/graphql/gql/record_loader_spec.rb
 spec/controllers/integration/exchange_spec.rb
+spec/controllers/application_controller/has_user_spec.rb
 spec/controllers/application_controller/has_download/download_file_spec.rb
 spec/controllers/can_paginate/pagination_spec.rb
 spec/jobs/trigger_webhook_job/record_payload_spec.rb
@@ -10277,6 +10292,7 @@ spec/rubocop/cop/zammad/migration_scheduler_last_run_spec.rb
 spec/rubocop/cop/zammad/forbid_redis_client_spec.rb
 spec/rubocop/cop/zammad/graphql_authorize_requires_permission_spec.rb
 spec/rubocop/cop/zammad/enforce_in_modal_spec.rb
+spec/rubocop/cop/zammad/forbid_unprocessable_entity_spec.rb
 spec/rubocop/cop/zammad/migration_ensure_integer_primary_key_spec.rb
 spec/rubocop/cop/zammad/graphql_forbid_sensitive_fields_spec.rb
 spec/support/capybara/custom_extensions.rb
@@ -10622,6 +10638,7 @@ spec/lib/facebook_spec.rb
 spec/lib/background_services_spec.rb
 spec/lib/password_policy_spec.rb
 spec/lib/text/quote_remover_spec.rb
+spec/lib/text/content_cleanup_spec.rb
 spec/lib/certificate/apply_ssl_certificates_spec.rb
 spec/lib/certificate/x509/smime_spec.rb
 spec/lib/user_agent_spec.rb
@@ -11043,6 +11060,7 @@ spec/services/service/ai/agent/run/context/instruction/object_attributes/options
 spec/services/service/ai/agent/run/context_spec.rb
 spec/services/service/ai/agent/run_spec.rb
 spec/services/service/ai/vectordb/rebuild_spec.rb
+spec/services/service/ai/vectordb/content/chunks_spec.rb
 spec/services/service/ai/vectordb/create_table_spec.rb
 spec/services/service/ai/vectordb/reload_spec.rb
 spec/services/service/ai/vectordb/similarity_search_spec.rb
@@ -11259,6 +11277,7 @@ spec/policies/controllers/ai/analytics/downloads_controller_policy_spec.rb
 spec/policies/controllers/knowledge_base/categories_controller_policy_spec.rb
 spec/policies/controllers/knowledge_base/feeds_controller_policy_spec.rb
 spec/policies/controllers/knowledge_base/answers_controller_policy_spec.rb
+spec/policies/controllers/knowledge_base/answer/attachments_controller_policy_spec.rb
 spec/policies/controllers/tags_controller_policy_spec.rb
 spec/policies/controllers/monitoring_controller_policy_spec.rb
 spec/policies/controllers/time_accountings_controller_policy_spec.rb
@@ -11594,6 +11613,8 @@ spec/fixtures/files/ai/text_tool/input007.json
 spec/fixtures/files/ai/text_tool/input009.json
 spec/fixtures/files/ai/text_tool/input010.json
 spec/fixtures/files/ai/text_tool/input013.json
+spec/fixtures/files/ai/vectordb/content/long-text-002.html
+spec/fixtures/files/ai/vectordb/content/long-text-001.html
 spec/fixtures/files/pgp/zammad@localhost.revoker.fingerprint
 spec/fixtures/files/pgp/zammad@localhost.revoker.pgp
 spec/fixtures/files/pgp/noexpirepgp1@example.com.pgp
@@ -11825,6 +11846,7 @@ spec/system/admin/ai/ticket_summary_spec.rb
 spec/system/admin/knowledge_base/public_menu_spec.rb
 spec/system/admin/knowledge_base/theme_spec.rb
 spec/system/admin/knowledge_base/create_spec.rb
+spec/system/admin/knowledge_base/remove_language_spec.rb
 spec/system/admin/knowledge_base/delete_spec.rb
 spec/system/overview/attribute_spec.rb
 spec/system/apps/desktop/guided_setup_spec.rb

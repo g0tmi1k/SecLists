@@ -1451,6 +1451,7 @@ packages/core/upload/server/src/controllers/validation/admin/configureView.ts
 packages/core/upload/server/src/controllers/validation/admin/utils.ts
 packages/core/upload/server/src/controllers/validation/content-api/upload.ts
 packages/core/upload/server/src/controllers/__tests__/admin-upload.test.ts
+packages/core/upload/server/src/controllers/__tests__/content-api.test.ts
 packages/core/upload/server/src/controllers/admin-file.ts
 packages/core/upload/server/src/middlewares/upload.ts
 packages/core/upload/server/src/bootstrap.ts
@@ -1480,6 +1481,7 @@ packages/core/upload/server/src/services/__tests__/upload/formatFileInfo.test.ts
 packages/core/upload/server/src/services/__tests__/upload/updateFileInfo.test.ts
 packages/core/upload/server/src/services/__tests__/upload/responsive-parallelism.test.ts
 packages/core/upload/server/src/services/__tests__/upload/uploadImage.test.ts
+packages/core/upload/server/src/services/__tests__/upload/findAndCountPage.test.ts
 packages/core/upload/server/src/services/__tests__/upload/animated-test.webp
 packages/core/upload/server/src/services/__tests__/image-manipulation.test.ts
 packages/core/upload/server/src/services/__tests__/file.test.ts
@@ -1943,6 +1945,7 @@ packages/core/admin/admin/src/utils/objects.ts
 packages/core/admin/admin/src/utils/deviceId.ts
 packages/core/admin/admin/src/utils/getPrefixedId.ts
 packages/core/admin/admin/src/utils/translatedErrors.ts
+packages/core/admin/admin/src/utils/widgetVisibility.ts
 packages/core/admin/admin/src/utils/shims.ts
 packages/core/admin/admin/src/utils/resizeHandlers.ts
 packages/core/admin/admin/src/utils/normalizeAPIError.ts
@@ -1963,6 +1966,7 @@ packages/core/admin/admin/src/utils/tests/jwt.test.ts
 packages/core/admin/admin/src/utils/tests/objects.test.ts
 packages/core/admin/admin/src/utils/tests/getFetchClient.test.ts
 packages/core/admin/admin/src/utils/tests/rulesEngine.test.ts
+packages/core/admin/admin/src/utils/tests/widgetVisibility.test.ts
 packages/core/admin/admin/src/utils/strings.ts
 packages/core/admin/admin/src/utils/once.ts
 packages/core/admin/admin/src/utils/cookies.ts
@@ -2008,6 +2012,7 @@ packages/core/admin/admin/src/hooks/tests/useEnterprise.test.ts
 packages/core/admin/admin/src/hooks/tests/useQueryParams.test.tsx
 packages/core/admin/admin/src/hooks/tests/usePersistentState.test.ts
 packages/core/admin/admin/src/hooks/tests/useInjectReducer.test.tsx
+packages/core/admin/admin/src/hooks/tests/useSettingsMenu.test.ts
 packages/core/admin/admin/src/hooks/tests/useAdminRoles.test.ts
 packages/core/admin/admin/src/hooks/tests/useElementOnScreen.test.tsx
 packages/core/admin/admin/src/hooks/tests/useRBAC.test.ts
@@ -2017,6 +2022,7 @@ packages/core/admin/admin/src/hooks/tests/useMediaQuery.test.tsx
 packages/core/admin/admin/src/hooks/tests/useAPIErrorHandler.test.ts
 packages/core/admin/admin/src/hooks/tests/useDeviceType.test.tsx
 packages/core/admin/admin/src/hooks/tests/useClipboard.test.ts
+packages/core/admin/admin/src/hooks/tests/useMenu.test.ts
 packages/core/admin/admin/src/hooks/tests/useWarnIfUnsavedChanges.test.ts
 packages/core/admin/admin/src/hooks/tests/useFetchClient.test.tsx
 packages/core/admin/admin/src/hooks/useThrottledCallback.ts
@@ -2086,6 +2092,7 @@ packages/core/admin/admin/src/components/tests/SearchInput.test.tsx
 packages/core/admin/admin/src/components/tests/NpsSurvey.test.tsx
 packages/core/admin/admin/src/components/tests/ConfirmDialog.test.tsx
 packages/core/admin/admin/src/components/tests/RelativeTime.test.tsx
+packages/core/admin/admin/src/components/tests/LeftMenu.test.tsx
 packages/core/admin/admin/src/components/tests/Form.test.tsx
 packages/core/admin/admin/src/components/tests/PageHelpers.test.tsx
 packages/core/admin/admin/src/components/tests/Filters.test.tsx
@@ -2373,6 +2380,7 @@ packages/core/content-manager/admin/src/pages/ListView/components/BulkActions/te
 packages/core/content-manager/admin/src/pages/ListView/components/BulkActions/tests/formatErrorMessages.test.ts
 packages/core/content-manager/admin/src/pages/ListView/components/ViewSettingsMenu.tsx
 packages/core/content-manager/admin/src/pages/ListView/components/tests/AutoCloneFailureModal.test.tsx
+packages/core/content-manager/admin/src/pages/ListView/components/tests/Filters.test.tsx
 packages/core/content-manager/admin/src/pages/ListView/components/tests/ViewSettingsMenu.test.tsx
 packages/core/content-manager/admin/src/pages/ListView/components/TableCells/Relations.tsx
 packages/core/content-manager/admin/src/pages/ListView/components/TableCells/Components.tsx
@@ -2380,6 +2388,7 @@ packages/core/content-manager/admin/src/pages/ListView/components/TableCells/Med
 packages/core/content-manager/admin/src/pages/ListView/components/TableCells/CellValue.tsx
 packages/core/content-manager/admin/src/pages/ListView/components/TableCells/CellContent.tsx
 packages/core/content-manager/admin/src/pages/ListView/components/TableCells/tests/Relation.test.tsx
+packages/core/content-manager/admin/src/pages/ListView/components/TableCells/tests/Media.test.tsx
 packages/core/content-manager/admin/src/pages/ListView/components/TableCells/tests/CellValue.test.tsx
 packages/core/content-manager/admin/src/pages/EditView/EditViewPage.tsx
 packages/core/content-manager/admin/src/pages/EditView/utils/data.ts
@@ -2403,9 +2412,11 @@ packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/Wys
 packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/Wysiwyg/WysiwygNav.tsx
 packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/Wysiwyg/EditorLayout.tsx
 packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/Wysiwyg/utils/continueList.ts
+packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/Wysiwyg/utils/sanitizer.ts
 packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/Wysiwyg/utils/utils.ts
 packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/Wysiwyg/utils/tests/__snapshots__/mdRenderer.test.ts.snap
 packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/Wysiwyg/utils/tests/mdRenderer.test.ts
+packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/Wysiwyg/utils/tests/sanitizer.test.ts
 packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/Wysiwyg/utils/mdRenderer.ts
 packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/Wysiwyg/WysiwygFooter.tsx
 packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/Wysiwyg/PreviewWysiwyg.tsx
@@ -2470,6 +2481,7 @@ packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/Blo
 packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/BlocksInput/tests/mock-schema.ts
 packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/BlocksInput/tests/normalizeBlocksState.test.ts
 packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/BlocksInput/tests/BlocksInput.test.tsx
+packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/BlocksInput/tests/BlocksInputIME.test.tsx
 packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/BlocksInput/plugins/withStrapiSchema.ts
 packages/core/content-manager/admin/src/pages/ListConfiguration/ListConfigurationPage.tsx
 packages/core/content-manager/admin/src/pages/ListConfiguration/tests/ListConfigurationPage.test.tsx
@@ -2522,6 +2534,8 @@ packages/core/content-manager/admin/src/assets/images/icon_remove.svg
 packages/core/content-manager/admin/src/utils/urls.ts
 packages/core/content-manager/admin/src/utils/conditionalFields.ts
 packages/core/content-manager/admin/src/utils/objects.ts
+packages/core/content-manager/admin/src/utils/layouts/normalizeContentManagerLayout.ts
+packages/core/content-manager/admin/src/utils/layouts/tests/normalizeContentManagerLayout.test.ts
 packages/core/content-manager/admin/src/utils/translations.ts
 packages/core/content-manager/admin/src/utils/attributes.ts
 packages/core/content-manager/admin/src/utils/validation.ts
@@ -2660,6 +2674,7 @@ packages/core/content-manager/server/src/controllers/uid.ts
 packages/core/content-manager/server/src/controllers/relations.ts
 packages/core/content-manager/server/src/controllers/single-types.ts
 packages/core/content-manager/server/src/controllers/__tests__/content-types.test.ts
+packages/core/content-manager/server/src/controllers/__tests__/bulkDelete.test.ts
 packages/core/content-manager/server/src/controllers/__tests__/countDraftRelations.test.ts
 packages/core/content-manager/server/src/controllers/__tests__/relations.test.ts
 packages/core/content-manager/server/src/controllers/__tests__/status-lookup.test.ts
@@ -2694,6 +2709,7 @@ packages/core/content-manager/server/src/homepage/services/index.ts
 packages/core/content-manager/server/src/homepage/services/homepage-query-utils.ts
 packages/core/content-manager/server/src/homepage/services/homepage.ts
 packages/core/content-manager/server/src/homepage/services/__tests__/homepage-query-utils.test.ts
+packages/core/content-manager/server/src/homepage/services/__tests__/homepage.test.ts
 packages/core/content-manager/server/src/utils/index.ts
 packages/core/content-manager/server/src/services/index.ts
 packages/core/content-manager/server/src/services/permission.ts
@@ -3310,6 +3326,7 @@ packages/core/data-transfer/src/strapi/providers/local-destination/__tests__/res
 packages/core/data-transfer/src/strapi/providers/remote-destination/index.ts
 packages/core/data-transfer/src/strapi/providers/remote-destination/__tests__/index.test.ts
 packages/core/data-transfer/src/strapi/providers/remote-destination/__tests__/push-assets-write-stream.test.ts
+packages/core/data-transfer/src/strapi/providers/remote-destination/__tests__/asset-encoding-negotiation.test.ts
 packages/core/data-transfer/src/strapi/providers/remote-destination/__tests__/checksum-negotiation.test.ts
 packages/core/data-transfer/src/strapi/providers/remote-destination/__tests__/utils.test.ts
 packages/core/data-transfer/src/strapi/providers/remote-source/index.ts
@@ -3342,31 +3359,31 @@ packages/core/data-transfer/src/errors/index.ts
 packages/core/data-transfer/src/errors/base.ts
 packages/core/data-transfer/src/errors/constants.ts
 packages/core/data-transfer/src/errors/providers.ts
+packages/core/data-transfer/src/types/index.ts
+packages/core/data-transfer/src/types/remote/index.ts
+packages/core/data-transfer/src/types/remote/protocol/index.ts
+packages/core/data-transfer/src/types/remote/protocol/server/index.ts
+packages/core/data-transfer/src/types/remote/protocol/server/error.ts
+packages/core/data-transfer/src/types/remote/protocol/server/messaging.ts
+packages/core/data-transfer/src/types/remote/protocol/auth.ts
+packages/core/data-transfer/src/types/remote/protocol/client/index.ts
+packages/core/data-transfer/src/types/remote/protocol/client/commands.ts
+packages/core/data-transfer/src/types/remote/protocol/client/transfer/index.ts
+packages/core/data-transfer/src/types/remote/protocol/client/transfer/action.ts
+packages/core/data-transfer/src/types/remote/protocol/client/transfer/pull.ts
+packages/core/data-transfer/src/types/remote/protocol/client/transfer/push.ts
+packages/core/data-transfer/src/types/remote/protocol/client/transfer/utils.ts
+packages/core/data-transfer/src/types/providers.ts
+packages/core/data-transfer/src/types/utils.ts
+packages/core/data-transfer/src/types/common-entities.ts
+packages/core/data-transfer/src/types/transfer-engine.ts
+packages/core/data-transfer/src/types/encryption.ts
 packages/core/data-transfer/LICENSE
 packages/core/data-transfer/tsconfig.build.json
 packages/core/data-transfer/jest.config.js
 packages/core/data-transfer/tsconfig.eslint.json
 packages/core/data-transfer/.eslintrc.cjs
 packages/core/data-transfer/.npmignore
-packages/core/data-transfer/types/remote/index.d.ts
-packages/core/data-transfer/types/remote/protocol/auth.d.ts
-packages/core/data-transfer/types/remote/protocol/index.d.ts
-packages/core/data-transfer/types/remote/protocol/server/error.d.ts
-packages/core/data-transfer/types/remote/protocol/server/index.d.ts
-packages/core/data-transfer/types/remote/protocol/server/messaging.d.ts
-packages/core/data-transfer/types/remote/protocol/client/transfer/index.d.ts
-packages/core/data-transfer/types/remote/protocol/client/transfer/pull.d.ts
-packages/core/data-transfer/types/remote/protocol/client/transfer/utils.d.ts
-packages/core/data-transfer/types/remote/protocol/client/transfer/push.d.ts
-packages/core/data-transfer/types/remote/protocol/client/transfer/action.d.ts
-packages/core/data-transfer/types/remote/protocol/client/index.d.ts
-packages/core/data-transfer/types/remote/protocol/client/commands.d.ts
-packages/core/data-transfer/types/index.d.ts
-packages/core/data-transfer/types/utils.d.ts
-packages/core/data-transfer/types/transfer-engine.d.ts
-packages/core/data-transfer/types/encryption.d.ts
-packages/core/data-transfer/types/providers.d.ts
-packages/core/data-transfer/types/common-entities.d.ts
 packages/core/database/package.json
 packages/core/database/rollup.config.mjs
 packages/core/database/tsconfig.json
@@ -3671,6 +3688,7 @@ packages/core/core/src/services/document-service/transform/fields.ts
 packages/core/core/src/services/document-service/common.ts
 packages/core/core/src/services/document-service/__tests__/first-published-at.test.ts
 packages/core/core/src/services/document-service/__tests__/middlewares.test.ts
+packages/core/core/src/services/document-service/__tests__/draft-and-publish.test.ts
 packages/core/core/src/services/document-service/publication-filter.ts
 packages/core/core/src/services/cron.ts
 packages/core/core/src/services/query-params.ts
@@ -5084,6 +5102,7 @@ tests/api/core/upload/content-api/upload-concurrency.test.api.js
 tests/api/core/upload/content-api/private-file-signing.test.api.js
 tests/api/core/upload/content-api/upload-automatic-folder.test.api.js
 tests/api/core/upload/content-api/upload-signing.test.api.js
+tests/api/core/upload/content-api/files-pagination.test.api.js
 tests/api/core/upload/content-api/graphql.test.api.js
 tests/api/core/upload/content-api/upload.test.api.js
 tests/api/core/upload/utils/strapi.tiff
@@ -5297,6 +5316,7 @@ tests/api/core/database/v4-self-ref-compat.test.api.js
 tests/api/core/database/knex-utils.test.api.js
 tests/api/core/database/transactions.test.api.js
 tests/api/core/database/db.test.api.js
+tests/api/core/database/schema-inspector.test.api.js
 tests/api/core/content-type-builder/collection-type.test.api.js
 tests/api/core/content-type-builder/schema.test.api.js
 tests/api/core/content-type-builder/components.test.api.js
@@ -5323,6 +5343,7 @@ tests/api/plugins/users-permissions/users-graphql.test.api.js
 tests/api/plugins/users-permissions/content-api/auth-refresh.test.api.js
 tests/api/plugins/users-permissions/content-api/auth-jwt-algorithm.test.api.js
 tests/api/plugins/users-permissions/content-api/auth.test.api.js
+tests/api/plugins/users-permissions/content-api/user-update-relations.test.api.js
 tests/api/plugins/users-permissions/content-api/auth-password-update-revokes-sessions.test.api.ts
 tests/api/plugins/users-permissions/content-api/auth-cookie-security.test.api.js
 tests/api/plugins/users-permissions/content-api/users-api.test.api.js
@@ -5770,6 +5791,7 @@ templates/website/public/robots.txt
 templates/website/types/generated/contentTypes.d.ts
 templates/website/types/generated/components.d.ts
 .editorconfig
+.ai/skills/git-conventions/SKILL.md
 .ai/skills/writing-a-skill/SKILL.md
 .gitattributes
 .prettierrc.js

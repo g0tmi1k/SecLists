@@ -7397,6 +7397,7 @@ tests/Feature/Importing/Api/ImportConsumablesTest.php
 tests/Feature/Importing/Api/ImportAccessoriesTest.php
 tests/Feature/Importing/Api/ImportAssetModelsTest.php
 tests/Feature/Importing/Api/ImportUsersTest.php
+tests/Feature/Importing/Api/ImportUsersFmcsLocationTest.php
 tests/Feature/Importing/Api/ImportLocationsTest.php
 tests/Feature/Importing/Api/ImportComponentsTest.php
 tests/Feature/Importing/Api/ImportManufacturersTest.php
@@ -7473,6 +7474,7 @@ tests/Feature/Users/Ui/PrintUserInventoryTest.php
 tests/Feature/Users/Ui/DeleteUserTest.php
 tests/Feature/Users/Ui/IndexUsersTest.php
 tests/Feature/Users/Ui/MergeUsersTest.php
+tests/Feature/Users/Ui/FmcsLocationValidationTest.php
 tests/Feature/ApiRateLimitTest.php
 tests/Feature/ReportTemplates/UpdateReportTemplateTest.php
 tests/Feature/ReportTemplates/StoreReportTemplateTest.php
@@ -7659,6 +7661,7 @@ tests/Feature/Console/CheckinAndDeleteItemsTest.php
 tests/Feature/Console/SendAcceptanceReminderTest.php
 tests/Feature/Console/FixupAssignedToAssignedTypeTest.php
 tests/Feature/Console/Commands/PurgeEulaPDFTest.php
+tests/Feature/Console/TestLocationsFmcsTest.php
 tests/Feature/Console/CleanIncorrectCheckoutAcceptancesTest.php
 tests/Feature/Console/CleanOldCheckoutRequestsTest.php
 tests/Feature/Console/ValidateAssetsTest.php
@@ -7669,14 +7672,17 @@ tests/Feature/Locations/Api/CreateLocationsTest.php
 tests/Feature/Locations/Api/UpdateLocationsTest.php
 tests/Feature/Locations/Api/LocationsViewTest.php
 tests/Feature/Locations/Api/DeleteLocationsTest.php
+tests/Feature/Locations/Api/LocationParentCompanyTest.php
 tests/Feature/Locations/Api/LocationsForSelectListTest.php
 tests/Feature/Locations/Api/IndexLocationsTest.php
 tests/Feature/Locations/Api/LocationFileTest.php
 tests/Feature/Locations/Ui/CreateLocationsTest.php
 tests/Feature/Locations/Ui/UpdateLocationsTest.php
 tests/Feature/Locations/Ui/DeleteLocationsTest.php
+tests/Feature/Locations/Ui/LocationParentCompanyTest.php
 tests/Feature/Locations/Ui/IndexLocationsTest.php
 tests/Feature/Locations/Ui/ShowLocationTest.php
+tests/Feature/Reporting/DeleteAcceptanceAuthorizationTest.php
 tests/Feature/Reporting/ActivityReportTest.php
 tests/Feature/Reporting/CustomReportTest.php
 tests/Feature/Reporting/AccessoryReportTest.php
@@ -7770,6 +7776,7 @@ database/migrations/2017_10_27_180947_denorm_asset_locations.php
 database/migrations/2015_09_09_195301_add_custom_css_to_settings.php
 database/migrations/2025_11_14_150613_add_color_to_companies.php
 database/migrations/2016_10_16_015024_rename_modelno_to_model_number.php
+database/migrations/2026_06_10_000001_add_null_company_is_floater_to_settings.php
 database/migrations/2016_08_02_124944_add_color_to_statuslabel.php
 database/migrations/2016_03_08_225351_create_components_table.php
 database/migrations/2014_10_16_200626_add_rtd_location_to_assets.php
