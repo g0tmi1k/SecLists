@@ -1481,6 +1481,7 @@ wp-includes/style-engine/class-wp-style-engine-css-declarations.php
 wp-includes/style-engine/class-wp-style-engine.php
 wp-includes/style-engine/class-wp-style-engine-processor.php
 wp-includes/capabilities.php
+wp-includes/json-schema.php
 wp-includes/class-wp-theme-json.php
 wp-includes/script-loader.php
 wp-includes/class-wp-list-util.php
@@ -1901,6 +1902,7 @@ wp-includes/comment.php
 wp-includes/class-wp-navigation-fallback.php
 wp-includes/comment-template.php
 wp-includes/class-wp-locale.php
+wp-includes/view-config.php
 wp-includes/rewrite.php
 wp-includes/class-wp-http-ixr-client.php
 wp-includes/connectors.php
@@ -2063,6 +2065,7 @@ wp-includes/class-wp-ajax-response.php
 wp-includes/functions.php
 wp-includes/class-wp-simplepie-sanitize-kses.php
 wp-includes/version.php
+wp-includes/images/w-logo-gray-white-bg.svg
 wp-includes/images/crystal/license.txt
 wp-includes/images/icon-library/color.svg
 wp-includes/images/icon-library/block-meta.svg
@@ -2434,6 +2437,7 @@ wp-includes/rest-api/endpoints/class-wp-rest-block-renderer-controller.php
 wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php
 wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php
 wp-includes/rest-api/endpoints/class-wp-rest-block-pattern-categories-controller.php
+wp-includes/rest-api/endpoints/class-wp-rest-view-config-controller.php
 wp-includes/rest-api/endpoints/class-wp-rest-widgets-controller.php
 wp-includes/rest-api/endpoints/class-wp-rest-block-patterns-controller.php
 wp-includes/rest-api/endpoints/class-wp-rest-edit-site-export-controller.php

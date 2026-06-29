@@ -7256,6 +7256,7 @@ app/Http/Requests/StoreComponentRequest.php
 app/Http/Requests/StoreDepartmentRequest.php
 app/Http/Requests/UpdateAssetRequest.php
 app/Http/Requests/StoreAssetRequest.php
+app/Http/Middleware/EnforceApiUserAgent.php
 app/Http/Middleware/CheckForDebug.php
 app/Http/Middleware/PreventRequestsDuringMaintenance.php
 app/Http/Middleware/TrustProxies.php
@@ -7264,6 +7265,7 @@ app/Http/Middleware/CheckLocale.php
 app/Http/Middleware/EncryptCookies.php
 app/Http/Middleware/TrustHosts.php
 app/Http/Middleware/CheckForTwoFactor.php
+app/Http/Middleware/IssueFreshApiTokenIfTwoFactorComplete.php
 app/Http/Middleware/CheckUserIsActivated.php
 app/Http/Middleware/VerifyCsrfToken.php
 app/Http/Middleware/RedirectIfAuthenticated.php
@@ -7415,6 +7417,7 @@ tests/Feature/AssetModels/Ui/IndexAssetModelsTest.php
 tests/Feature/AssetModels/Ui/UpdateAssetModelsTest.php
 tests/Feature/AssetModels/Ui/CreateAssetModelsTest.php
 tests/Feature/Modals/Ui/ShowModalsTest.php
+tests/Feature/Authentication/PersonalAccessTokenTwoFactorGuardTest.php
 tests/Feature/Authentication/LoginTest.php
 tests/Feature/Authentication/TwoFactorRateLimitTest.php
 tests/Feature/Notes/CreateNotesTest.php
@@ -7516,6 +7519,7 @@ tests/Feature/CheckoutAcceptances/Ui/ConsumableAcceptanceTest.php
 tests/Feature/CheckoutAcceptances/Ui/AccessoryAcceptanceTest.php
 tests/Feature/CustomFields/Api/DeleteCustomFieldsTest.php
 tests/Feature/CustomFields/Ui/DeleteCustomFieldsTest.php
+tests/Feature/CustomFields/Ui/CreateCustomFieldsTest.php
 tests/Feature/QueryCountBenchmarkTest.php
 tests/Feature/Manufacturers/Api/DeleteManufacturersTest.php
 tests/Feature/Manufacturers/Api/UpdateManufacturersTest.php
@@ -7608,7 +7612,9 @@ tests/Feature/Settings/ShowSetUpPageTest.php
 tests/Feature/Settings/AlertsSettingTest.php
 tests/Feature/Settings/SecuritySettingTest.php
 tests/Feature/Settings/BrandingSettingsTest.php
+tests/Feature/Settings/ApiRequestFiltersTest.php
 tests/Feature/Livewire/ImporterTest.php
+tests/Feature/Livewire/PersonalAccessTokensTest.php
 tests/Feature/Livewire/CategoryEditFormTest.php
 tests/Feature/Suppliers/Api/DeleteSuppliersTest.php
 tests/Feature/Suppliers/Ui/CreateSupplierTest.php
@@ -7656,6 +7662,7 @@ tests/Feature/Notifications/Email/EmailNotificationsToAdminAlertEmailUponCheckin
 tests/Feature/Notifications/Email/AcceptanceReminderTest.php
 tests/Feature/History/Api/IndexHistoryTest.php
 tests/Feature/CustomFieldsets/Api/DeleteCustomFieldsetsTest.php
+tests/Feature/Api/EnforceApiUserAgentTest.php
 tests/Feature/Console/BulkDeleteTest.php
 tests/Feature/Console/CheckinAndDeleteItemsTest.php
 tests/Feature/Console/SendAcceptanceReminderTest.php
@@ -7682,6 +7689,7 @@ tests/Feature/Locations/Ui/DeleteLocationsTest.php
 tests/Feature/Locations/Ui/LocationParentCompanyTest.php
 tests/Feature/Locations/Ui/IndexLocationsTest.php
 tests/Feature/Locations/Ui/ShowLocationTest.php
+tests/Feature/Reporting/SentReminderAuthorizationTest.php
 tests/Feature/Reporting/DeleteAcceptanceAuthorizationTest.php
 tests/Feature/Reporting/ActivityReportTest.php
 tests/Feature/Reporting/CustomReportTest.php
@@ -8050,6 +8058,7 @@ database/migrations/2013_11_19_013337_create_asset_logs_table.php
 database/migrations/2013_11_15_201848_add_license_name_to_licenses.php
 database/migrations/2017_08_03_160105_set_asset_archived_to_zero_default.php
 database/migrations/2015_02_25_022931_add_eula_fields.php
+database/migrations/2026_06_23_000001_add_blocked_api_user_agents_to_settings.php
 database/migrations/2014_06_19_191508_add_asset_name_to_settings.php
 database/migrations/2016_08_30_084634_make_purchase_cost_nullable.php
 database/migrations/2014_06_24_012839_add_zip_to_supplier.php

@@ -197,6 +197,7 @@ api/src/schedules/utils/duration-to-cron.ts
 api/src/schedules/utils/duration-to-cron.test.ts
 api/src/schedules/license.test.ts
 api/src/schedules/tus.ts
+api/src/schedules/cloudflare-queue-consumer.ts
 api/src/schedules/project.test.ts
 api/src/schedules/retention.ts
 api/src/schedules/license.ts
@@ -482,6 +483,7 @@ api/src/services/mail/templates/password-reset.liquid
 api/src/services/mail/rate-limiter.test.ts
 api/src/services/deployment-projects.ts
 api/src/services/folders.test.ts
+api/src/services/cloudflare-queue-consumer.test.ts
 api/src/services/collections.ts
 api/src/services/deployment.test.ts
 api/src/services/permissions.ts
@@ -525,6 +527,7 @@ api/src/services/roles.test.ts
 api/src/services/websocket.test.ts
 api/src/services/extensions.test.ts
 api/src/services/server.test.ts
+api/src/services/cloudflare-queue-consumer.ts
 api/src/services/authentication.ts
 api/src/services/fields.test.ts
 api/src/services/assets.ts
@@ -558,8 +561,10 @@ api/src/logger/redact-query.test.ts
 api/src/server.ts
 api/src/deployment/index.ts
 api/src/deployment/drivers/index.ts
+api/src/deployment/drivers/cloudflare.test.ts
 api/src/deployment/drivers/netlify.ts
 api/src/deployment/drivers/vercel.ts
+api/src/deployment/drivers/cloudflare.ts
 api/src/deployment/drivers/vercel.test.ts
 api/src/deployment/drivers/netlify.test.ts
 api/src/deployment/deployment.ts
@@ -1344,7 +1349,6 @@ sdk/src/rest/commands/utils/users.ts
 sdk/src/rest/commands/utils/versions.ts
 sdk/src/rest/commands/utils/deployment.ts
 sdk/src/rest/commands/utils/random.ts
-sdk/src/rest/commands/utils/hash.ts
 sdk/src/rest/commands/server/index.ts
 sdk/src/rest/commands/server/info.ts
 sdk/src/rest/commands/server/openapi.ts
@@ -2054,6 +2058,7 @@ app/src/modules/deployment/routes/provider/settings.vue
 app/src/modules/deployment/routes/overview.vue
 app/src/modules/deployment/index.ts
 app/src/modules/deployment/config/providers.ts
+app/src/modules/deployment/config/providers.test.ts
 app/src/modules/deployment/composables/use-deployment-navigation.test.ts
 app/src/modules/deployment/composables/use-deployment-navigation.ts
 app/src/modules/deployment/components/provider-setup-drawer.vue
@@ -2864,6 +2869,7 @@ app/src/components/v-icon/custom-icons/grid_6.vue
 app/src/components/v-icon/custom-icons/flip_horizontal.vue
 app/src/components/v-icon/custom-icons/signal_wifi_2_bar.vue
 app/src/components/v-icon/custom-icons/folder_move.vue
+app/src/components/v-icon/custom-icons/cloudflare.vue
 app/src/components/v-icon/custom-icons/grid_5.vue
 app/src/components/v-icon/custom-icons/vercel.vue
 app/src/components/v-icon/custom-icons/signal_wifi_1_bar.vue
@@ -3466,9 +3472,7 @@ packages/specs/src/paths/presets/preset.yaml
 packages/specs/src/paths/presets/presets.yaml
 packages/specs/src/paths/assets/assets.yaml
 packages/specs/src/paths/utils/random.yaml
-packages/specs/src/paths/utils/hash-generate.yaml
 packages/specs/src/paths/utils/sort.yaml
-packages/specs/src/paths/utils/hash-verify.yaml
 packages/specs/src/paths/utils/cache-clear.yaml
 packages/specs/src/paths/utils/export.yaml
 packages/specs/src/paths/utils/import.yaml
@@ -3966,10 +3970,20 @@ packages/types/src/presets.ts
 packages/types/src/accountability.ts
 codecov.yaml
 crowdin.yml
+.changeset/cms-2720-foreground-overlay-shader.md
+.changeset/yellow-cougars-laugh.md
 .changeset/floppy-keys-relax.md
+.changeset/curvy-mammals-strive.md
 .changeset/config.json
+.changeset/ssrf-embedded-ipv4-blocklist.md
+.changeset/red-suns-reply.md
+.changeset/calm-years-wave.md
+.changeset/many-papers-decide.md
+.changeset/slick-colts-work.md
 .changeset/dry-pillows-hope.md
+.changeset/mcp-files-update-data-schema.md
 .changeset/full-trees-type.md
+.changeset/common-plums-sneeze.md
 contributing.md
 tests/blackbox/readme.md
 tests/blackbox/extensions/action-verify-schema/package.json

@@ -191,8 +191,12 @@ erpnext/controllers/tests/test_item_variant.py
 erpnext/controllers/tests/test_taxes_and_totals.py
 erpnext/controllers/tests/test_distributed_discount.py
 erpnext/controllers/tests/test_queries.py
+erpnext/controllers/tests/test_website_list_for_contact.py
 erpnext/controllers/tests/test_reactivity.py
 erpnext/controllers/tests/test_subcontracting_controller.py
+erpnext/controllers/tests/test_stock_controller.py
+erpnext/controllers/tests/test_selling_controller.py
+erpnext/controllers/tests/test_sales_and_purchase_return.py
 erpnext/controllers/tests/test_item_wise_inventory_account.py
 erpnext/controllers/tests/test_accounts_controller.py
 erpnext/controllers/tests/__init__.py
@@ -1252,6 +1256,7 @@ erpnext/accounts/report/consolidated_trial_balance/consolidated_trial_balance.js
 erpnext/accounts/report/consolidated_trial_balance/__init__.py
 erpnext/accounts/report/trial_balance_for_party/trial_balance_for_party.json
 erpnext/accounts/report/trial_balance_for_party/trial_balance_for_party.py
+erpnext/accounts/report/trial_balance_for_party/test_trial_balance_for_party.py
 erpnext/accounts/report/trial_balance_for_party/trial_balance_for_party.js
 erpnext/accounts/report/trial_balance_for_party/__init__.py
 erpnext/accounts/report/consolidated_financial_statement/consolidated_financial_statement.js
@@ -1439,6 +1444,7 @@ erpnext/accounts/report/payment_period_based_on_invoice_date/payment_period_base
 erpnext/accounts/report/payment_period_based_on_invoice_date/__init__.py
 erpnext/accounts/report/asset_depreciations_and_balances/asset_depreciations_and_balances.json
 erpnext/accounts/report/asset_depreciations_and_balances/asset_depreciations_and_balances.py
+erpnext/accounts/report/asset_depreciations_and_balances/test_asset_depreciations_and_balances.py
 erpnext/accounts/report/asset_depreciations_and_balances/asset_depreciations_and_balances.js
 erpnext/accounts/report/asset_depreciations_and_balances/__init__.py
 erpnext/accounts/report/cheques_and_deposits_incorrectly_cleared/cheques_and_deposits_incorrectly_cleared.js
@@ -1658,6 +1664,7 @@ erpnext/projects/web_form/tasks/__init__.py
 erpnext/projects/web_form/__init__.py
 erpnext/projects/utils.py
 erpnext/projects/report/daily_timesheet_summary/daily_timesheet_summary.py
+erpnext/projects/report/daily_timesheet_summary/test_daily_timesheet_summary.py
 erpnext/projects/report/daily_timesheet_summary/daily_timesheet_summary.json
 erpnext/projects/report/daily_timesheet_summary/daily_timesheet_summary.js
 erpnext/projects/report/daily_timesheet_summary/__init__.py
@@ -1674,6 +1681,7 @@ erpnext/projects/report/project_summary/project_summary.json
 erpnext/projects/report/project_summary/project_summary.js
 erpnext/projects/report/project_summary/project_summary.py
 erpnext/projects/report/project_summary/__init__.py
+erpnext/projects/report/project_wise_stock_tracking/test_project_wise_stock_tracking.py
 erpnext/projects/report/project_wise_stock_tracking/project_wise_stock_tracking.js
 erpnext/projects/report/project_wise_stock_tracking/project_wise_stock_tracking.json
 erpnext/projects/report/project_wise_stock_tracking/project_wise_stock_tracking.py
@@ -1862,10 +1870,12 @@ erpnext/locale/sl.po
 erpnext/locale/pt.po
 erpnext/locale/fr.po
 erpnext/locale/sv.po
+erpnext/locale/uz.po
 erpnext/locale/sr_CS.po
 erpnext/locale/ar.po
 erpnext/locale/cs.po
 erpnext/locale/th.po
+erpnext/locale/bg.po
 erpnext/locale/af.po
 erpnext/locale/main.pot
 erpnext/locale/ko.po
@@ -1904,6 +1914,7 @@ erpnext/www/shop-by-category/__init__.py
 erpnext/www/lms/__init__.py
 erpnext/www/support/index.html
 erpnext/www/support/index.py
+erpnext/www/support/test_support_index.py
 erpnext/www/support/__init__.py
 erpnext/www/banking.py
 erpnext/www/payment_setup_certification.html
@@ -1958,6 +1969,7 @@ erpnext/regional/south_africa/setup.py
 erpnext/regional/south_africa/__init__.py
 erpnext/regional/turkey/setup.py
 erpnext/regional/turkey/__init__.py
+erpnext/regional/report/irs_1099/test_irs_1099.py
 erpnext/regional/report/irs_1099/irs_1099.json
 erpnext/regional/report/irs_1099/irs_1099.js
 erpnext/regional/report/irs_1099/irs_1099.py
@@ -1999,6 +2011,7 @@ erpnext/regional/united_arab_emirates/__init__.py
 erpnext/regional/__init__.py
 erpnext/startup/filters.py
 erpnext/startup/boot.py
+erpnext/startup/test_boot.py
 erpnext/startup/notifications.py
 erpnext/startup/__init__.py
 erpnext/deprecation_dumpster.py
@@ -2061,13 +2074,16 @@ erpnext/support/web_form/__init__.py
 erpnext/support/README.md
 erpnext/support/report/first_response_time_for_issues/first_response_time_for_issues.json
 erpnext/support/report/first_response_time_for_issues/first_response_time_for_issues.py
+erpnext/support/report/first_response_time_for_issues/test_first_response_time_for_issues.py
 erpnext/support/report/first_response_time_for_issues/first_response_time_for_issues.js
 erpnext/support/report/first_response_time_for_issues/__init__.py
 erpnext/support/report/issue_summary/issue_summary.py
 erpnext/support/report/issue_summary/issue_summary.json
+erpnext/support/report/issue_summary/test_issue_summary.py
 erpnext/support/report/issue_summary/issue_summary.js
 erpnext/support/report/issue_summary/__init__.py
 erpnext/support/report/support_hour_distribution/support_hour_distribution.js
+erpnext/support/report/support_hour_distribution/test_support_hour_distribution.py
 erpnext/support/report/support_hour_distribution/support_hour_distribution.json
 erpnext/support/report/support_hour_distribution/support_hour_distribution.py
 erpnext/support/report/support_hour_distribution/__init__.py
@@ -2218,11 +2234,13 @@ erpnext/selling/page/point_of_sale/pos_past_order_list.js
 erpnext/selling/page/point_of_sale/pos_item_details.js
 erpnext/selling/page/point_of_sale/point_of_sale.json
 erpnext/selling/page/point_of_sale/pos_number_pad.js
+erpnext/selling/page/point_of_sale/test_point_of_sale.py
 erpnext/selling/page/point_of_sale/point_of_sale.js
 erpnext/selling/page/point_of_sale/pos_past_order_summary.js
 erpnext/selling/page/point_of_sale/pos_payment.js
 erpnext/selling/page/point_of_sale/__init__.py
 erpnext/selling/page/point_of_sale/pos_controller.js
+erpnext/selling/page/sales_funnel/test_sales_funnel.py
 erpnext/selling/page/sales_funnel/sales_funnel.py
 erpnext/selling/page/sales_funnel/sales_funnel.js
 erpnext/selling/page/sales_funnel/sales_funnel.json
@@ -2245,6 +2263,7 @@ erpnext/selling/report/payment_terms_status_for_sales_order/__init__.py
 erpnext/selling/report/customers_without_any_sales_transactions/__init__.py
 erpnext/selling/report/customers_without_any_sales_transactions/customers_without_any_sales_transactions.json
 erpnext/selling/report/customer_acquisition_and_loyalty/customer_acquisition_and_loyalty.js
+erpnext/selling/report/customer_acquisition_and_loyalty/test_customer_acquisition_and_loyalty.py
 erpnext/selling/report/customer_acquisition_and_loyalty/customer_acquisition_and_loyalty.json
 erpnext/selling/report/customer_acquisition_and_loyalty/customer_acquisition_and_loyalty.py
 erpnext/selling/report/customer_acquisition_and_loyalty/__init__.py
@@ -2261,10 +2280,12 @@ erpnext/selling/report/territory_target_variance_based_on_item_group/territory_t
 erpnext/selling/report/territory_target_variance_based_on_item_group/territory_target_variance_based_on_item_group.json
 erpnext/selling/report/territory_target_variance_based_on_item_group/__init__.py
 erpnext/selling/report/lost_quotations/lost_quotations.json
+erpnext/selling/report/lost_quotations/test_lost_quotations.py
 erpnext/selling/report/lost_quotations/lost_quotations.js
 erpnext/selling/report/lost_quotations/lost_quotations.py
 erpnext/selling/report/lost_quotations/__init__.py
 erpnext/selling/report/sales_analytics/test_analytics.py
+erpnext/selling/report/sales_analytics/test_sales_analytics.py
 erpnext/selling/report/sales_analytics/sales_analytics.json
 erpnext/selling/report/sales_analytics/sales_analytics.py
 erpnext/selling/report/sales_analytics/sales_analytics.js
@@ -2283,10 +2304,12 @@ erpnext/selling/report/sales_person_target_variance_based_on_item_group/sales_pe
 erpnext/selling/report/sales_person_target_variance_based_on_item_group/sales_person_target_variance_based_on_item_group.py
 erpnext/selling/report/sales_person_target_variance_based_on_item_group/sales_person_target_variance_based_on_item_group.js
 erpnext/selling/report/sales_person_target_variance_based_on_item_group/__init__.py
+erpnext/selling/report/sales_order_trends/test_sales_order_trends.py
 erpnext/selling/report/sales_order_trends/sales_order_trends.py
 erpnext/selling/report/sales_order_trends/sales_order_trends.json
 erpnext/selling/report/sales_order_trends/sales_order_trends.js
 erpnext/selling/report/sales_order_trends/__init__.py
+erpnext/selling/report/available_stock_for_packing_items/test_available_stock_for_packing_items.py
 erpnext/selling/report/available_stock_for_packing_items/available_stock_for_packing_items.json
 erpnext/selling/report/available_stock_for_packing_items/available_stock_for_packing_items.js
 erpnext/selling/report/available_stock_for_packing_items/available_stock_for_packing_items.py
@@ -2303,6 +2326,7 @@ erpnext/selling/report/sales_partner_transaction_summary/__init__.py
 erpnext/selling/report/customer_credit_balance/customer_credit_balance.js
 erpnext/selling/report/customer_credit_balance/customer_credit_balance.json
 erpnext/selling/report/customer_credit_balance/customer_credit_balance.py
+erpnext/selling/report/customer_credit_balance/test_customer_credit_balance.py
 erpnext/selling/report/customer_credit_balance/__init__.py
 erpnext/selling/report/inactive_customers/inactive_customers.py
 erpnext/selling/report/inactive_customers/inactive_customers.js
@@ -2572,6 +2596,7 @@ erpnext/assets/dashboard_fixtures.py
 erpnext/assets/module_onboarding/asset_onboarding/asset_onboarding.json
 erpnext/assets/report/fixed_asset_register/fixed_asset_register.json
 erpnext/assets/report/fixed_asset_register/fixed_asset_register.js
+erpnext/assets/report/fixed_asset_register/test_fixed_asset_register.py
 erpnext/assets/report/fixed_asset_register/fixed_asset_register.py
 erpnext/assets/report/fixed_asset_register/__init__.py
 erpnext/assets/report/asset_activity/asset_activity.json
@@ -2871,6 +2896,7 @@ erpnext/manufacturing/report/completed_work_orders/__init__.py
 erpnext/manufacturing/report/material_requirements_planning_report/material_requirements_planning_report.py
 erpnext/manufacturing/report/material_requirements_planning_report/material_requirements_planning_report.json
 erpnext/manufacturing/report/material_requirements_planning_report/material_requirements_planning_report.js
+erpnext/manufacturing/report/material_requirements_planning_report/test_material_requirements_planning_report.py
 erpnext/manufacturing/report/material_requirements_planning_report/__init__.py
 erpnext/manufacturing/report/bom_variance_report/bom_variance_report.json
 erpnext/manufacturing/report/bom_variance_report/bom_variance_report.py
@@ -2887,6 +2913,7 @@ erpnext/manufacturing/report/downtime_analysis/downtime_analysis.json
 erpnext/manufacturing/report/downtime_analysis/__init__.py
 erpnext/manufacturing/report/work_order_stock_report/work_order_stock_report.py
 erpnext/manufacturing/report/work_order_stock_report/work_order_stock_report.json
+erpnext/manufacturing/report/work_order_stock_report/test_work_order_stock_report.py
 erpnext/manufacturing/report/work_order_stock_report/work_order_stock_report.js
 erpnext/manufacturing/report/work_order_stock_report/__init__.py
 erpnext/manufacturing/report/quality_inspection_summary/quality_inspection_summary.json
@@ -2932,6 +2959,7 @@ erpnext/manufacturing/report/bom_operations_time/bom_operations_time.json
 erpnext/manufacturing/report/bom_operations_time/__init__.py
 erpnext/manufacturing/report/issued_items_against_work_order/issued_items_against_work_order.json
 erpnext/manufacturing/report/issued_items_against_work_order/__init__.py
+erpnext/manufacturing/report/production_planning_report/test_production_planning_report.py
 erpnext/manufacturing/report/production_planning_report/production_planning_report.json
 erpnext/manufacturing/report/production_planning_report/production_planning_report.js
 erpnext/manufacturing/report/production_planning_report/production_planning_report.py
@@ -2962,6 +2990,9 @@ erpnext/communication/doctype/communication_medium/communication_medium.py
 erpnext/communication/doctype/communication_medium/__init__.py
 erpnext/communication/doctype/__init__.py
 erpnext/communication/__init__.py
+erpnext/crm/doctype/frappe_crm_allowed_user/frappe_crm_allowed_user.py
+erpnext/crm/doctype/frappe_crm_allowed_user/frappe_crm_allowed_user.json
+erpnext/crm/doctype/frappe_crm_allowed_user/__init__.py
 erpnext/crm/doctype/crm_note/crm_note.json
 erpnext/crm/doctype/crm_note/crm_note.py
 erpnext/crm/doctype/crm_note/__init__.py
@@ -3080,6 +3111,7 @@ erpnext/crm/doctype/prospect/test_prospect.py
 erpnext/crm/doctype/prospect/prospect.py
 erpnext/crm/doctype/prospect/prospect.json
 erpnext/crm/doctype/prospect/__init__.py
+erpnext/crm/doctype/test_utils.py
 erpnext/crm/doctype/__init__.py
 erpnext/crm/doctype/campaign/campaign.json
 erpnext/crm/doctype/campaign/test_campaign.py
@@ -3101,6 +3133,7 @@ erpnext/crm/number_card/new_opportunity_(last_1_month)/new_opportunity_(last_1_m
 erpnext/crm/crm_dashboard/crm/crm.json
 erpnext/crm/frappe_crm_api.py
 erpnext/crm/utils.py
+erpnext/crm/report/lead_conversion_time/test_lead_conversion_time.py
 erpnext/crm/report/lead_conversion_time/lead_conversion_time.json
 erpnext/crm/report/lead_conversion_time/lead_conversion_time.js
 erpnext/crm/report/lead_conversion_time/lead_conversion_time.py
@@ -3112,20 +3145,24 @@ erpnext/crm/report/lost_opportunity/test_lost_opportunity.py
 erpnext/crm/report/lost_opportunity/__init__.py
 erpnext/crm/report/prospects_engaged_but_not_converted/prospects_engaged_but_not_converted.py
 erpnext/crm/report/prospects_engaged_but_not_converted/prospects_engaged_but_not_converted.json
+erpnext/crm/report/prospects_engaged_but_not_converted/test_prospects_engaged_but_not_converted.py
 erpnext/crm/report/prospects_engaged_but_not_converted/prospects_engaged_but_not_converted.js
 erpnext/crm/report/prospects_engaged_but_not_converted/__init__.py
 erpnext/crm/report/campaign_efficiency/campaign_efficiency.js
+erpnext/crm/report/campaign_efficiency/test_campaign_efficiency.py
 erpnext/crm/report/campaign_efficiency/campaign_efficiency.py
 erpnext/crm/report/campaign_efficiency/campaign_efficiency.json
 erpnext/crm/report/campaign_efficiency/__init__.py
 erpnext/crm/report/lead_details/lead_details.js
 erpnext/crm/report/lead_details/lead_details.json
+erpnext/crm/report/lead_details/test_lead_details.py
 erpnext/crm/report/lead_details/lead_details.py
 erpnext/crm/report/lead_details/__init__.py
 erpnext/crm/report/lead_owner_efficiency/lead_owner_efficiency.json
 erpnext/crm/report/lead_owner_efficiency/lead_owner_efficiency.js
 erpnext/crm/report/lead_owner_efficiency/lead_owner_efficiency.py
 erpnext/crm/report/lead_owner_efficiency/__init__.py
+erpnext/crm/report/first_response_time_for_opportunity/test_first_response_time_for_opportunity.py
 erpnext/crm/report/first_response_time_for_opportunity/first_response_time_for_opportunity.js
 erpnext/crm/report/first_response_time_for_opportunity/first_response_time_for_opportunity.json
 erpnext/crm/report/first_response_time_for_opportunity/first_response_time_for_opportunity.py
@@ -3627,6 +3664,7 @@ erpnext/stock/dashboard_chart/delivery_trends/delivery_trends.json
 erpnext/stock/dashboard_chart/warehouse_wise_stock_value/warehouse_wise_stock_value.json
 erpnext/stock/dashboard_chart/item_shortage_summary/item_shortage_summary.json
 erpnext/stock/dashboard_chart/purchase_receipt_trends/purchase_receipt_trends.json
+erpnext/stock/test_stock_balance.py
 erpnext/stock/get_item_details.py
 erpnext/stock/deprecated_serial_batch.py
 erpnext/stock/number_card/total_warehouses/total_warehouses.json
@@ -3660,6 +3698,7 @@ erpnext/stock/dashboard/item_dashboard_list.html
 erpnext/stock/dashboard/__init__.py
 erpnext/stock/utils.py
 erpnext/stock/serial_batch_bundle.py
+erpnext/stock/tests/test_stock_ledger.py
 erpnext/stock/tests/test_get_item_details.py
 erpnext/stock/tests/test_valuation.py
 erpnext/stock/tests/test_utils.py
@@ -3669,6 +3708,7 @@ erpnext/stock/report/itemwise_recommended_reorder_level/itemwise_recommended_reo
 erpnext/stock/report/itemwise_recommended_reorder_level/itemwise_recommended_reorder_level.py
 erpnext/stock/report/itemwise_recommended_reorder_level/__init__.py
 erpnext/stock/report/serial_no_ledger/serial_no_ledger.py
+erpnext/stock/report/serial_no_ledger/test_serial_no_ledger.py
 erpnext/stock/report/serial_no_ledger/serial_no_ledger.js
 erpnext/stock/report/serial_no_ledger/serial_no_ledger.json
 erpnext/stock/report/serial_no_ledger/__init__.py
@@ -3678,9 +3718,11 @@ erpnext/stock/report/fifo_queue_vs_qty_after_transaction_comparison/fifo_queue_v
 erpnext/stock/report/fifo_queue_vs_qty_after_transaction_comparison/fifo_queue_vs_qty_after_transaction_comparison.json
 erpnext/stock/report/fifo_queue_vs_qty_after_transaction_comparison/__init__.py
 erpnext/stock/report/incorrect_stock_value_report/incorrect_stock_value_report.json
+erpnext/stock/report/incorrect_stock_value_report/test_incorrect_stock_value_report.py
 erpnext/stock/report/incorrect_stock_value_report/incorrect_stock_value_report.js
 erpnext/stock/report/incorrect_stock_value_report/incorrect_stock_value_report.py
 erpnext/stock/report/incorrect_stock_value_report/__init__.py
+erpnext/stock/report/serial_and_batch_summary/test_serial_and_batch_summary.py
 erpnext/stock/report/serial_and_batch_summary/serial_and_batch_summary.json
 erpnext/stock/report/serial_and_batch_summary/serial_and_batch_summary.py
 erpnext/stock/report/serial_and_batch_summary/serial_and_batch_summary.js
@@ -3696,6 +3738,7 @@ erpnext/stock/report/product_bundle_balance/__init__.py
 erpnext/stock/report/serial_no_status/serial_no_status.json
 erpnext/stock/report/serial_no_status/__init__.py
 erpnext/stock/report/batch_item_expiry_status/batch_item_expiry_status.js
+erpnext/stock/report/batch_item_expiry_status/test_batch_item_expiry_status.py
 erpnext/stock/report/batch_item_expiry_status/batch_item_expiry_status.py
 erpnext/stock/report/batch_item_expiry_status/batch_item_expiry_status.json
 erpnext/stock/report/batch_item_expiry_status/__init__.py
@@ -3717,6 +3760,7 @@ erpnext/stock/report/material_requests_for_which_supplier_quotations_are_not_cre
 erpnext/stock/report/material_requests_for_which_supplier_quotations_are_not_created/__init__.py
 erpnext/stock/report/requested_items_to_be_transferred/requested_items_to_be_transferred.json
 erpnext/stock/report/requested_items_to_be_transferred/__init__.py
+erpnext/stock/report/item_variant_details/test_item_variant_details.py
 erpnext/stock/report/item_variant_details/item_variant_details.js
 erpnext/stock/report/item_variant_details/item_variant_details.py
 erpnext/stock/report/item_variant_details/item_variant_details.json
@@ -3753,9 +3797,11 @@ erpnext/stock/report/serial_no_service_contract_expiry/serial_no_service_contrac
 erpnext/stock/report/serial_no_service_contract_expiry/__init__.py
 erpnext/stock/report/delayed_order_report/delayed_order_report.json
 erpnext/stock/report/delayed_order_report/delayed_order_report.py
+erpnext/stock/report/delayed_order_report/test_delayed_order_report.py
 erpnext/stock/report/delayed_order_report/delayed_order_report.js
 erpnext/stock/report/delayed_order_report/__init__.py
 erpnext/stock/report/available_batch_report/available_batch_report.js
+erpnext/stock/report/available_batch_report/test_available_batch_report.py
 erpnext/stock/report/available_batch_report/available_batch_report.json
 erpnext/stock/report/available_batch_report/available_batch_report.py
 erpnext/stock/report/available_batch_report/__init__.py
@@ -3768,12 +3814,14 @@ erpnext/stock/report/stock_and_account_value_comparison/stock_and_account_value_
 erpnext/stock/report/stock_and_account_value_comparison/stock_and_account_value_comparison.json
 erpnext/stock/report/stock_and_account_value_comparison/__init__.py
 erpnext/stock/report/delayed_item_report/delayed_item_report.py
+erpnext/stock/report/delayed_item_report/test_delayed_item_report.py
 erpnext/stock/report/delayed_item_report/delayed_item_report.json
 erpnext/stock/report/delayed_item_report/delayed_item_report.js
 erpnext/stock/report/delayed_item_report/__init__.py
 erpnext/stock/report/item_price_stock/item_price_stock.js
 erpnext/stock/report/item_price_stock/item_price_stock.py
 erpnext/stock/report/item_price_stock/item_price_stock.json
+erpnext/stock/report/item_price_stock/test_item_price_stock.py
 erpnext/stock/report/item_price_stock/__init__.py
 erpnext/stock/report/incorrect_balance_qty_after_transaction/incorrect_balance_qty_after_transaction.py
 erpnext/stock/report/incorrect_balance_qty_after_transaction/incorrect_balance_qty_after_transaction.js
@@ -3786,6 +3834,7 @@ erpnext/stock/report/item_prices/__init__.py
 erpnext/stock/report/stock_projected_qty/stock_projected_qty.json
 erpnext/stock/report/stock_projected_qty/stock_projected_qty.py
 erpnext/stock/report/stock_projected_qty/stock_projected_qty.js
+erpnext/stock/report/stock_projected_qty/test_stock_projected_qty.py
 erpnext/stock/report/stock_projected_qty/__init__.py
 erpnext/stock/report/stock_analytics/stock_analytics.js
 erpnext/stock/report/stock_analytics/stock_analytics.json
@@ -3806,6 +3855,7 @@ erpnext/stock/report/purchase_receipt_trends/purchase_receipt_trends.py
 erpnext/stock/report/purchase_receipt_trends/purchase_receipt_trends.js
 erpnext/stock/report/purchase_receipt_trends/__init__.py
 erpnext/stock/report/stock_ledger_invariant_check/stock_ledger_invariant_check.py
+erpnext/stock/report/stock_ledger_invariant_check/test_stock_ledger_invariant_check.py
 erpnext/stock/report/stock_ledger_invariant_check/stock_ledger_invariant_check.js
 erpnext/stock/report/stock_ledger_invariant_check/stock_ledger_invariant_check.json
 erpnext/stock/report/stock_ledger_invariant_check/__init__.py
@@ -3832,10 +3882,12 @@ erpnext/stock/report/serial_no_and_batch_traceability/serial_no_and_batch_tracea
 erpnext/stock/report/serial_no_and_batch_traceability/serial_no_and_batch_traceability.py
 erpnext/stock/report/serial_no_and_batch_traceability/__init__.py
 erpnext/stock/report/bom_search/bom_search.py
+erpnext/stock/report/bom_search/test_bom_search.py
 erpnext/stock/report/bom_search/bom_search.js
 erpnext/stock/report/bom_search/bom_search.json
 erpnext/stock/report/bom_search/__init__.py
 erpnext/stock/report/item_where_used/item_where_used.py
+erpnext/stock/report/item_where_used/test_item_where_used.py
 erpnext/stock/report/item_where_used/item_where_used.json
 erpnext/stock/report/item_where_used/item_where_used.js
 erpnext/stock/report/item_where_used/__init__.py
@@ -3850,6 +3902,7 @@ erpnext/stock/report/reserved_stock/reserved_stock.js
 erpnext/stock/report/reserved_stock/__init__.py
 erpnext/stock/report/__init__.py
 erpnext/stock/report/batch_wise_balance_history/batch_wise_balance_history.py
+erpnext/stock/report/batch_wise_balance_history/test_batch_wise_balance_history.py
 erpnext/stock/report/batch_wise_balance_history/batch_wise_balance_history.js
 erpnext/stock/report/batch_wise_balance_history/batch_wise_balance_history.json
 erpnext/stock/report/batch_wise_balance_history/__init__.py
@@ -4157,6 +4210,8 @@ erpnext/patches/v16_0/migrate_asset_type_checkboxes_to_select.py
 erpnext/patches/v16_0/set_posting_datetime_for_sabb_and_drop_indexes.py
 erpnext/patches/v16_0/set_mr_picked_qty.py
 erpnext/patches/v16_0/remove_payables_receivables_workspace.py
+erpnext/patches/v16_0/set_default_close_opportunity_after_days.py
+erpnext/patches/v16_0/drop_redundant_serial_no_index_from_sabb.py
 erpnext/patches/v16_0/make_workstation_operating_components.py
 erpnext/patches/v16_0/migrate_transaction_deletion_task_flags_to_status.py
 erpnext/patches/v16_0/migrate_tax_withholding_data.py
@@ -4180,6 +4235,7 @@ erpnext/patches/v16_0/migrate_subscription_generate_invoice_at.py
 erpnext/patches/v16_0/depends_on_inv_dimensions.py
 erpnext/patches/v16_0/co_by_product_patch.py
 erpnext/patches/v16_0/update_serial_batch_entries.py
+erpnext/patches/v16_0/convert_commission_rate_to_percent.py
 erpnext/patches/v16_0/set_root_type_in_account_categories.py
 erpnext/patches/v16_0/fix_titles.py
 erpnext/patches/v16_0/migrate_address_contact_custom_fields.py
@@ -4388,10 +4444,14 @@ erpnext/utilities/doctype/video/video_list.js
 erpnext/utilities/doctype/video/video.py
 erpnext/utilities/doctype/video/__init__.py
 erpnext/utilities/doctype/__init__.py
+erpnext/utilities/test_utilities_init.py
 erpnext/utilities/product.py
 erpnext/utilities/transaction_base.py
 erpnext/utilities/activation.py
+erpnext/utilities/test_transaction_base.py
 erpnext/utilities/naming.py
+erpnext/utilities/query.py
+erpnext/utilities/test_query.py
 erpnext/utilities/bulk_transaction.py
 erpnext/utilities/web_form/addresses/addresses.py
 erpnext/utilities/web_form/addresses/addresses.js
@@ -4402,7 +4462,9 @@ erpnext/utilities/README.md
 erpnext/utilities/report/youtube_interactions/youtube_interactions.js
 erpnext/utilities/report/youtube_interactions/youtube_interactions.py
 erpnext/utilities/report/youtube_interactions/youtube_interactions.json
+erpnext/utilities/report/youtube_interactions/test_youtube_interactions.py
 erpnext/utilities/report/youtube_interactions/__init__.py
+erpnext/utilities/report/test_product_util.py
 erpnext/utilities/report/__init__.py
 erpnext/utilities/__init__.py
 erpnext/setup/doctype/item_group/test_records.json
@@ -4603,6 +4665,7 @@ erpnext/setup/doctype/uom_conversion_factor/uom_conversion_factor.js
 erpnext/setup/doctype/uom_conversion_factor/uom_conversion_factor.py
 erpnext/setup/doctype/uom_conversion_factor/test_uom_conversion_factor.py
 erpnext/setup/doctype/uom_conversion_factor/__init__.py
+erpnext/setup/doctype/authorization_control/test_authorization_control.py
 erpnext/setup/doctype/authorization_control/authorization_control.py
 erpnext/setup/doctype/authorization_control/authorization_control.json
 erpnext/setup/doctype/authorization_control/README.md
@@ -4810,7 +4873,6 @@ erpnext/public/js/utils/party.js
 erpnext/public/js/utils/sales_common.js
 erpnext/public/js/utils/supplier_quick_entry.js
 erpnext/public/js/utils/barcode_scanner.js
-erpnext/public/js/utils/naming_series.js
 erpnext/public/js/utils/landed_taxes_and_charges_common.js
 erpnext/public/js/utils/contact_address_quick_entry.js
 erpnext/public/js/website_theme.js
@@ -4866,6 +4928,8 @@ erpnext/templates/pages/help.py
 erpnext/templates/pages/search_help.py
 erpnext/templates/pages/rfq.html
 erpnext/templates/pages/partners.py
+erpnext/templates/pages/test_rfq.py
+erpnext/templates/pages/test_material_request_info.py
 erpnext/templates/pages/help.html
 erpnext/templates/pages/regional/india/__init__.py
 erpnext/templates/pages/regional/__init__.py
@@ -4881,6 +4945,7 @@ erpnext/templates/pages/order.html
 erpnext/templates/pages/timelog_info.html
 erpnext/templates/pages/projects.js
 erpnext/templates/pages/material_request_info.py
+erpnext/templates/pages/test_partners.py
 erpnext/templates/pages/rfq.py
 erpnext/templates/pages/search_help.html
 erpnext/templates/pages/order.py
@@ -4928,6 +4993,7 @@ erpnext/templates/print_formats/includes/item_table_qty.html
 erpnext/templates/print_formats/includes/total.html
 erpnext/templates/print_formats/includes/items.html
 erpnext/templates/print_formats/includes/taxes.html
+erpnext/templates/test_utils.py
 erpnext/templates/__init__.py
 erpnext/templates/generators/sales_partner.html
 erpnext/templates/generators/bom.html
@@ -5058,6 +5124,7 @@ erpnext/buying/report/subcontracted_item_to_be_received/subcontracted_item_to_be
 erpnext/buying/report/subcontracted_item_to_be_received/test_subcontracted_item_to_be_received.py
 erpnext/buying/report/subcontracted_item_to_be_received/subcontracted_item_to_be_received.py
 erpnext/buying/report/subcontracted_item_to_be_received/__init__.py
+erpnext/buying/report/purchase_order_trends/test_purchase_order_trends.py
 erpnext/buying/report/purchase_order_trends/purchase_order_trends.js
 erpnext/buying/report/purchase_order_trends/purchase_order_trends.json
 erpnext/buying/report/purchase_order_trends/purchase_order_trends.py
@@ -5077,6 +5144,7 @@ erpnext/buying/report/item_wise_purchase_history/item_wise_purchase_history.json
 erpnext/buying/report/item_wise_purchase_history/item_wise_purchase_history.py
 erpnext/buying/report/item_wise_purchase_history/__init__.py
 erpnext/buying/report/purchase_order_analysis/purchase_order_analysis.py
+erpnext/buying/report/purchase_order_analysis/test_purchase_order_analysis.py
 erpnext/buying/report/purchase_order_analysis/purchase_order_analysis.json
 erpnext/buying/report/purchase_order_analysis/__init__.py
 erpnext/buying/report/purchase_order_analysis/purchase_order_analysis.js
