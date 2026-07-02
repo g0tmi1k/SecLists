@@ -105,6 +105,7 @@ docs/docs/docs/01-core/content-releases/02-frontend/02-release-details-page.mdx
 docs/docs/docs/01-core/content-releases/02-frontend/01-releases-page.mdx
 docs/docs/docs/01-core/content-releases/03-scheduling.md
 docs/docs/docs/01-core/content-releases/_category_.json
+docs/docs/docs/01-core/configuration/01-security-defaults.md
 docs/docs/docs/01-core/configuration/00-intro.md
 docs/docs/docs/01-core/configuration/_category_.json
 docs/docs/docs/01-core/helper-plugin/_category_.json
@@ -1175,15 +1176,26 @@ packages/core/upload/admin/src/future/pages/Assets/components/AssetDetails/tests
 packages/core/upload/admin/src/future/pages/Assets/components/AssetDetails/AssetPreview.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/DropZone/UploadDropZone.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/DropZone/UploadDropZoneContext.tsx
+packages/core/upload/admin/src/future/pages/Assets/components/Dnd/DragOverlayChip.tsx
+packages/core/upload/admin/src/future/pages/Assets/components/Dnd/useAssetDnd.ts
+packages/core/upload/admin/src/future/pages/Assets/components/Dnd/tests/AssetsDndProvider.test.tsx
+packages/core/upload/admin/src/future/pages/Assets/components/Dnd/dndIds.ts
+packages/core/upload/admin/src/future/pages/Assets/components/Dnd/AssetsDndProvider.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/FolderTree/FolderTree.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/FolderTree/tests/FolderTree.test.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/tests/CreateFolderDialog.test.tsx
+packages/core/upload/admin/src/future/utils/getBulkMoveErrorMessage.ts
 packages/core/upload/admin/src/future/utils/getAssetIcon.ts
 packages/core/upload/admin/src/future/utils/translations.ts
+packages/core/upload/admin/src/future/utils/canDropItemOnFolder.ts
 packages/core/upload/admin/src/future/utils/createRafBatcher.ts
+packages/core/upload/admin/src/future/utils/buildBulkMovePayload.ts
 packages/core/upload/admin/src/future/utils/downloadFile.ts
 packages/core/upload/admin/src/future/utils/files.ts
+packages/core/upload/admin/src/future/utils/tests/canDropItemOnFolder.test.ts
+packages/core/upload/admin/src/future/utils/tests/getBulkMoveErrorMessage.test.ts
 packages/core/upload/admin/src/future/utils/tests/createRafBatcher.test.ts
+packages/core/upload/admin/src/future/utils/tests/buildBulkMovePayload.test.ts
 packages/core/upload/admin/src/future/services/folders.ts
 packages/core/upload/admin/src/future/services/uploadFileViaXHR.ts
 packages/core/upload/admin/src/future/services/settings.ts
@@ -1199,6 +1211,7 @@ packages/core/upload/admin/src/future/components/Drawer.tsx
 packages/core/upload/admin/src/future/components/UploadProgressDialog.tsx
 packages/core/upload/admin/src/future/components/tests/Drawer.test.tsx
 packages/core/upload/admin/src/future/components/tests/UploadProgressDialog.test.tsx
+packages/core/upload/admin/src/future/types/dnd.ts
 packages/core/upload/admin/src/translations/en.json
 packages/core/upload/admin/src/translations/tr.json
 packages/core/upload/admin/src/translations/uk.json
@@ -1826,6 +1839,7 @@ packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/createPermissionC
 packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/difference.ts
 packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/updateConditionsToFalse.ts
 packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/permissions.ts
+packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/localePermissionValidation.ts
 packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/removeConditionKeyFromData.ts
 packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/constants.ts
 packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/layouts.ts
@@ -1833,6 +1847,7 @@ packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/updateValues.ts
 packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/getCheckboxState.ts
 packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/tests/removeConditionKeyFromData.test.ts
 packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/tests/layouts.test.ts
+packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/tests/localePermissionValidation.test.ts
 packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/tests/data.ts
 packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/tests/updateValues.test.ts
 packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/tests/difference.test.ts
@@ -1840,6 +1855,7 @@ packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/tests/getCheckbox
 packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/tests/updateConditionsToFalse.test.ts
 packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/tests/permissions.test.ts
 packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/tests/createPermissionChecker.test.ts
+packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/tests/forms.test.ts
 packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/tests/createArrayOfValues.test.ts
 packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/forms.ts
 packages/core/admin/admin/src/pages/Settings/pages/Roles/utils/createArrayOfValues.ts
@@ -2174,6 +2190,7 @@ packages/core/admin/admin/src/components/FormInputs/Date.tsx
 packages/core/admin/admin/src/components/FormInputs/Email.tsx
 packages/core/admin/admin/src/components/FormInputs/Json.tsx
 packages/core/admin/admin/src/components/FormInputs/tests/Boolean.test.tsx
+packages/core/admin/admin/src/components/FormInputs/tests/Enumeration.test.tsx
 packages/core/admin/admin/src/components/FormInputs/tests/Time.test.tsx
 packages/core/admin/admin/src/components/FormInputs/tests/HandleDateChange.test.tsx
 packages/core/admin/admin/src/components/FormInputs/tests/Renderer.test.tsx
@@ -2789,6 +2806,7 @@ packages/core/content-manager/server/src/services/content-types.ts
 packages/core/content-manager/server/src/services/configuration.ts
 packages/core/content-manager/server/src/services/document-manager.ts
 packages/core/content-manager/server/src/services/uid.ts
+packages/core/content-manager/server/src/services/__tests__/permission.test.ts
 packages/core/content-manager/server/src/services/__tests__/content-types.test.ts
 packages/core/content-manager/server/src/services/__tests__/metrics.test.ts
 packages/core/content-manager/server/src/services/__tests__/permission-checker.test.ts
@@ -4898,6 +4916,8 @@ packages/plugins/i18n/server/src/services/permissions/actions.ts
 packages/plugins/i18n/server/src/services/permissions/sections-builder.ts
 packages/plugins/i18n/server/src/services/permissions/engine.ts
 packages/plugins/i18n/server/src/services/permissions/conditions.ts
+packages/plugins/i18n/server/src/services/permissions/__tests__/sections-builder.test.ts
+packages/plugins/i18n/server/src/services/permissions/__tests__/actions.test.ts
 packages/plugins/i18n/server/src/services/locales.ts
 packages/plugins/i18n/server/src/services/localizations.ts
 packages/plugins/i18n/server/src/services/__tests__/ai-localizations.test.ts
@@ -5284,6 +5304,7 @@ tests/api/core/content-manager/fields/time.test.api.js
 tests/api/core/content-manager/fields/decimal.test.api.js
 tests/api/core/content-manager/fields/boolean.test.api.js
 tests/api/core/content-manager/api/x-to-many-rf-preview.test.api.js
+tests/api/core/content-manager/api/hidden-content-type-read.test.api.js
 tests/api/core/content-manager/api/relations.test.api.ts
 tests/api/core/content-manager/api/basic-compo.test.api.js
 tests/api/core/content-manager/api/basic-dp-dz.test.api.js
@@ -5315,6 +5336,7 @@ tests/api/core/content-manager/content-manager/history/history.test.api.ts
 tests/api/core/content-manager/index.test.api.js
 tests/api/core/content-manager/homepage/admin-homepage.test.api.ts
 tests/api/core/content-manager/dynamiczones/simple.test.api.js
+tests/api/core/content-manager/dynamiczones/null-entry.test.api.js
 tests/api/core/content-manager/dynamiczones/with-media.test.api.js
 tests/api/core/content-manager/single-type.test.api.js
 tests/api/core/content-manager/preview/preview.test.api.ts
@@ -5403,6 +5425,7 @@ tests/api/core/strapi/document-service/validation/validation.test.api.ts
 tests/api/core/strapi/document-service/clone.test.api.ts
 tests/api/core/strapi/document-service/relations/invisible-relation-republish.test.api.ts
 tests/api/core/strapi/document-service/relations/basic.test.api.ts
+tests/api/core/strapi/document-service/relations/non-localized-stale-locale.test.api.ts
 tests/api/core/strapi/document-service/relations/m2m-order-republish.test.api.ts
 tests/api/core/strapi/document-service/relations/i18n.test.api.ts
 tests/api/core/strapi/document-service/relations/no-dp.test.api.ts
@@ -5476,6 +5499,7 @@ tests/api/plugins/users-permissions/content-api/auth-cookie-security.test.api.js
 tests/api/plugins/users-permissions/content-api/users-api.test.api.js
 tests/api/plugins/users-permissions/utils.js
 tests/api/plugins/users-permissions/graphql.test.api.js
+tests/api/plugins/i18n/admin/role-locale-permissions.test.api.ts
 tests/api/plugins/i18n/content-manager/find-available-relations.test.api.js
 tests/api/plugins/i18n/content-manager/fill-from-locale.test.api.js
 tests/api/plugins/i18n/content-manager/crud.test.api.js
@@ -5631,6 +5655,7 @@ tests/e2e/tests/i18n/settings.spec.ts
 tests/e2e/tests/i18n/fill-from-locale.spec.ts
 tests/e2e/tests/media-library/cancel-deletion.spec.ts
 tests/e2e/tests/media-library/future/grid-view.spec.ts
+tests/e2e/tests/media-library/future/drag-drop-shallow.spec.ts
 tests/e2e/tests/media-library/future/asset-details.spec.ts
 tests/e2e/tests/media-library/future/folder-creation.spec.ts
 tests/e2e/tests/media-library/future/page-objects/AssetsPage.ts

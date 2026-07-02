@@ -829,6 +829,7 @@ config/initializers/delayed_jobs_log_level.rb
 config/initializers/zzz_action_cable_preferences.rb
 config/initializers/backtrace_silencers.rb
 config/initializers/cookies_serializer.rb
+config/initializers/knowledge_base_custom_css_presence.rb
 config/initializers/omniauth.rb
 config/initializers/generators.rb
 config/initializers/delayed_jobs_settings_reset.rb
@@ -3258,6 +3259,7 @@ app/assets/stylesheets/custom/README.txt
 app/assets/stylesheets/print.scss
 app/assets/stylesheets/addons/README.txt
 app/assets/stylesheets/zammad.scss
+app/assets/stylesheets/custom_knowledge_base_public/README.txt
 app/assets/builds/.keep
 app/assets/javascripts/ie11CustomProperties.min.js
 app/assets/javascripts/knowledge_base_public.js
@@ -7901,6 +7903,7 @@ app/frontend/shared/graphql/queries/currentUser.graphql
 app/frontend/shared/graphql/queries/applicationConfig.graphql
 app/frontend/shared/graphql/queries/applicationBuildChecksum.graphql
 app/frontend/shared/graphql/queries/macros.api.ts
+app/frontend/shared/graphql/schema-types.ts
 app/frontend/shared/graphql/subscriptions/pushMessages.api.ts
 app/frontend/shared/graphql/subscriptions/userUpdates.graphql
 app/frontend/shared/graphql/subscriptions/pushMessages.graphql
@@ -7991,6 +7994,7 @@ app/frontend/shared/entities/organization/stores/objectAttributes.ts
 app/frontend/shared/entities/organization/composables/useOrganizationFormSchema.ts
 app/frontend/shared/entities/organization/composables/useOrganizationDetail.ts
 app/frontend/shared/entities/organization/composables/useOrganizationEntity.ts
+app/frontend/shared/entities/organization/types.ts
 app/frontend/shared/entities/ticket-priority/entity.ts
 app/frontend/shared/entities/two-factor/composables/useTwoFactorPlugins.ts
 app/frontend/shared/entities/two-factor/composables/initializeTwoFactorPlugins.ts
@@ -8392,6 +8396,7 @@ app/frontend/shared/server/apollo/cache/utils/registerFieldPolicy.ts
 app/frontend/shared/server/apollo/cache/utils/registerOffsetStylePagination.ts
 app/frontend/shared/server/apollo/cache/utils/registerNotNormalizedObjectFieldsMerge.ts
 app/frontend/shared/server/apollo/cache/utils/registerIncomingQueryMerge.ts
+app/frontend/shared/server/apollo/cache/utils/__tests__/registerRedirect.spec.ts
 app/frontend/shared/server/apollo/cache/initializer/userCurrentTicketOverviews.ts
 app/frontend/shared/server/apollo/cache/initializer/ticketOverviewsQuery.ts
 app/frontend/shared/server/apollo/cache/initializer/ticketOverviews.ts
@@ -11589,6 +11594,7 @@ spec/fixtures/files/smime/smime-sender-ca@example.com.key
 spec/fixtures/files/smime/issue_3727.key
 spec/fixtures/files/smime/alice@acme.corp+sign+encrypt.csr
 spec/fixtures/files/smime/smime-sender-ca@example.com.secret
+spec/fixtures/files/smime/wrong_mime_type.eml
 spec/fixtures/files/smime/alice@acme.corp+sign+encrypt+ec.csr
 spec/fixtures/files/smime/smime2@example.com.key
 spec/fixtures/files/smime/expiredsmime1@example.com.key
