@@ -143,6 +143,7 @@ system/src/Grav/Installer/Install.php
 system/src/Grav/Installer/VersionUpdate.php
 system/src/Grav/Installer/InstallException.php
 system/src/Grav/Installer/Versions.php
+system/src/Grav/Installer/updates/1.8.0_2026-07-03_0.php
 system/src/Grav/Installer/updates/1.8.0_2026-06-30_1.php
 system/src/Grav/Installer/updates/1.8.0_2025-09-21_0.php
 system/src/Grav/Installer/updates/1.7.0_2020-11-20_1.php
@@ -368,6 +369,7 @@ system/src/Grav/Common/Page/Interfaces/PagesSourceInterface.php
 system/src/Grav/Common/Page/Interfaces/PageTranslateInterface.php
 system/src/Grav/Common/Page/Header.php
 system/src/Grav/Common/Page/Page.php
+system/src/Grav/Common/Page/PageIndexStore.php
 system/src/Grav/Common/Page/Pages.php
 system/src/Grav/Common/Page/Markdown/Excerpts.php
 system/src/Grav/Common/Page/Traits/PageFormTrait.php
@@ -763,6 +765,10 @@ tests/fake/simple-site/user/pages/04.page-translated/default.fr.md
 tests/fake/simple-site/user/pages/04.page-translated/default.en.md
 tests/fake/simple-site/user/pages/05.translatedlong/part2/default.fr.md
 tests/fake/simple-site/user/pages/05.translatedlong/part2/default.en.md
+tests/fake/simple-site/user/pages/07.localized-category/default.fr.md
+tests/fake/simple-site/user/pages/07.localized-category/01.item/default.fr.md
+tests/fake/simple-site/user/pages/07.localized-category/01.item/default.en.md
+tests/fake/simple-site/user/pages/07.localized-category/default.en.md
 tests/fake/simple-site/user/pages/06.localized-slug/default.fr.md
 tests/fake/simple-site/user/pages/06.localized-slug/default.en.md
 tests/unit/_bootstrap.php
@@ -801,6 +807,7 @@ tests/unit/Grav/Common/Security/MediaResizeSecurityTest.php
 tests/unit/Grav/Common/Security/NonceKeySecurityTest.php
 tests/unit/Grav/Common/Security/SvgXxeSecurityTest.php
 tests/unit/Grav/Common/Security/FormFlashSecurityTest.php
+tests/unit/Grav/Common/Security/DynamicDataCallGuardTest.php
 tests/unit/Grav/Common/Security/TwigContentXssOutputTest.php
 tests/unit/Grav/Common/Security/ZipBombSecurityTest.php
 tests/unit/Grav/Common/Security/FileCacheSecurityTest.php

@@ -3236,6 +3236,7 @@ dev/tests/integration/testsuite/Magento/Backend/Block/Widget/Grid/ItemTest.php
 dev/tests/integration/testsuite/Magento/Backend/Block/Widget/Grid/ColumnSetTest.php
 dev/tests/integration/testsuite/Magento/Backend/Block/Widget/Grid/ExtendedTest.php
 dev/tests/integration/testsuite/Magento/Backend/Block/Widget/Grid/Column/Renderer/TextTest.php
+dev/tests/integration/testsuite/Magento/Backend/Block/Widget/Grid/Column/Renderer/CurrencyTest.php
 dev/tests/integration/testsuite/Magento/Backend/Block/Widget/Grid/Column/Renderer/ActionTest.php
 dev/tests/integration/testsuite/Magento/Backend/Block/Widget/Grid/MassactionTest.php
 dev/tests/integration/testsuite/Magento/Backend/Block/Widget/Grid/ContainerTest.php
@@ -5551,6 +5552,7 @@ dev/tests/integration/testsuite/Magento/Eav/Model/Entity/AttributeTest.php
 dev/tests/integration/testsuite/Magento/Eav/Model/Entity/AttributeLoaderTest.php
 dev/tests/integration/testsuite/Magento/Eav/Model/AttributeRepositoryTest.php
 dev/tests/integration/testsuite/Magento/Eav/Model/AttributeManagementTest.php
+dev/tests/integration/testsuite/Magento/Eav/Model/Api/SearchCriteria/CollectionProcessor/ProductCollectionFilterProcessorTest.php
 dev/tests/integration/testsuite/Magento/Eav/Controller/Adminhtml/Product/Attribute/Update/InputType/YesNoTest.php
 dev/tests/integration/testsuite/Magento/Eav/Controller/Adminhtml/Product/Attribute/Update/InputType/TextTest.php
 dev/tests/integration/testsuite/Magento/Eav/Controller/Adminhtml/Product/Attribute/Update/InputType/DateTimeTest.php
@@ -14884,6 +14886,7 @@ app/code/Magento/Catalog/Test/Mftf/Test/StoreFrontUseEmptyFileAsACustomOptionOfF
 app/code/Magento/Catalog/Test/Mftf/Test/AdminStoresProductNavigateMenuTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/AdminDeleteConfigurableChildProductsTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/AdminUpdateVirtualProductWithTierPriceInStockVisibleInCategoryAndSearchTest.xml
+app/code/Magento/Catalog/Test/Mftf/Test/AdminCreateProductWithTransliteratedUrlKeyTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/AdminAssignProductAttributeToAttributeSetTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/AdminNavigateMultipleUpSellProductsTest.xml
 app/code/Magento/Catalog/Test/Mftf/Test/ConfigurableOptionTextinputLengthValidationHintTest.xml
@@ -24780,6 +24783,7 @@ app/code/Magento/Store/Test/Unit/Model/Resolver/StoreTest.php
 app/code/Magento/Store/Test/Unit/Model/Resolver/GroupTest.php
 app/code/Magento/Store/Test/Unit/Model/Resolver/WebsiteTest.php
 app/code/Magento/Store/Test/Unit/Model/Message/EmptyGroupCategoryTest.php
+app/code/Magento/Store/Test/Unit/Model/StoreResolverTest.php
 app/code/Magento/Store/Test/Unit/Model/ScopeResolverTest.php
 app/code/Magento/Store/Test/Unit/Model/StoreSwitcher/RedirectDataGeneratorTest.php
 app/code/Magento/Store/Test/Unit/Model/StoreSwitcher/RedirectDataCacheSerializerTest.php
@@ -25078,6 +25082,7 @@ app/code/Magento/Store/Model/Config/Cache/Tag/Strategy/CompositeTagGenerator.php
 app/code/Magento/Store/Model/Config/Cache/Tag/Strategy/TagGeneratorInterface.php
 app/code/Magento/Store/Model/Config/Cache/Tag/Strategy/StoreConfig.php
 app/code/Magento/Store/Model/Config/Placeholder.php
+app/code/Magento/Store/Model/Config/PlaceholderInterface.php
 app/code/Magento/Store/Model/Config/Importer.php
 app/code/Magento/Store/Model/Config/StoreView.php
 app/code/Magento/Store/Model/Website.php
@@ -30553,6 +30558,7 @@ app/code/Magento/Sitemap/Controller/Adminhtml/Sitemap/Save.php
 app/code/Magento/Sitemap/README.md
 app/code/Magento/Sitemap/registration.php
 app/code/Magento/Sitemap/Helper/Data.php
+app/code/Magento/Amqp/Test/Unit/Setup/ConnectionValidatorTest.php
 app/code/Magento/Amqp/Test/Unit/Setup/ConfigOptionsListTest.php
 app/code/Magento/Amqp/Test/Mftf/LICENSE.txt
 app/code/Magento/Amqp/Test/Mftf/LICENSE_AFL.txt
@@ -32208,6 +32214,7 @@ app/code/Magento/Sales/Test/Mftf/Test/AdminUpdatePaymentMethodTitleTest.xml
 app/code/Magento/Sales/Test/Mftf/Test/StorefrontVerifySecureURLRedirectSalesTest.xml
 app/code/Magento/Sales/Test/Mftf/Test/StorefrontVerifyOrderShipmentForDecimalQuantityTest.xml
 app/code/Magento/Sales/Test/Mftf/Test/AdminIsNotAbleToSendOrderCommentEmailWithoutSalesEmailPrivilegesTest.xml
+app/code/Magento/Sales/Test/Mftf/Test/AdminFilterOrdersGridByShippingAddressCountryTest.xml
 app/code/Magento/Sales/Test/Mftf/Test/AdminOpenCreditmemoViewPageWithWrongCreditmemoIdTest.xml
 app/code/Magento/Sales/Test/Mftf/Test/AdminReorderOrderWithOfflinePaymentMethodTest.xml
 app/code/Magento/Sales/Test/Mftf/Test/AdminProductInTheShoppingCartCouldBeReachedByAdminDuringOrderCreationWithMultiWebsiteConfigTest.xml
@@ -32616,6 +32623,7 @@ app/code/Magento/Sales/Test/Mftf/ActionGroup/AdminOrderViewCheckStatusActionGrou
 app/code/Magento/Sales/Test/Mftf/ActionGroup/AdminAssertTotalsWithTaxOnInvoiceTotalsExcludingShippingAndHandlingPricesPageActionGroup.xml
 app/code/Magento/Sales/Test/Mftf/ActionGroup/AdminAssertTransactionTypeInTransactionTabActionGroup.xml
 app/code/Magento/Sales/Test/Mftf/ActionGroup/AdminOpenAndFillCreditMemoRefundActionGroup.xml
+app/code/Magento/Sales/Test/Mftf/ActionGroup/AdminFilterOrderGridByShippingAddressActionGroup.xml
 app/code/Magento/Sales/Test/Mftf/ActionGroup/SelectPurchaseOrderPaymentMethodActionGroup.xml
 app/code/Magento/Sales/Test/Mftf/ActionGroup/AdminSelectDropdownOptionOnConfigureProductSlidingModalActionGroup.xml
 app/code/Magento/Sales/Test/Mftf/ActionGroup/AdminClickUpdateChangesOnCreateOrderPageActionGroup.xml
@@ -37836,6 +37844,7 @@ app/code/Magento/Checkout/Test/Unit/Model/SidebarTest.php
 app/code/Magento/Checkout/Test/Unit/Model/SessionTest.php
 app/code/Magento/Checkout/Test/Unit/Model/Cart/RequestQuantityProcessorTest.php
 app/code/Magento/Checkout/Test/Unit/Model/Cart/RequestInfoFilterTest.php
+app/code/Magento/Checkout/Test/Unit/Model/Cart/AjaxMessageResponseTest.php
 app/code/Magento/Checkout/Test/Unit/Model/Cart/CollectQuoteTest.php
 app/code/Magento/Checkout/Test/Unit/Model/Cart/RequestInfoFilterCompositeTest.php
 app/code/Magento/Checkout/Test/Unit/Model/Cart/ImageProviderTest.php
@@ -37870,6 +37879,7 @@ app/code/Magento/Checkout/Test/Mftf/Test/StorefrontCustomerCheckoutDisabledProdu
 app/code/Magento/Checkout/Test/Mftf/Test/CheckoutDifferentDefaultCountryPerStoreTest.xml
 app/code/Magento/Checkout/Test/Mftf/Test/StorefrontGuestCheckoutForSpecificCountriesTest.xml
 app/code/Magento/Checkout/Test/Mftf/Test/DefaultBillingAddressShouldBeCheckedOnPaymentPageTest.xml
+app/code/Magento/Checkout/Test/Mftf/Test/StorefrontCustomerCheckoutWithInvalidCityTest.xml
 app/code/Magento/Checkout/Test/Mftf/Test/OnePageCheckoutCancelEditingBillingAddressTest.xml
 app/code/Magento/Checkout/Test/Mftf/Test/StorefrontCustomerCheckoutWithoutRegionTest.xml
 app/code/Magento/Checkout/Test/Mftf/Test/OnePageCheckoutWithAllProductTypesTest.xml
@@ -38568,6 +38578,7 @@ app/code/Magento/Checkout/Model/Cart/RequestQuantityProcessor.php
 app/code/Magento/Checkout/Model/Cart/ImageProvider.php
 app/code/Magento/Checkout/Model/Cart/RequestInfoFilterInterface.php
 app/code/Magento/Checkout/Model/Cart/CollectQuote.php
+app/code/Magento/Checkout/Model/Cart/AjaxMessageResponse.php
 app/code/Magento/Checkout/Exception.php
 app/code/Magento/Checkout/i18n/en_US.csv
 app/code/Magento/Checkout/Controller/Noroute/Index.php
@@ -39735,6 +39746,7 @@ app/code/Magento/MediaGalleryCatalogUi/Test/Mftf/ActionGroup/AssertAdminCategory
 app/code/Magento/MediaGalleryCatalogUi/Test/Mftf/ActionGroup/AdminOpenCategoryGridPageActionGroup.xml
 app/code/Magento/MediaGalleryCatalogUi/Test/Mftf/ActionGroup/AdminAssertMediaGalleryFilterPlaceHolderGridActionGroup.xml
 app/code/Magento/MediaGalleryCatalogUi/Test/Mftf/ActionGroup/AssertAdminMediaGalleryAssetFilterPlaceHolderActionGroup.xml
+app/code/Magento/MediaGalleryCatalogUi/Test/Mftf/ActionGroup/AdminResetFilterInCategoryGridActionGroup.xml
 app/code/Magento/MediaGalleryCatalogUi/Test/Mftf/ActionGroup/AssertAdminCategoryGridPageImageColumnActionGroup.xml
 app/code/Magento/MediaGalleryCatalogUi/Test/Mftf/ActionGroup/AdminAssertCategoryPageTitleActionGroup.xml
 app/code/Magento/MediaGalleryCatalogUi/LICENSE.txt

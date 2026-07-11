@@ -14,6 +14,7 @@ UPGRADE-6.0.md
 funding.json
 composer.lock
 MAINTAINERS.md
+build/gjs_build.php
 build/exclude_files.txt
 build/exclude_files_full.txt
 build/hooks/pre-commit.win
@@ -39,6 +40,7 @@ composer.json
 .ddev/docker-compose.phpmyadmin.yaml
 .ddev/commands/redis/redis-cli
 .ddev/commands/host/phpmyadmin
+.ddev/commands/web/gjs-build
 .ddev/commands/web/ddev-setup-mautic
 .ddev/local.config.php.dist
 .ddev/addon-metadata/ddev-selenium-standalone-chrome/manifest.yaml
@@ -875,6 +877,7 @@ app/bundles/EmailBundle/EventListener/FormSubscriber.php
 app/bundles/EmailBundle/EventListener/GraphAggregateStatsSubscriber.php
 app/bundles/EmailBundle/EventListener/EmailDefaultsSubscriber.php
 app/bundles/EmailBundle/EventListener/MessageQueueSubscriber.php
+app/bundles/EmailBundle/EventListener/SegmentSubscriber.php
 app/bundles/EmailBundle/EventListener/StatsSubscriber.php
 app/bundles/EmailBundle/EventListener/PageSubscriber.php
 app/bundles/EmailBundle/EventListener/DashboardBestHoursSubscriber.php
@@ -905,6 +908,7 @@ app/bundles/EmailBundle/Tests/EventListener/FormSubscriberTest.php
 app/bundles/EmailBundle/Tests/EventListener/EmailToUserSubscriberTest.php
 app/bundles/EmailBundle/Tests/EventListener/PointSubscriberFunctionalTest.php
 app/bundles/EmailBundle/Tests/EventListener/CampaignSubscriberTest.php
+app/bundles/EmailBundle/Tests/EventListener/SegmentSubscriberTest.php
 app/bundles/EmailBundle/Tests/EventListener/EmailImportExportSubscriberFunctionalTest.php
 app/bundles/EmailBundle/Tests/EventListener/TrackingSubscriberTest.php
 app/bundles/EmailBundle/Tests/EventListener/WebhookSubscriberTest.php
@@ -914,6 +918,7 @@ app/bundles/EmailBundle/Tests/EventListener/ReportSubscriberTest.php
 app/bundles/EmailBundle/Tests/EventListener/BuilderSubscriberTest.php
 app/bundles/EmailBundle/Tests/EventListener/BuilderSubscriberFunctionalTest.php
 app/bundles/EmailBundle/Tests/EventListener/DetermineWinnerSubscriberTest.php
+app/bundles/EmailBundle/Tests/EventListener/SegmentSubscriberFunctionalTest.php
 app/bundles/EmailBundle/Tests/EventListener/ReportSubscriberFunctionalTest.php
 app/bundles/EmailBundle/Tests/EventListener/CampaignConditionSubscriberTest.php
 app/bundles/EmailBundle/Tests/EventListener/MatchFilterForLeadTraitTest.php
@@ -922,6 +927,7 @@ app/bundles/EmailBundle/Tests/EventListener/CampaignSubscriberActionEmailToConta
 app/bundles/EmailBundle/Tests/EventListener/ProcessUnsubscribeSubscriberTest.php
 app/bundles/EmailBundle/Tests/OptionsAccessor/EmailToUserAccessorTest.php
 app/bundles/EmailBundle/Tests/Validator/MultipleEmailsValidValidatorTest.php
+app/bundles/EmailBundle/Tests/Validator/ValidEmailLinksValidatorTest.php
 app/bundles/EmailBundle/Tests/Validator/ScheduleDateRangeValidatorTest.php
 app/bundles/EmailBundle/Tests/Validator/EmailOrEmailTokenListValidatorTest.php
 app/bundles/EmailBundle/Tests/Stats/SentHelperTest.php
@@ -1002,9 +1008,11 @@ app/bundles/EmailBundle/Tests/Helper/EmailValidatorTest.php
 app/bundles/EmailBundle/Tests/Helper/MailHelperTest.php
 app/bundles/EmailBundle/OptionsAccessor/EmailToUserAccessor.php
 app/bundles/EmailBundle/Validator/EmailOrEmailTokenListValidator.php
+app/bundles/EmailBundle/Validator/ValidEmailLinks.php
 app/bundles/EmailBundle/Validator/DsnValidator.php
 app/bundles/EmailBundle/Validator/TextOnlyDynamicContentValidator.php
 app/bundles/EmailBundle/Validator/EmailOrEmailTokenList.php
+app/bundles/EmailBundle/Validator/ValidEmailLinksValidator.php
 app/bundles/EmailBundle/Validator/MultipleEmailsValidValidator.php
 app/bundles/EmailBundle/Validator/TextOnlyDynamicContent.php
 app/bundles/EmailBundle/Validator/ScheduleDateRange.php
@@ -2408,6 +2416,7 @@ app/bundles/MessengerBundle/Tests/MessageHandler/PageHitNotificationHandlerTest.
 app/bundles/MessengerBundle/Tests/MessageHandler/EmailHitNotificationHandlerTest.php
 app/bundles/MessengerBundle/Tests/Message/PageHitNotificationTest.php
 app/bundles/MessengerBundle/Tests/Message/EmailHitNotificationTest.php
+app/bundles/MessengerBundle/Tests/Form/Type/ConfigTypeTest.php
 app/bundles/MessengerBundle/MessageHandler/EmailHitNotificationHandler.php
 app/bundles/MessengerBundle/MessageHandler/RemoveReportAttachmentHandler.php
 app/bundles/MessengerBundle/MessageHandler/PageHitNotificationHandler.php
@@ -3556,6 +3565,7 @@ app/bundles/CoreBundle/Tests/Unit/Update/Step/PreUpdateChecksStepTest.php
 app/bundles/CoreBundle/Tests/Unit/Update/Step/RemoveDeletedFilesStepTest.php
 app/bundles/CoreBundle/Tests/Unit/Update/StepProviderTest.php
 app/bundles/CoreBundle/Tests/Unit/Twig/Extension/DateExtensionTest.php
+app/bundles/CoreBundle/Tests/Unit/Twig/Extension/OverrideIncludeExtensionTest.php
 app/bundles/CoreBundle/Tests/Unit/Twig/Extension/HtmlExtensionTest.php
 app/bundles/CoreBundle/Tests/Unit/Twig/Extension/MenuExtensionTest.php
 app/bundles/CoreBundle/Tests/Unit/Twig/Extension/FormatterExtensionTest.php
@@ -3732,6 +3742,7 @@ app/bundles/CoreBundle/Tests/Functional/Controller/AbstractFormControllerTest.ph
 app/bundles/CoreBundle/Tests/Functional/SamlTest.php
 app/bundles/CoreBundle/Tests/Functional/UserEntityTrait.php
 app/bundles/CoreBundle/Tests/Functional/CreateTestEntitiesTrait.php
+app/bundles/CoreBundle/Tests/Functional/Helper/ChartQueryFunctionalTest.php
 app/bundles/CoreBundle/Tests/Functional/Helper/CommandHelperTest.php
 app/bundles/CoreBundle/Tests/Functional/Helper/Chart/ChartQueryTest.php
 app/bundles/CoreBundle/Tests/Functional/Helper/LanguageHelperTest.php
@@ -3768,6 +3779,8 @@ app/bundles/CoreBundle/Tests/Fixtures/Transifex/resources-upload.json
 app/bundles/CoreBundle/Tests/Fixtures/Transifex/language-stats.json
 app/bundles/CoreBundle/Tests/Fixtures/test.json
 app/bundles/CoreBundle/Tests/Fixtures/non_utf_8.csv
+app/bundles/CoreBundle/Tests/IpLookup/MaxmindDownloadLookupTest.php
+app/bundles/CoreBundle/Tests/IpLookup/AbstractLocalDataLookupTest.php
 app/bundles/CoreBundle/Tests/Helper/Chart/SeriesPieChartTest.php
 app/bundles/CoreBundle/Tests/Helper/Chart/PieChartTest.php
 app/bundles/CoreBundle/Tests/Helper/MapHelperTest.php
@@ -4282,6 +4295,7 @@ app/bundles/CoreBundle/Resources/views/Exception/base.html.twig
 app/bundles/CoreBundle/Resources/views/Default/slim.html.twig
 app/bundles/CoreBundle/Resources/views/Default/script.html.twig
 app/bundles/CoreBundle/Resources/views/Default/form.html.twig
+app/bundles/CoreBundle/Resources/views/Default/ajax_form.html.twig
 app/bundles/CoreBundle/Resources/views/Default/content.html.twig
 app/bundles/CoreBundle/Resources/views/Default/output.html.twig
 app/bundles/CoreBundle/Resources/views/Default/form_end.html.twig
@@ -4801,6 +4815,7 @@ app/bundles/AssetBundle/EventListener/AssetExportListEventSubscriber.php
 app/bundles/AssetBundle/Tests/EventListener/LeadSubscriberFunctionalTest.php
 app/bundles/AssetBundle/Tests/EventListener/ReportSubscriberTest.php
 app/bundles/AssetBundle/Tests/EventListener/DetermineWinnerSubscriberTest.php
+app/bundles/AssetBundle/Tests/EventListener/DashboardSubscriberTest.php
 app/bundles/AssetBundle/Tests/EventListener/ReportSubscriberFunctionalTest.php
 app/bundles/AssetBundle/Tests/Asset/AbstractAssetTestCase.php
 app/bundles/AssetBundle/Tests/DataFixtures/LoadAssetDataTest.php
@@ -4816,6 +4831,7 @@ app/bundles/AssetBundle/Tests/Controller/AssetDownloadFunctionalTest.php
 app/bundles/AssetBundle/Tests/Controller/AssetControllerFunctionalTest.php
 app/bundles/AssetBundle/Tests/Controller/AssetProjectSearchFunctionalTest.php
 app/bundles/AssetBundle/Tests/Controller/Api/AssetApiControllerFunctionalTest.php
+app/bundles/AssetBundle/Tests/Controller/Api/AssetWidgetDataApiControllerFunctionalTest.php
 app/bundles/AssetBundle/Tests/Controller/PublicControllerFunctionalTest.php
 app/bundles/AssetBundle/Validator/Constraints/Upload.php
 app/bundles/AssetBundle/Validator/Constraints/UploadValidator.php
@@ -5009,6 +5025,7 @@ app/migrations/Version20190410143658.php
 app/migrations/Version20250806085552.php
 app/migrations/Version20221014061125.php
 app/migrations/Version20230313111424.php
+app/migrations/Version20260616135523.php
 app/migrations/Version20220216161028.php
 app/migrations/Version20211020114811.php
 app/migrations/Version20241227065658.php
@@ -5823,6 +5840,7 @@ plugins/MauticSocialBundle/README.md
 plugins/MauticSocialBundle/Helper/CampaignEventHelper.php
 plugins/MauticSocialBundle/Helper/TwitterCommandHelper.php
 plugins/GrapesJsBuilderBundle/GrapesJsBuilderBundle.php
+plugins/GrapesJsBuilderBundle/Tests/Unit/EventSubscriber/AssetsSubscriberTest.php
 plugins/GrapesJsBuilderBundle/Tests/Unit/EventSubscriber/PageSubscriberTest.php
 plugins/GrapesJsBuilderBundle/Tests/Unit/EventSubscriber/EmailSubscriberTest.php
 plugins/GrapesJsBuilderBundle/Tests/Unit/EventSubscriber/InjectCustomContentSubscriberTest.php
@@ -5834,6 +5852,7 @@ plugins/GrapesJsBuilderBundle/Tests/Functional/Controller/AssertCustomMjmlTest.p
 plugins/GrapesJsBuilderBundle/Tests/InstallFixtures/ORM/GrapeJsDataTest.php
 plugins/GrapesJsBuilderBundle/package.json
 plugins/GrapesJsBuilderBundle/.babelrc
+plugins/GrapesJsBuilderBundle/scripts/manifest-reporter.js
 plugins/GrapesJsBuilderBundle/easy-coding-standard.yml
 plugins/GrapesJsBuilderBundle/phpunit.xml
 plugins/GrapesJsBuilderBundle/.eslintrc
@@ -5852,8 +5871,33 @@ plugins/GrapesJsBuilderBundle/EventSubscriber/InjectCustomContentSubscriber.php
 plugins/GrapesJsBuilderBundle/Assets/library/js/commands/compCopyPaste.js
 plugins/GrapesJsBuilderBundle/Assets/library/js/mjmlStyles.service.js
 plugins/GrapesJsBuilderBundle/Assets/library/js/editorState.service.js
+plugins/GrapesJsBuilderBundle/Assets/library/js/preset-mautic/commands.js
+plugins/GrapesJsBuilderBundle/Assets/library/js/preset-mautic/dynamicContent/dynamicContent.blocks.js
+plugins/GrapesJsBuilderBundle/Assets/library/js/preset-mautic/dynamicContent/dynamicContent.domcomponents.js
+plugins/GrapesJsBuilderBundle/Assets/library/js/preset-mautic/dynamicContent/dynamicContent.commands.js
+plugins/GrapesJsBuilderBundle/Assets/library/js/preset-mautic/dynamicContent/dynamicContent.service.js
+plugins/GrapesJsBuilderBundle/Assets/library/js/preset-mautic/dynamicContent/dynamicContent.events.js
+plugins/GrapesJsBuilderBundle/Assets/library/js/preset-mautic/buttonBlock.js
+plugins/GrapesJsBuilderBundle/Assets/library/js/preset-mautic/logger.js
+plugins/GrapesJsBuilderBundle/Assets/library/js/preset-mautic/events.js
+plugins/GrapesJsBuilderBundle/Assets/library/js/preset-mautic/blocks/blocks.mjml.js
+plugins/GrapesJsBuilderBundle/Assets/library/js/preset-mautic/blocks.js
+plugins/GrapesJsBuilderBundle/Assets/library/js/preset-mautic/components.js
+plugins/GrapesJsBuilderBundle/Assets/library/js/preset-mautic/buttons.js
+plugins/GrapesJsBuilderBundle/Assets/library/js/preset-mautic/panels/panels.mjml.js
+plugins/GrapesJsBuilderBundle/Assets/library/js/preset-mautic/content.service.js
+plugins/GrapesJsBuilderBundle/Assets/library/js/preset-mautic/editorFonts/editorFonts.service.js
+plugins/GrapesJsBuilderBundle/Assets/library/js/preset-mautic/listeners.js
+plugins/GrapesJsBuilderBundle/Assets/library/js/preset-mautic/index.js
+plugins/GrapesJsBuilderBundle/Assets/library/js/preset-mautic/mjml/mjml.service.js
+plugins/GrapesJsBuilderBundle/Assets/library/js/preset-mautic/buttons/buttonApply.js
+plugins/GrapesJsBuilderBundle/Assets/library/js/preset-mautic/buttons/buttonClose.command.js
+plugins/GrapesJsBuilderBundle/Assets/library/js/preset-mautic/buttons/buttonClose.js
+plugins/GrapesJsBuilderBundle/Assets/library/js/preset-mautic/buttons/buttonApply.command.js
+plugins/GrapesJsBuilderBundle/Assets/library/js/preset-mautic/buttons/buttonPreview.js
+plugins/GrapesJsBuilderBundle/Assets/library/js/preset-mautic/buttons/buttons.service.js
+plugins/GrapesJsBuilderBundle/Assets/library/js/preset-mautic/buttons/buttonPreview.command.js
 plugins/GrapesJsBuilderBundle/Assets/library/js/builder.service.js
-plugins/GrapesJsBuilderBundle/Assets/library/js/dist/builder.js
 plugins/GrapesJsBuilderBundle/Assets/library/js/asset.service.js
 plugins/GrapesJsBuilderBundle/Assets/library/js/plugins/grapesjs-mjmlThemeTokens/blocks.js
 plugins/GrapesJsBuilderBundle/Assets/library/js/plugins/grapesjs-mjmlThemeTokens/utils.js

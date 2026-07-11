@@ -2117,6 +2117,7 @@ wp-includes/abilities-api/class-wp-ability-category.php
 wp-includes/abilities-api/class-wp-ability.php
 wp-includes/abilities-api/class-wp-ability-categories-registry.php
 wp-includes/abilities-api/class-wp-abilities-registry.php
+wp-includes/class-wp-view-config-data.php
 wp-includes/post-formats.php
 wp-includes/wp-db.php
 wp-includes/class-wp-block-editor-context.php
@@ -3801,6 +3802,7 @@ wp-admin/includes/class-wp-comments-list-table.php
 wp-admin/includes/class-ftp-sockets.php
 wp-admin/includes/upgrade.php
 wp-admin/includes/class-wp-ms-themes-list-table.php
+wp-admin/includes/dashboard-on-this-day.php
 wp-admin/includes/class-wp-upgrader.php
 wp-admin/includes/class-theme-upgrader.php
 wp-admin/includes/class-wp-plugins-list-table.php
