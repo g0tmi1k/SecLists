@@ -21,6 +21,7 @@ Dockerfile
 config/debugbar.php
 config/image.php
 config/view.php
+config/importer.php
 config/logging.php
 config/google2fa.php
 config/hashing.php
@@ -259,11 +260,13 @@ tests/Feature/Scim/UserEmailsShapeTest.php
 tests/Feature/Scim/UserFilterSchemaUrnTest.php
 tests/Feature/Scim/ReplaceUserWithMalformedKeyTest.php
 tests/Feature/Scim/ReplaceUserWithFilterKeyTest.php
+tests/Feature/Authentication/CheckUserIsActivatedApiTest.php
 tests/Feature/Authentication/TwoFactorRateLimitTest.php
 tests/Feature/Authentication/LoginTest.php
 tests/Feature/Authentication/PersonalAccessTokenTwoFactorGuardTest.php
 tests/Feature/Authentication/EnforceApiTwoFactorEnrollmentTest.php
 tests/Feature/QueryCountBenchmarkTest.php
+tests/Feature/Livewire/AlertMenuTest.php
 tests/Feature/Livewire/CategoryEditFormTest.php
 tests/Feature/Livewire/CheckoutTargetPanelTest.php
 tests/Feature/Livewire/PersonalAccessTokensTest.php
@@ -308,6 +311,7 @@ tests/Feature/Assets/Ui/CheckinCheckoutCounters.php
 tests/Feature/Assets/Ui/BulkDeleteAssetsTest.php
 tests/Feature/Assets/Ui/StoreAssetWithFullMultipleCompanySupportTest.php
 tests/Feature/Assets/Ui/AuditAssetTest.php
+tests/Feature/Assets/Ui/ImportAssetHistoryTest.php
 tests/Feature/Assets/Ui/EditAssetTest.php
 tests/Feature/Assets/Ui/ForceCheckinAssetTest.php
 tests/Feature/Assets/Ui/CloneAssetTest.php
@@ -343,6 +347,7 @@ tests/Feature/Console/BulkDeleteTest.php
 tests/Feature/Console/OptimizeTest.php
 tests/Feature/Console/FixupAssignedToAssignedTypeTest.php
 tests/Feature/Console/SendAcceptanceReminderTest.php
+tests/Feature/Console/SendInventoryAlertsTest.php
 tests/Feature/Console/Commands/PurgeEulaPDFTest.php
 tests/Feature/Console/Commands/PurgeCompaniesTest.php
 tests/Feature/Console/Commands/CleanupOrphanActionLogsTest.php
@@ -552,6 +557,7 @@ tests/Support/Importing/UsersImportFileBuilder.php
 tests/Support/Importing/LicensesImportFileBuilder.php
 tests/Support/Importing/AccessoriesImportFileBuilder.php
 tests/Support/Importing/ComponentsImportFileBuilder.php
+tests/Support/Importing/AssetHistoryImportFileBuilder.php
 tests/Support/Importing/ManufacturersImportFileBuilder.php
 tests/Support/Importing/CleansUpImportFiles.php
 tests/Support/InteractsWithAuthentication.php
@@ -598,7 +604,6 @@ resources/views/settings/logins.blade.php
 resources/views/hardware/view.blade.php
 resources/views/hardware/checkin-due.blade.php
 resources/views/hardware/quickscan.blade.php
-resources/views/hardware/history.blade.php
 resources/views/hardware/index.blade.php
 resources/views/hardware/bulk-delete.blade.php
 resources/views/hardware/requested.blade.php
@@ -666,7 +671,6 @@ resources/views/partials/label2-field-definitions.blade.php
 resources/views/partials/confetti-js.blade.php
 resources/views/partials/forms/checkout-selector.blade.php
 resources/views/partials/forms/edit/item_number.blade.php
-resources/views/partials/forms/edit/name-first.blade.php
 resources/views/partials/forms/edit/purchase_cost.blade.php
 resources/views/partials/forms/edit/category-select.blade.php
 resources/views/partials/forms/edit/supplier-select.blade.php
@@ -703,7 +707,6 @@ resources/views/partials/forms/edit/username.blade.php
 resources/views/partials/forms/edit/name.blade.php
 resources/views/partials/forms/edit/location-profile-select.blade.php
 resources/views/partials/forms/edit/model-select.blade.php
-resources/views/partials/forms/edit/name-last.blade.php
 resources/views/partials/forms/edit/address.blade.php
 resources/views/partials/forms/edit/manufacturer-select.blade.php
 resources/views/partials/forms/edit/depreciation.blade.php
@@ -737,7 +740,6 @@ resources/views/notifications/Welcome.blade.php
 resources/views/notifications/FirstAdmin.blade.php
 resources/views/maintenance-types/index.blade.php
 resources/views/maintenance-types/edit.blade.php
-resources/views/blade/alert-menu.blade.php
 resources/views/blade/box/index.blade.php
 resources/views/blade/box/footer.blade.php
 resources/views/blade/page-data.blade.php
@@ -808,6 +810,7 @@ resources/views/blade/table/consumables.blade.php
 resources/views/blade/table/maintenances.blade.php
 resources/views/blade/table/bulk-users.blade.php
 resources/views/blade/notifications.blade.php
+resources/views/blade/demo-lock.blade.php
 resources/views/blade/modals/maintenance-complete.blade.php
 resources/views/blade/form/legend-help.blade.php
 resources/views/blade/form/tooltip.blade.php
@@ -890,6 +893,7 @@ resources/views/locations/print.blade.php
 resources/views/locations/index.blade.php
 resources/views/locations/bulk-delete.blade.php
 resources/views/locations/edit.blade.php
+resources/views/livewire/alert-menu.blade.php
 resources/views/livewire/custom-field-editor.blade.php
 resources/views/livewire/admin-personal-access-tokens.blade.php
 resources/views/livewire/location-scope-check.blade.php
@@ -7468,6 +7472,7 @@ app/Livewire/Importer.php
 app/Livewire/CustomFieldEditor.php
 app/Livewire/CategoryEditForm.php
 app/Livewire/SlackSettingsForm.php
+app/Livewire/AlertMenu.php
 app/Http/Kernel.php
 app/Http/Transformers/CustomFieldsTransformer.php
 app/Http/Transformers/MaintenancesTransformer.php
@@ -7764,6 +7769,7 @@ app/Importer/SupplierImporter.php
 app/Importer/ComponentImporter.php
 app/Importer/ConsumableImporter.php
 app/Importer/CategoryImporter.php
+app/Importer/AssetHistoryImporter.php
 app/Importer/AssetImporter.php
 app/Importer/AssetModelImporter.php
 app/Importer/ManufacturerImporter.php
@@ -8357,6 +8363,7 @@ ansible/ubuntu/apachevirtualhost.conf.j2
 ansible/ubuntu/vagrant_playbook.yml
 sample_csvs/components-sample-large.csv
 sample_csvs/suppliers-sample-large.csv
+sample_csvs/.!14623!assets-sample-BLANKS.csv
 sample_csvs/assets-sample-BAD.csv
 sample_csvs/manufacturers-sample-large.csv
 sample_csvs/consumables-sample-large.csv
@@ -8367,6 +8374,7 @@ sample_csvs/assets-sample-BLANKS.csv
 sample_csvs/consumables-sample.csv
 sample_csvs/models-sample-large.csv
 sample_csvs/licenses-sample.csv
+sample_csvs/.!14622!assets-sample-BAD.csv
 sample_csvs/users-sample.csv
 sample_csvs/suppliers-sample.csv
 sample_csvs/models-sample.csv
@@ -8374,6 +8382,7 @@ sample_csvs/components-sample.csv
 sample_csvs/categories-sample.csv
 sample_csvs/categories-sample-large.csv
 sample_csvs/manufacturers-sample.csv
+sample_csvs/asset-history-sample.csv
 pint.json
 Dockerfile.fpm-alpine
 .env.testing.example

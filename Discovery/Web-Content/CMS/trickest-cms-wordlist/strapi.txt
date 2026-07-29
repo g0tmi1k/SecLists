@@ -241,6 +241,7 @@ tests/e2e/tests/content-type-builder/collection-type/uid-generation.spec.ts
 tests/e2e/tests/content-type-builder/collection-type/edit-schema-no-data-loss.spec.ts
 tests/e2e/tests/content-type-builder/collection-type/destructive-field-delete.spec.ts
 tests/e2e/tests/content-type-builder/collection-type/edit-collection-type.spec.ts
+tests/e2e/tests/content-type-builder/collection-type/add-fields-to-existing-ct.spec.ts
 tests/e2e/tests/content-type-builder/collection-type/create-collection-type.spec.ts
 tests/e2e/tests/content-type-builder/components/edit-components.spec.ts
 tests/e2e/tests/content-type-builder/components/create-components.spec.ts
@@ -278,6 +279,7 @@ tests/e2e/tests/media-library/future/page-objects/AssetsPage.ts
 tests/e2e/tests/media-library/future/asset-crop.spec.ts
 tests/e2e/tests/media-library/future/asset-details.spec.ts
 tests/e2e/tests/media-library/future/file-upload.spec.ts
+tests/e2e/tests/media-library/future/sort.spec.ts
 tests/e2e/tests/media-library/future/drag-drop-deep.spec.ts
 tests/e2e/tests/media-library/future/bulk-move.spec.ts
 tests/e2e/tests/media-library/future/bulk-delete.spec.ts
@@ -5135,6 +5137,7 @@ packages/core/upload/admin/src/future/pages/Assets/components/tests/CreateFolder
 packages/core/upload/admin/src/future/pages/Assets/components/BulkMoveDialog.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/BulkActionsBar.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/ImportFromUrlDialog.tsx
+packages/core/upload/admin/src/future/pages/Assets/components/SortMenu.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/AssetDetails/useCropImg.ts
 packages/core/upload/admin/src/future/pages/Assets/components/AssetDetails/AssetPreview.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/AssetDetails/AssetCropEditor.tsx
@@ -5160,16 +5163,21 @@ packages/core/upload/admin/src/future/pages/Assets/components/FolderTree/tests/F
 packages/core/upload/admin/src/future/pages/Assets/components/FolderTree/useSpringLoadedExpand.ts
 packages/core/upload/admin/src/future/pages/Assets/components/EmptyState.tsx
 packages/core/upload/admin/src/future/pages/Assets/utils/tests/listQueryKey.test.ts
+packages/core/upload/admin/src/future/pages/Assets/utils/tests/mergeMixedList.test.ts
 packages/core/upload/admin/src/future/pages/Assets/utils/tests/selection.test.ts
 packages/core/upload/admin/src/future/pages/Assets/utils/selection.ts
 packages/core/upload/admin/src/future/pages/Assets/utils/listQueryKey.ts
+packages/core/upload/admin/src/future/pages/Assets/utils/mergeMixedList.ts
+packages/core/upload/admin/src/future/pages/Assets/tests/SortMenu.test.tsx
 packages/core/upload/admin/src/future/pages/Assets/tests/AssetsGrid.test.tsx
 packages/core/upload/admin/src/future/pages/Assets/tests/AssetsTable.test.tsx
 packages/core/upload/admin/src/future/pages/Assets/tests/EmptyState.test.tsx
 packages/core/upload/admin/src/future/pages/Assets/tests/AssetPreview.test.tsx
 packages/core/upload/admin/src/future/pages/Assets/hooks/useAssetSelection.ts
 packages/core/upload/admin/src/future/pages/Assets/hooks/useInfiniteAssets.ts
+packages/core/upload/admin/src/future/pages/Assets/hooks/useListSort.ts
 packages/core/upload/admin/src/future/pages/Assets/hooks/tests/useFolderNavigation.test.ts
+packages/core/upload/admin/src/future/pages/Assets/hooks/tests/useListSort.test.ts
 packages/core/upload/admin/src/future/pages/Assets/hooks/tests/useInfiniteAssets.test.ts
 packages/core/upload/admin/src/future/pages/Assets/hooks/tests/useFolderInfo.test.ts
 packages/core/upload/admin/src/future/pages/Assets/hooks/useFolderNavigation.ts
@@ -6116,7 +6124,6 @@ packages/plugins/color-picker/admin/src/translations/uk.json
 packages/plugins/color-picker/vitest.config.ts
 packages/plugins/color-picker/jest.config.front.js
 packages/plugins/color-picker/LICENSE
-.ai/skills/writing-a-skill/SKILL.md
 .ai/skills/git-conventions/SKILL.md
 lint-staged.shared.mjs
 jest.config.api.js

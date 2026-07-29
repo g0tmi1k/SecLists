@@ -257,6 +257,7 @@ htdocs/blockedlog/README.md
 htdocs/blockedlog/admin/lifetimeamount.inc.php
 htdocs/blockedlog/admin/blockedlog_archives.php
 htdocs/blockedlog/admin/blockedlog_control.php
+htdocs/blockedlog/admin/filecheck_diff.php
 htdocs/blockedlog/admin/documentation.php
 htdocs/blockedlog/admin/registration.php
 htdocs/blockedlog/admin/filecheck.php
@@ -8241,6 +8242,7 @@ htdocs/install/mysql/migration/16.0.0-17.0.0.sql
 htdocs/install/mysql/migration/19.0.0-20.0.0.sql
 htdocs/install/mysql/migration/22.0.0-23.0.0.sql
 htdocs/install/mysql/migration/3.1.0-3.2.0.sql
+htdocs/install/mysql/migration/24.0.0-25.0.0.sql
 htdocs/install/mysql/migration/18.0.0-19.0.0.sql
 htdocs/install/mysql/migration/3.2.0-3.3.0.sql
 htdocs/install/mysql/migration/3.3.0-3.4.0.sql
