@@ -17,13 +17,19 @@ extensions/akismet/.gitattributes
 extensions/akismet/locale/en.yml
 extensions/akismet/node_modules/.yarn-integrity
 extensions/akismet/CHANGELOG.md
+extensions/akismet/tests/integration/ValidatePostTest.php
 extensions/akismet/tests/integration/setup.php
+extensions/akismet/tests/integration/VerifyKeySettingTest.php
 extensions/akismet/tests/unit/.gitkeep
+extensions/akismet/tests/unit/AkismetTest.php
 extensions/akismet/tests/fixtures/.gitkeep
+extensions/akismet/tests/fixtures/FakeAkismetProvider.php
 extensions/akismet/tests/phpunit.integration.xml
 extensions/akismet/tests/phpunit.unit.xml
+extensions/akismet/src/AkismetUnexpectedResponseException.php
 extensions/akismet/src/Listener/SubmitHam.php
 extensions/akismet/src/Listener/ValidatePost.php
+extensions/akismet/src/Listener/ValidateApiKey.php
 extensions/akismet/src/Listener/SubmitSpam.php
 extensions/akismet/src/Provider/AkismetProvider.php
 extensions/akismet/src/Akismet.php
@@ -373,6 +379,7 @@ extensions/sticky/locale/en.yml
 extensions/sticky/CHANGELOG.md
 extensions/sticky/tests/integration/api/StickyDiscussionsTest.php
 extensions/sticky/tests/integration/api/ListDiscussionsTest.php
+extensions/sticky/tests/integration/api/StickyExcerptTest.php
 extensions/sticky/tests/integration/setup.php
 extensions/sticky/tests/integration/AuditTest.php
 extensions/sticky/tests/unit/.gitkeep
@@ -491,6 +498,7 @@ extensions/mentions/views/emails/html/userMentioned.blade.php
 extensions/mentions/views/emails/html/groupMentioned.blade.php
 extensions/mentions/CHANGELOG.md
 extensions/mentions/tests/integration/api/ListPostsTest.php
+extensions/mentions/tests/integration/api/MentionedByEagerLoadingTest.php
 extensions/mentions/tests/integration/api/CreatePostWithEmptyContentTest.php
 extensions/mentions/tests/integration/api/PostMentionsTest.php
 extensions/mentions/tests/integration/api/EditPostWithEmptyContentTest.php
@@ -702,6 +710,7 @@ extensions/tags/less/common/TagLabel.less
 extensions/tags/less/common/common.less
 extensions/tags/less/common/TagSelectionModal.less
 extensions/tags/less/admin/EditTagModal.less
+extensions/tags/less/admin/SelectTagsSettingComponent.less
 extensions/tags/less/admin/TagsPage.less
 extensions/tags/less/forum.less
 extensions/tags/less/admin.less
@@ -714,6 +723,8 @@ extensions/tags/js/tsconfig.json
 extensions/tags/js/package.json
 extensions/tags/js/admin.ts
 extensions/tags/js/forum.ts
+extensions/tags/js/tests/stubs/TagHero.ts
+extensions/tags/js/tests/unit/forum/addTagFilter.test.ts
 extensions/tags/js/dist/common/components/TagSelectionModal.js.map
 extensions/tags/js/dist/common/components/TagSelectionModal.js
 extensions/tags/js/dist/admin.js.map
@@ -761,6 +772,7 @@ extensions/tags/js/dist-typings/forum/addTagLabels.d.ts
 extensions/tags/js/dist-typings/forum/addTagFilter.d.ts
 extensions/tags/js/dist-typings/forum/addTagComposer.d.ts
 extensions/tags/js/dist-typings/forum/addTagControl.d.ts
+extensions/tags/js/jest.config.cjs
 extensions/tags/js/webpack.config.js
 extensions/tags/js/src/common/components/TagSelectionModal.tsx
 extensions/tags/js/src/common/utils/sortTags.tsx
@@ -820,6 +832,7 @@ extensions/tags/tests/integration/api/tags/ListWithFulltextSearchTest.php
 extensions/tags/tests/integration/api/tags/CreateTest.php
 extensions/tags/tests/integration/api/tags/SchemaTest.php
 extensions/tags/tests/integration/api/tags/ListTest.php
+extensions/tags/tests/integration/GlobalPolicyTagCountsTest.php
 extensions/tags/tests/integration/setup.php
 extensions/tags/tests/integration/visibility/DiscussionVisibilityTest.php
 extensions/tags/tests/integration/RetrievesRepresentativeTags.php
@@ -926,7 +939,9 @@ extensions/subscriptions/tests/integration/api/discussions/FollowAfterReplyTest.
 extensions/subscriptions/tests/integration/api/discussions/FollowAfterCreateTest.php
 extensions/subscriptions/tests/integration/api/discussions/ReplyNotificationTest.php
 extensions/subscriptions/tests/integration/setup.php
+extensions/subscriptions/tests/integration/NotificationEmailInjectionTest.php
 extensions/subscriptions/tests/unit/.gitkeep
+extensions/subscriptions/tests/fixtures/views/email-body.blade.php
 extensions/subscriptions/tests/fixtures/.gitkeep
 extensions/subscriptions/tests/phpunit.integration.xml
 extensions/subscriptions/tests/phpunit.unit.xml
@@ -1191,15 +1206,19 @@ extensions/realtime/tests/integration/SendNotificationsJobTest.php
 extensions/realtime/tests/integration/RestartOnSettingChangeTest.php
 extensions/realtime/tests/integration/api/IndexTypingTagsAttributeTest.php
 extensions/realtime/tests/integration/api/notifications/ShowNotificationTest.php
+extensions/realtime/tests/integration/api/TypingIdentifiedAuthTest.php
 extensions/realtime/tests/integration/api/IndexTypingTagAuthTest.php
 extensions/realtime/tests/integration/payload/GeneratorTest.php
 extensions/realtime/tests/integration/setup.php
+extensions/realtime/tests/integration/WebsocketBindingsTest.php
 extensions/realtime/tests/integration/IndexTypingPresenceRoutingTest.php
 extensions/realtime/tests/unit/Extend/RealtimeExtenderTest.php
 extensions/realtime/tests/unit/Extend/RealtimeRegistryTest.php
 extensions/realtime/tests/unit/Websocket/FactoryRoutingTest.php
+extensions/realtime/tests/unit/Websocket/TypingRelayTest.php
 extensions/realtime/tests/unit/Websocket/ChannelSubscriptionAuthTest.php
 extensions/realtime/tests/unit/Websocket/MessageTest.php
+extensions/realtime/tests/unit/Websocket/PusherClientRetryTest.php
 extensions/realtime/tests/unit/.gitkeep
 extensions/realtime/tests/fixtures/.gitkeep
 extensions/realtime/tests/phpunit.integration.xml
@@ -1215,6 +1234,7 @@ extensions/realtime/src/Content/ForumContent.php
 extensions/realtime/src/Websocket/Api/ForumAttributes.php
 extensions/realtime/src/Websocket/Api/AuthController.php
 extensions/realtime/src/Websocket/Api/PresenceChannelAuthorizer.php
+extensions/realtime/src/Websocket/PusherClientFactory.php
 extensions/realtime/src/Websocket/Server/HttpServer.php
 extensions/realtime/src/Websocket/Server/QueryParams.php
 extensions/realtime/src/Websocket/Channel/PresenceChannel.php
@@ -1231,6 +1251,7 @@ extensions/realtime/src/Websocket/Logger/ConnectionLogger.php
 extensions/realtime/src/Websocket/Logger/WebsocketLogger.php
 extensions/realtime/src/Websocket/Logger/Logger.php
 extensions/realtime/src/Websocket/Logger/HttpLogger.php
+extensions/realtime/src/Websocket/TypingIdentity.php
 extensions/realtime/src/Websocket/Exception/InvalidSignature.php
 extensions/realtime/src/Websocket/Exception/WebsocketException.php
 extensions/realtime/src/Websocket/Exception/AppKeyNotAllowed.php
@@ -1340,6 +1361,7 @@ extensions/messages/views/emails/html/messageReceived.blade.php
 extensions/messages/tests/integration/api/dialogs/UpdateTest.php
 extensions/messages/tests/integration/api/ListTest.php
 extensions/messages/tests/integration/api/dialog_messages/CreateTest.php
+extensions/messages/tests/integration/api/dialog_messages/DeleteTest.php
 extensions/messages/tests/integration/setup.php
 extensions/messages/tests/unit/.gitkeep
 extensions/messages/tests/fixtures/.gitkeep
@@ -1802,6 +1824,7 @@ LICENSE.md
 php-packages/phpstan/stubs/Tobyz/JsonApiServer/Context.stub
 php-packages/phpstan/stubs/Tobyz/JsonApiServer/JsonApi.stub
 php-packages/phpstan/stubs/Illuminate/Log/Context/Repository.stub
+php-packages/phpstan/stubs/Illuminate/Console/CommandMutex.stub
 php-packages/phpstan/stubs/Illuminate/Filesystem/FilesystemManager.stub
 php-packages/phpstan/stubs/Illuminate/Filesystem/Filesystem.stub
 php-packages/phpstan/stubs/Illuminate/Support/ServiceProvider.stub
@@ -1829,6 +1852,7 @@ php-packages/testing/.editorconfig
 php-packages/testing/tests/README.md
 php-packages/testing/tests/tests/integration/TestCaseTest.php
 php-packages/testing/tests/tests/integration/setup.php
+php-packages/testing/tests/tests/unit/RepeatedQueryDetectorTest.php
 php-packages/testing/tests/tests/unit/.gitkeep
 php-packages/testing/tests/tests/fixtures/.gitkeep
 php-packages/testing/tests/tests/phpunit.integration.xml
@@ -1840,6 +1864,7 @@ php-packages/testing/src/integration/Extension/ExtensionManagerIncludeCurrent.ph
 php-packages/testing/src/integration/TestCase.php
 php-packages/testing/src/integration/RefreshesFormatterCache.php
 php-packages/testing/src/integration/RetrievesAuthorizedUsers.php
+php-packages/testing/src/integration/RepeatedQueryDetector.php
 php-packages/testing/src/integration/Setup/SetupScript.php
 php-packages/testing/src/integration/Setup/Bootstrapper.php
 php-packages/testing/src/integration/Setup/InlineTransactionsManager.php
@@ -1968,6 +1993,7 @@ framework/core/js/tests/integration/common/components/Icon.test.ts
 framework/core/js/tests/integration/common/components/Navigation.test.ts
 framework/core/js/tests/integration/common/components/SplitDropdown.test.ts
 framework/core/js/tests/integration/common/components/Button.test.ts
+framework/core/js/tests/integration/common/components/Icon.test.tsx
 framework/core/js/tests/integration/common/components/Link.test.ts
 framework/core/js/tests/integration/common/components/Input.test.ts
 framework/core/js/tests/integration/common/components/SearchModal.test.ts
@@ -1978,6 +2004,7 @@ framework/core/js/tests/integration/common/components/LoadingIndicator.test.ts
 framework/core/js/tests/integration/common/components/Avatar.test.ts
 framework/core/js/tests/integration/common/components/Select.test.ts
 framework/core/js/tests/integration/common/components/FormGroup.test.ts
+framework/core/js/tests/integration/common/components/OverflowingList.test.ts
 framework/core/js/tests/integration/common/components/ColorPreviewInput.test.ts
 framework/core/js/tests/integration/common/components/Alert.test.ts
 framework/core/js/tests/integration/common/components/SelectDropdown.test.ts
@@ -1998,18 +2025,24 @@ framework/core/js/tests/integration/admin/components/UserListPage.test.ts
 framework/core/js/tests/integration/admin/components/AdvancedPage.test.ts
 framework/core/js/tests/integration/admin/components/MailPage.test.ts
 framework/core/js/tests/integration/admin/components/GeneralSearchSource.test.ts
+framework/core/js/tests/integration/admin/components/AdminPageSetting.test.ts
 framework/core/js/tests/integration/admin/components/DashboardPage.test.ts
 framework/core/js/tests/integration/admin/components/PermissionsPage.test.ts
 framework/core/js/tests/integration/admin/components/AppearencePage.test.ts
 framework/core/js/tests/integration/admin/AssetsRevision.test.ts
 framework/core/js/tests/integration/admin/Application.test.ts
 framework/core/js/tests/integration/forum/components/Modals.test.ts
+framework/core/js/tests/integration/forum/components/DiscussionPage.test.ts
+framework/core/js/tests/integration/forum/components/GlobalSearch.test.ts
+framework/core/js/tests/integration/forum/components/IndexSidebar.test.ts
 framework/core/js/tests/integration/forum/components/PostStream.test.ts
 framework/core/js/tests/integration/forum/components/IndexPage.test.ts
 framework/core/js/tests/integration/forum/components/HeaderSecondary.test.ts
 framework/core/js/tests/unit/common/extend.test.ts
 framework/core/js/tests/unit/common/utils/isDark.test.ts
 framework/core/js/tests/unit/common/utils/extractText.test.ts
+framework/core/js/tests/unit/common/utils/applyIconStyle.test.ts
+framework/core/js/tests/unit/common/utils/countItemsThatFit.test.ts
 framework/core/js/tests/unit/common/utils/Translator.test.ts
 framework/core/js/tests/unit/common/utils/string.test.ts
 framework/core/js/tests/unit/common/utils/abbreviateNumber.test.ts
@@ -2089,6 +2122,7 @@ framework/core/js/dist-typings/common/components/ThemeMode.d.ts
 framework/core/js/dist-typings/common/components/Icon.d.ts
 framework/core/js/dist-typings/common/components/Checkbox.d.ts
 framework/core/js/dist-typings/common/components/MultiSelect.d.ts
+framework/core/js/dist-typings/common/components/OverflowingList.d.ts
 framework/core/js/dist-typings/common/components/InfoTile.d.ts
 framework/core/js/dist-typings/common/components/AlertManager.d.ts
 framework/core/js/dist-typings/common/components/Tooltip.d.ts
@@ -2139,6 +2173,7 @@ framework/core/js/dist-typings/common/utils/isDark.d.ts
 framework/core/js/dist-typings/common/utils/RequestError.d.ts
 framework/core/js/dist-typings/common/utils/classList.d.ts
 framework/core/js/dist-typings/common/utils/formatAmount.d.ts
+framework/core/js/dist-typings/common/utils/countItemsThatFit.d.ts
 framework/core/js/dist-typings/common/utils/styleSelectedText.d.ts
 framework/core/js/dist-typings/common/utils/BasicEditorDriver.d.ts
 framework/core/js/dist-typings/common/utils/haptic.d.ts
@@ -2151,6 +2186,7 @@ framework/core/js/dist-typings/common/utils/stringToColor.d.ts
 framework/core/js/dist-typings/common/utils/escapeRegExp.d.ts
 framework/core/js/dist-typings/common/utils/extractText.d.ts
 framework/core/js/dist-typings/common/utils/formatNumber.d.ts
+framework/core/js/dist-typings/common/utils/applyIconStyle.d.ts
 framework/core/js/dist-typings/common/utils/humanTime.d.ts
 framework/core/js/dist-typings/common/utils/mixin.d.ts
 framework/core/js/dist-typings/common/utils/liveHumanTimes.d.ts
@@ -2413,6 +2449,7 @@ framework/core/js/src/common/components/Separator.js
 framework/core/js/src/common/components/ModalManager.tsx
 framework/core/js/src/common/components/RequestErrorModal.tsx
 framework/core/js/src/common/components/TextEditor.js
+framework/core/js/src/common/components/OverflowingList.tsx
 framework/core/js/src/common/components/InfoTile.tsx
 framework/core/js/src/common/components/IPAddress.tsx
 framework/core/js/src/common/components/Button.tsx
@@ -2433,6 +2470,7 @@ framework/core/js/src/common/components/DetailedDropdownItem.tsx
 framework/core/js/src/common/components/Modal.tsx
 framework/core/js/src/common/components/FormModal.tsx
 framework/core/js/src/common/utils/subclassOf.js
+framework/core/js/src/common/utils/countItemsThatFit.ts
 framework/core/js/src/common/utils/focusTrap.ts
 framework/core/js/src/common/utils/haptic.ts
 framework/core/js/src/common/utils/styleSelectedText.ts
@@ -2467,6 +2505,7 @@ framework/core/js/src/common/utils/ItemList.ts
 framework/core/js/src/common/utils/humanTime.ts
 framework/core/js/src/common/utils/mixin.js
 framework/core/js/src/common/utils/isObject.ts
+framework/core/js/src/common/utils/applyIconStyle.ts
 framework/core/js/src/common/utils/Stream.ts
 framework/core/js/src/common/utils/BasicEditorDriver.ts
 framework/core/js/src/common/utils/computed.ts
@@ -2743,6 +2782,7 @@ framework/core/tests/integration/api/posts/ListGroupsQueryCountTest.php
 framework/core/tests/integration/api/posts/ShowTest.php
 framework/core/tests/integration/api/posts/CreateTest.php
 framework/core/tests/integration/api/posts/UpdateTest.php
+framework/core/tests/integration/api/posts/PostVisibilityTest.php
 framework/core/tests/integration/api/posts/ListTest.php
 framework/core/tests/integration/api/posts/ListDiscussionStateQueryCountTest.php
 framework/core/tests/integration/api/posts/DeleteTest.php
@@ -2752,11 +2792,13 @@ framework/core/tests/integration/api/queue/PauseQueueTest.php
 framework/core/tests/integration/api/settings/MailSettingsTest.php
 framework/core/tests/integration/api/settings/SetTest.php
 framework/core/tests/integration/api/settings/DeleteTest.php
+framework/core/tests/integration/api/discussions/ListWithIncludedPostsQueryCountTest.php
 framework/core/tests/integration/api/discussions/ShowTest.php
 framework/core/tests/integration/api/discussions/ListWithFulltextSearchTest.php
 framework/core/tests/integration/api/discussions/CreateTest.php
 framework/core/tests/integration/api/discussions/UpdateTest.php
 framework/core/tests/integration/api/discussions/ListTest.php
+framework/core/tests/integration/api/discussions/PostIdsVisibilityTest.php
 framework/core/tests/integration/api/discussions/ShowGroupsQueryCountTest.php
 framework/core/tests/integration/api/discussions/PgsqlSearchConfigurationInjectionTest.php
 framework/core/tests/integration/api/discussions/DeletionTest.php
@@ -2794,6 +2836,7 @@ framework/core/tests/integration/api/users/AvatarSrcsetTest.php
 framework/core/tests/integration/api/users/GroupSearchTest.php
 framework/core/tests/integration/api/users/SendPasswordResetEmailTest.php
 framework/core/tests/integration/api/users/DeleteTest.php
+framework/core/tests/integration/mail/NotificationMarkdownInjectionTest.php
 framework/core/tests/integration/mail/AbandonedExtensionsEmailBodyTest.php
 framework/core/tests/integration/mail/EmailTitleLeakTest.php
 framework/core/tests/integration/setup.php
@@ -2801,8 +2844,10 @@ framework/core/tests/integration/admin/IndexTest.php
 framework/core/tests/integration/user/AvatarImageValidationTest.php
 framework/core/tests/integration/user/GroupPermissionCacheTest.php
 framework/core/tests/integration/slugger/SlugDriverTest.php
+framework/core/tests/integration/console/MigrateCommandIsolationTest.php
 framework/core/tests/integration/console/TinkerCommandTest.php
 framework/core/tests/integration/console/AssetsPublishTest.php
+framework/core/tests/integration/console/ScheduleRunTest.php
 framework/core/tests/integration/policy/DiscussionPolicyTest.php
 framework/core/tests/integration/policy/PostPolicyTest.php
 framework/core/tests/integration/database/AfterCommitListenerTest.php
@@ -2840,6 +2885,7 @@ framework/core/tests/integration/extenders/FrontendContentTest.php
 framework/core/tests/integration/extenders/ModelTest.php
 framework/core/tests/integration/extenders/ThrottleApiTest.php
 framework/core/tests/integration/extenders/MailTest.php
+framework/core/tests/integration/frontend/FontAwesomeStylesheetTest.php
 framework/core/tests/integration/frontend/XsltPolyfillTest.php
 framework/core/tests/integration/frontend/AssetsRevisionPayloadTest.php
 framework/core/tests/integration/frontend/FontAwesomeLoadingTest.php
@@ -2867,6 +2913,7 @@ framework/core/tests/unit/Extension/AbandonedExtensionsFetcherTest.php
 framework/core/tests/unit/Announcements/AnnouncementsFetcherTest.php
 framework/core/tests/unit/Announcements/ListAnnouncementsControllerTest.php
 framework/core/tests/unit/Locale/TranslatorTest.php
+framework/core/tests/unit/Database/AbstractModelCastsTest.php
 framework/core/tests/unit/Database/DatabaseRequirementsTest.php
 framework/core/tests/unit/Log/Context/RepositoryTest.php
 framework/core/tests/unit/Http/RouteCollectionTest.php
@@ -2877,8 +2924,10 @@ framework/core/tests/unit/User/AbstractPolicyTest.php
 framework/core/tests/unit/User/AvatarUploaderTest.php
 framework/core/tests/unit/User/LoginProviderTest.php
 framework/core/tests/unit/Frontend/Compiler/FileVersionerTest.php
+framework/core/tests/unit/Frontend/Compiler/LessFontUrlTest.php
 framework/core/tests/unit/Frontend/Compiler/RevisionCompilerTest.php
 framework/core/tests/unit/Frontend/Compiler/AssetsRevisionTest.php
+framework/core/tests/unit/Frontend/Content/AssetsTest.php
 framework/core/tests/unit/Frontend/RecompileFrontendAssetsTest.php
 framework/core/tests/unit/.gitkeep
 framework/core/tests/unit/Notification/NotificationMailerTest.php
@@ -2915,6 +2964,7 @@ framework/core/tests/fixtures/less/forum.less
 framework/core/tests/fixtures/less/Imported.less
 framework/core/tests/fixtures/locales/en+intl-icu.yml
 framework/core/tests/fixtures/locales/en.yml
+framework/core/tests/fixtures/views/email-body.blade.php
 framework/core/tests/fixtures/views/test.blade.php
 framework/core/tests/fixtures/views/override/frontend/app.blade.php
 framework/core/tests/fixtures/.gitkeep
@@ -3384,6 +3434,7 @@ framework/core/src/Post/Filter/TypeFilter.php
 framework/core/src/Post/Filter/AuthorFilter.php
 framework/core/src/Post/RegisteredTypesScope.php
 framework/core/src/Post/PostServiceProvider.php
+framework/core/src/Post/Access/ScopesPostVisibilityWithinDiscussion.php
 framework/core/src/Post/Access/PostPolicy.php
 framework/core/src/Post/Access/ScopePostVisibility.php
 framework/core/src/Post/Event/Revised.php
@@ -3515,11 +3566,14 @@ framework/core/src/Mail/Mailer.php
 framework/core/src/Mail/DriverInterface.php
 framework/core/src/Mail/SendmailDriver.php
 framework/core/src/Mail/MutateEmail.php
+framework/core/src/Mail/SafeSubstitution.php
 framework/core/src/Mail/MailServiceProvider.php
 framework/core/src/Mail/ValidatesMailSettings.php
+framework/core/src/Mail/MailFormatter.php
 framework/core/src/Mail/PostmarkDriver.php
 framework/core/src/Mail/Event/EmailSendFailed.php
 framework/core/src/Mail/NullDriver.php
+framework/core/src/Mail/MailTranslator.php
 framework/core/src/Mail/LogDriver.php
 framework/core/src/Mail/MailgunDriver.php
 framework/core/src/Mail/Job/SendInformationalEmailJob.php
