@@ -158,6 +158,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Migrations/AlterMigrationTe
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Migrations/PropertyDataCultureResolverTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Migrations/Upgrade/UmbracoPlanTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Migrations/Stubs/DropForeignKeyMigrationStub.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Migrations/EnsureLongCommandTimeoutTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/BackOffice/BackOfficeClaimsPrincipalFactoryTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Logging/Serilog/Enrichers/HttpSessionIdEnricherTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Logging/Viewer/ExpressionFilterTests.cs
@@ -170,6 +171,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/BackgroundJobs/RecurringBac
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/BackgroundJobs/DelayCalculatorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/BackgroundJobs/Jobs/CacheInstructionsPruningJobTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/BackgroundJobs/Jobs/LogScrubberJobTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/BackgroundJobs/Jobs/ServerRegistration/ServerRoleElectorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/BackgroundJobs/Jobs/ServerRegistration/TouchServerJobTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/BackgroundJobs/Jobs/ServerRegistration/InstructionProcessJobTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/BackgroundJobs/Jobs/MemoryCacheSizeReportingJobTests.cs
@@ -199,6 +201,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Persistence/Querying/Conten
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Persistence/Querying/MediaTypeRepositorySqlClausesTest.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Persistence/Querying/MediaRepositorySqlClausesTest.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Persistence/Querying/ExpressionTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Persistence/ConnectionStringTimeoutExtensionsTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Persistence/Mappers/MediaMapperTest.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Persistence/Mappers/ContentMapperTest.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Persistence/Mappers/RelationMapperTest.cs
@@ -212,6 +215,8 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Persistence/Mappers/Propert
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Persistence/Mappers/PropertyTypeMapperTest.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Persistence/Mappers/ContentTypeMapperTest.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Persistence/DefaultDatabaseAvailabilityCheckTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Persistence/UmbracoDatabaseTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Persistence/CommandTimeoutResolverTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Persistence/SqlAzureDatabaseProviderMetadataTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Scoping/ScopeTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Scoping/AmbientScopeStackTests.cs
@@ -232,6 +237,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Common/OpenApi/MimeTypesTransforme
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Common/OpenApi/TagActionsByGroupNameTransformerTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Common/OpenApi/SortTagsAndPathsTransformerTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Persistence.Sqlite/SqliteDatabaseProviderMetadataTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Persistence.Sqlite/ConfigureSqliteConnectionStringTimeoutsTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Persistence.Sqlite/SqliteSyntaxProviderTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Persistence.EFCore/SqliteExceptionExtensionsTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.PublishedCache.NuCache/SnapDictionaryTests.cs
@@ -303,6 +309,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Delivery/OpenApi/ApiKeyTransformer
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Delivery/OpenApi/ContentTypeSchemaTransformerTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Delivery/Security/MemberApplicationManagerTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Delivery/Json/DeliveryApiVersionAwareJsonConverterBaseTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Delivery/Handlers/InitializeMemberApplicationNotificationHandlerTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Serialization/BackOfficeSerializationTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Services/MemberReferenceServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Services/BackOfficeExternalLoginServiceTests.cs
@@ -330,6 +337,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Patching/PatchPathParse
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Factories/IndexPresentationFactoryTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Factories/MediaUrlFactoryTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Factories/PublicAccessPresentationFactoryTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Factories/MediaCollectionPresentationFactoryTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Factories/DocumentNotificationPresentationFactoryTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Factories/DataTypePresentationFactoryTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Api.Management/Factories/DocumentCollectionPresentationFactoryTests.cs
@@ -403,6 +411,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Persistence.SqlServer/SqlLocalDbDataba
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Persistence.SqlServer/SqlServerSyntaxProviderTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Persistence.SqlServer/SqlServerDatabaseProviderMetadataTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Persistence.SqlServer/SqlAzureDatabaseProviderMetadataTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Cms.Persistence.SqlServer/ConfigureSqlServerConnectionStringTimeoutsTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/HealthChecks/ImagingHMACSecretKeyCheckTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/HealthChecks/UmbracoApplicationUrlCheckTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/HealthChecks/HttpsCheckTests.cs
@@ -995,6 +1004,7 @@ tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/ContentWithMultiN
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/ContentWithImageCropper.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/ContentWithContentPicker.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/ContentWithUploadVideo.spec.ts
+tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/ContentWithApprovedColorLabel.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/ContentWithUploadFile.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/ContentWithMemberPicker.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/DocumentUrlBrokenPublishPath.spec.ts
@@ -1746,6 +1756,7 @@ tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Packaging/CreatedPackageS
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Packaging/PackageDataInstallationTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/HybridCache/Factories/PublishedContentFactoryTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/BackgroundJobs/TouchServerJobTests.cs
+tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Runtime/ServerRoleElectionAtStartupTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Runtime/FileSystemMainDomLockTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Install/UnattendedPackageMigrationTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Install/MigrationCoordinatorTests.cs
@@ -2484,7 +2495,10 @@ src/Umbraco.Infrastructure/Templates/PartialViews/IPartialViewPopulator.cs
 src/Umbraco.Infrastructure/Templates/PartialViews/PartialViewPopulator.cs
 src/Umbraco.Infrastructure/IPublishedContentQuery.cs
 src/Umbraco.Infrastructure/Sync/ServerMessengerBase.cs
+src/Umbraco.Infrastructure/Sync/ServerRoleElector.cs
+src/Umbraco.Infrastructure/Sync/BoundedServerTouch.cs
 src/Umbraco.Infrastructure/Sync/BatchedDatabaseServerMessenger.cs
+src/Umbraco.Infrastructure/Sync/IServerRoleElector.cs
 src/Umbraco.Infrastructure/Sync/DatabaseServerMessenger.cs
 src/Umbraco.Infrastructure/Sync/RefreshInstructionEnvelope.cs
 src/Umbraco.Infrastructure/Sync/SyncBootStateAccessor.cs
@@ -2556,6 +2570,7 @@ src/Umbraco.Infrastructure/PropertyEditors/ValueConverters/BlockListPropertyValu
 src/Umbraco.Infrastructure/PropertyEditors/ValueConverters/SingleBlockPropertyValueCreator.cs
 src/Umbraco.Infrastructure/PropertyEditors/ValueConverters/BlockListPropertyValueConverter.cs
 src/Umbraco.Infrastructure/PropertyEditors/ValueConverters/BlockEditorConverter.cs
+src/Umbraco.Infrastructure/PropertyEditors/ValueConverters/BlockPropertyVariance.cs
 src/Umbraco.Infrastructure/PropertyEditors/ValueConverters/DateOnlyValueConverter.cs
 src/Umbraco.Infrastructure/PropertyEditors/RadioButtonsPropertyEditor.cs
 src/Umbraco.Infrastructure/PropertyEditors/MultiNodeTreePickerPropertyEditor.cs
@@ -3246,6 +3261,7 @@ src/Umbraco.Infrastructure/Persistence/DatabaseAnnotations/SpecialDbTypeAttribut
 src/Umbraco.Infrastructure/Persistence/DatabaseAnnotations/SpecialDbType.cs
 src/Umbraco.Infrastructure/Persistence/DatabaseAnnotations/IndexTypes.cs
 src/Umbraco.Infrastructure/Persistence/DefaultDatabaseAvailabilityCheck.cs
+src/Umbraco.Infrastructure/Persistence/ConnectionStringTimeoutExtensions.cs
 src/Umbraco.Infrastructure/Persistence/NPocoDatabaseTypeExtensions.cs
 src/Umbraco.Infrastructure/Persistence/DbProviderFactoryCreator.cs
 src/Umbraco.Infrastructure/Persistence/IUmbracoDatabaseFactory.cs
@@ -3350,6 +3366,7 @@ src/Umbraco.Infrastructure/Persistence/Dtos/UserLoginDto.cs
 src/Umbraco.Infrastructure/Persistence/Dtos/UserNotificationDto.cs
 src/Umbraco.Infrastructure/Persistence/Dtos/RelationTypeDto.cs
 src/Umbraco.Infrastructure/Persistence/Dtos/DocumentUrlDto.cs
+src/Umbraco.Infrastructure/Persistence/CommandTimeoutResolver.cs
 src/Umbraco.Infrastructure/Persistence/UmbracoPocoDataBuilder.cs
 src/Umbraco.Infrastructure/Persistence/NPocoDatabaseExtensions.cs
 src/Umbraco.Infrastructure/Scoping/AmbientScopeStack.cs
@@ -3572,6 +3589,7 @@ src/Umbraco.Cms.Persistence.Sqlite/Mappers/SqlitePocoDateAndTimeOnlyMapper.cs
 src/Umbraco.Cms.Persistence.Sqlite/Mappers/SqliteGuidScalarMapper.cs
 src/Umbraco.Cms.Persistence.Sqlite/Mappers/SqlitePocoDecimalMapper.cs
 src/Umbraco.Cms.Persistence.Sqlite/CLAUDE.md
+src/Umbraco.Cms.Persistence.Sqlite/Configuration/ConfigureSqliteConnectionStringTimeouts.cs
 src/Umbraco.Cms.Persistence.Sqlite/Interceptors/SqliteConnectionInterceptor.cs
 src/Umbraco.Cms.Persistence.Sqlite/Interceptors/SqliteAddRetryPolicyInterceptor.cs
 src/Umbraco.Cms.Persistence.Sqlite/Interceptors/SqliteAddPreferDeferredInterceptor.cs
@@ -5035,6 +5053,7 @@ src/Umbraco.Cms.Api.Management/ViewModels/Package/UpdatePackageRequestModel.cs
 src/Umbraco.Cms.Api.Management/ViewModels/Package/PackageDefinitionResponseModel.cs
 src/Umbraco.Cms.Api.Management/ViewModels/Package/CreatePackageRequestModel.cs
 src/Umbraco.Cms.Api.Management/ViewModels/RecycleBin/RecycleBinItemResponseModelBase.cs
+src/Umbraco.Cms.Api.Management/ViewModels/IHasChildren.cs
 src/Umbraco.Cms.Api.Management/ViewModels/ContentType/CreateContentTypeWithParentRequestModelBase.cs
 src/Umbraco.Cms.Api.Management/ViewModels/ContentType/ContentTypeResponseModelBase.cs
 src/Umbraco.Cms.Api.Management/ViewModels/ContentType/PropertyTypeModelBase.cs
@@ -5703,6 +5722,7 @@ src/Umbraco.Cms.Persistence.SqlServer/FaultHandling/Strategies/ThrottlingConditi
 src/Umbraco.Cms.Persistence.SqlServer/FaultHandling/Strategies/SqlAzureTransientErrorDetectionStrategy.cs
 src/Umbraco.Cms.Persistence.SqlServer/FaultHandling/Strategies/NetworkConnectivityErrorDetectionStrategy.cs
 src/Umbraco.Cms.Persistence.SqlServer/CLAUDE.md
+src/Umbraco.Cms.Persistence.SqlServer/Configuration/ConfigureSqlServerConnectionStringTimeouts.cs
 src/Umbraco.Cms.Persistence.SqlServer/SqlServerComposer.cs
 src/Umbraco.Cms.Persistence.SqlServer/Interceptors/SqlServerAddMiniProfilerInterceptor.cs
 src/Umbraco.Cms.Persistence.SqlServer/Interceptors/SqlServerConnectionInterceptor.cs
@@ -8623,6 +8643,7 @@ src/Umbraco.Web.UI.Client/mocks/db/utils/entity/entity-tree.manager.ts
 src/Umbraco.Web.UI.Client/mocks/db/utils/entity/entity-detail.manager.ts
 src/Umbraco.Web.UI.Client/mocks/db/utils/entity/entity-variant-url.manager.ts
 src/Umbraco.Web.UI.Client/mocks/db/utils/entity/entity-base.ts
+src/Umbraco.Web.UI.Client/mocks/db/utils/entity/entity-recycle-bin-tree.manager.ts
 src/Umbraco.Web.UI.Client/mocks/db/utils/content/content-collection.manager.ts
 src/Umbraco.Web.UI.Client/mocks/db/utils/mock-db-base.ts
 src/Umbraco.Web.UI.Client/mocks/db/utils/culture/culture-detail.manager.ts
@@ -8797,8 +8818,10 @@ src/Umbraco.Web.UI.Client/mocks/msw-handlers/template/slug.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/member-type/item.handlers.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/member-type/detail.handlers.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/member-type/index.ts
+src/Umbraco.Web.UI.Client/mocks/msw-handlers/member-type/copy.handlers.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/member-type/structure.handlers.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/member-type/tree.handlers.ts
+src/Umbraco.Web.UI.Client/mocks/msw-handlers/member-type/move.handlers.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/member-type/slug.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/package.handlers.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/backoffice/assets/logo_dark.svg
@@ -8814,6 +8837,7 @@ src/Umbraco.Web.UI.Client/mocks/msw-handlers/media/index.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/media/collection.handlers.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/media/tree.handlers.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/media/url.handlers.ts
+src/Umbraco.Web.UI.Client/mocks/msw-handlers/media/move.handlers.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/media/slug.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/temporary-file/index.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/temporary-file/temporary-file.handlers.ts
@@ -8868,15 +8892,18 @@ src/Umbraco.Web.UI.Client/mocks/msw-handlers/document/recycle-bin.handlers.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/document/index.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/document/publishing.handlers.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/document/collection.handlers.ts
+src/Umbraco.Web.UI.Client/mocks/msw-handlers/document/copy.handlers.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/document/permission.handlers.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/document/tree.handlers.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/document/url.handlers.ts
+src/Umbraco.Web.UI.Client/mocks/msw-handlers/document/move.handlers.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/document/audit-log.handlers.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/document/slug.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/document-blueprint/item.handlers.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/document-blueprint/detail.handlers.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/document-blueprint/index.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/document-blueprint/tree.handlers.ts
+src/Umbraco.Web.UI.Client/mocks/msw-handlers/document-blueprint/move.handlers.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/document-blueprint/slug.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/member/item.handlers.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/member/detail.handlers.ts
@@ -8895,8 +8922,10 @@ src/Umbraco.Web.UI.Client/mocks/msw-handlers/media-type/folder.handlers.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/media-type/item.handlers.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/media-type/detail.handlers.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/media-type/index.ts
+src/Umbraco.Web.UI.Client/mocks/msw-handlers/media-type/copy.handlers.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/media-type/structure.handlers.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/media-type/tree.handlers.ts
+src/Umbraco.Web.UI.Client/mocks/msw-handlers/media-type/move.handlers.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/media-type/slug.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/rte-embed.handlers.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/script/folder.handlers.ts
@@ -8913,6 +8942,7 @@ src/Umbraco.Web.UI.Client/mocks/msw-handlers/dictionary/detail.handlers.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/dictionary/index.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/dictionary/import-export.handlers.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/dictionary/tree.handlers.ts
+src/Umbraco.Web.UI.Client/mocks/msw-handlers/dictionary/move.handlers.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/dictionary/slug.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/relation-type/detail.handlers.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/relation-type/index.ts
@@ -8923,8 +8953,10 @@ src/Umbraco.Web.UI.Client/mocks/msw-handlers/document-type/folder.handlers.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/document-type/item.handlers.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/document-type/detail.handlers.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/document-type/index.ts
+src/Umbraco.Web.UI.Client/mocks/msw-handlers/document-type/copy.handlers.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/document-type/structure.handlers.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/document-type/tree.handlers.ts
+src/Umbraco.Web.UI.Client/mocks/msw-handlers/document-type/move.handlers.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/document-type/slug.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/server.handlers.ts
 src/Umbraco.Web.UI.Client/mocks/msw-handlers/modelsbuilder.handlers.ts
@@ -13664,6 +13696,7 @@ src/Umbraco.Web.UI.Client/src/packages/core/property-sort-mode/global-components
 src/Umbraco.Web.UI.Client/src/packages/core/property-sort-mode/global-components/property-sort-mode-toolbar.element.ts
 src/Umbraco.Web.UI.Client/src/packages/core/menu/types.ts
 src/Umbraco.Web.UI.Client/src/packages/core/menu/menu-variant-tree-structure-workspace-context-base.ts
+src/Umbraco.Web.UI.Client/src/packages/core/menu/menu-tree-structure-workspace-context.test-utils.ts
 src/Umbraco.Web.UI.Client/src/packages/core/menu/section-sidebar-menu-with-entity-actions/section-sidebar-menu-with-entity-actions.stories.ts
 src/Umbraco.Web.UI.Client/src/packages/core/menu/section-sidebar-menu-with-entity-actions/manifests.ts
 src/Umbraco.Web.UI.Client/src/packages/core/menu/section-sidebar-menu-with-entity-actions/index.ts
@@ -13700,10 +13733,12 @@ src/Umbraco.Web.UI.Client/src/packages/core/menu/components/menu-item-layout/ind
 src/Umbraco.Web.UI.Client/src/packages/core/menu/components/menu-item-layout/menu-item-layout.element.ts
 src/Umbraco.Web.UI.Client/src/packages/core/menu/menu-variant-structure-workspace-context.interface.ts
 src/Umbraco.Web.UI.Client/src/packages/core/menu/menu-structure/types.ts
+src/Umbraco.Web.UI.Client/src/packages/core/menu/menu-variant-tree-structure-workspace-context.test-utils.ts
 src/Umbraco.Web.UI.Client/src/packages/core/menu/conditions/types.ts
 src/Umbraco.Web.UI.Client/src/packages/core/menu/conditions/menu-alias.condition.ts
 src/Umbraco.Web.UI.Client/src/packages/core/menu/index.ts
 src/Umbraco.Web.UI.Client/src/packages/core/menu/menu-variant-structure-workspace-context.context-token.ts
+src/Umbraco.Web.UI.Client/src/packages/core/menu/menu-variant-tree-structure-workspace-context-base.test.ts
 src/Umbraco.Web.UI.Client/src/packages/core/menu/menu-tree-structure-workspace-context-base.ts
 src/Umbraco.Web.UI.Client/src/packages/core/menu/menu-structure-workspace-context.interface.ts
 src/Umbraco.Web.UI.Client/src/packages/core/menu/menu-structure-workspace-context.context-token.ts
@@ -13723,6 +13758,7 @@ src/Umbraco.Web.UI.Client/src/packages/core/menu/section-sidebar-menu/global-con
 src/Umbraco.Web.UI.Client/src/packages/core/menu/section-sidebar-menu/global-context/expansion/section-sidebar-menu-app-expansion.manager.ts
 src/Umbraco.Web.UI.Client/src/packages/core/menu/section-sidebar-menu/global-context/section-sidebar-menu.global-context.ts
 src/Umbraco.Web.UI.Client/src/packages/core/menu/section-sidebar-menu/global-context/section-sidebar-menu.global-context.token.ts
+src/Umbraco.Web.UI.Client/src/packages/core/menu/menu-tree-structure-workspace-context-base.test.ts
 src/Umbraco.Web.UI.Client/src/packages/core/menu/menu.extension.ts
 src/Umbraco.Web.UI.Client/src/packages/core/picker-input/picker-input.context.ts
 src/Umbraco.Web.UI.Client/src/packages/core/picker-input/picker-input.context-token.ts

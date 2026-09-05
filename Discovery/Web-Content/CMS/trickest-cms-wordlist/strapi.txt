@@ -581,6 +581,7 @@ tests/api/plugins/graphql/components.test.api.js
 tests/api/plugins/graphql/nested-relation-public-permissions.test.api.js
 tests/api/plugins/content-releases/releases.test.api.ts
 tests/api/plugins/content-releases/homepage.test.api.ts
+tests/api/plugins/content-releases/releases-audit-logs.test.api.ts
 tests/api/plugins/users-permissions/users-graphql.test.api.js
 tests/api/plugins/users-permissions/graphql.test.api.js
 tests/api/plugins/users-permissions/content-api/auth-refresh.test.api.js
@@ -2051,6 +2052,7 @@ packages/core/content-releases/server/.eslintrc.cjs
 packages/core/content-releases/server/tsconfig.build.json
 packages/core/content-releases/server/src/register.ts
 packages/core/content-releases/server/src/constants.ts
+packages/core/content-releases/server/src/audit-logs.ts
 packages/core/content-releases/server/src/utils/index.ts
 packages/core/content-releases/server/src/utils/__tests__/is-entry-valid.test.ts
 packages/core/content-releases/server/src/content-types/index.ts
@@ -2074,6 +2076,7 @@ packages/core/content-releases/server/src/controllers/__tests__/release.test.ts
 packages/core/content-releases/server/src/controllers/__tests__/release-action.test.ts
 packages/core/content-releases/server/src/controllers/release-action.ts
 packages/core/content-releases/server/src/controllers/settings.ts
+packages/core/content-releases/server/src/__tests__/audit-logs.test.ts
 packages/core/content-releases/server/src/__tests__/index.test.ts
 packages/core/content-releases/server/src/destroy.ts
 packages/core/content-releases/server/src/middlewares/documents.ts
@@ -3177,6 +3180,7 @@ packages/core/content-type-builder/admin/src/components/FormModal/attributes/adv
 packages/core/content-type-builder/admin/src/components/FormModal/attributes/validation/common.ts
 packages/core/content-type-builder/admin/src/components/FormModal/attributes/tests/ConditionForm.test.tsx
 packages/core/content-type-builder/admin/src/components/FormModal/attributes/tests/types.test.ts
+packages/core/content-type-builder/admin/src/components/FormModal/attributes/tests/attributeOptions.test.ts
 packages/core/content-type-builder/admin/src/components/FormModal/attributes/commonBaseForm.ts
 packages/core/content-type-builder/admin/src/components/FormModal/attributes/baseForm.ts
 packages/core/content-type-builder/admin/src/components/FormModal/FormModal.tsx
@@ -3292,6 +3296,7 @@ packages/core/content-type-builder/admin/src/utils/getTrad.ts
 packages/core/content-type-builder/admin/src/utils/conditions.ts
 packages/core/content-type-builder/admin/src/utils/startsWithANumber.ts
 packages/core/content-type-builder/admin/src/utils/findAttribute.ts
+packages/core/content-type-builder/admin/src/utils/applyPrivateSearchDefault.ts
 packages/core/content-type-builder/admin/src/utils/getYupInnerErrors.ts
 packages/core/content-type-builder/admin/src/utils/parseNumberInputValue.ts
 packages/core/content-type-builder/admin/src/utils/index.ts
@@ -3396,6 +3401,7 @@ packages/core/review-workflows/server/src/services/stages.ts
 packages/core/review-workflows/server/src/services/workflows.ts
 packages/core/review-workflows/server/src/services/index.ts
 packages/core/review-workflows/server/src/services/workflow-content-types.ts
+packages/core/review-workflows/server/src/services/__tests__/workflows.test.ts
 packages/core/review-workflows/server/src/services/metrics/index.ts
 packages/core/review-workflows/server/src/services/metrics/weekly-metrics.ts
 packages/core/review-workflows/server/src/migrations/multiple-workflows.ts
@@ -4525,6 +4531,7 @@ packages/core/admin/ee/server/src/audit-logs/routes/audit-logs.ts
 packages/core/admin/ee/server/src/audit-logs/routes/__tests__/audit-logs.test.ts
 packages/core/admin/ee/server/src/audit-logs/controllers/audit-logs.ts
 packages/core/admin/ee/server/src/audit-logs/controllers/__tests__/audit-logs.test.ts
+packages/core/admin/ee/server/src/audit-logs/utils.ts
 packages/core/admin/ee/server/src/audit-logs/services/lifecycles.ts
 packages/core/admin/ee/server/src/audit-logs/services/audit-logs.ts
 packages/core/admin/ee/server/src/audit-logs/services/__tests__/find-many-users.test.ts
@@ -4863,6 +4870,7 @@ packages/core/upload/server/src/controllers/validation/admin/upload.ts
 packages/core/upload/server/src/controllers/validation/admin/settings.ts
 packages/core/upload/server/src/controllers/validation/admin/configureView.ts
 packages/core/upload/server/src/controllers/validation/admin/ai-metadata.ts
+packages/core/upload/server/src/controllers/validation/__tests__/upload-focal-point.test.ts
 packages/core/upload/server/src/controllers/index.ts
 packages/core/upload/server/src/controllers/view-configuration.ts
 packages/core/upload/server/src/controllers/__tests__/admin-settings.test.ts
@@ -5265,6 +5273,7 @@ packages/core/upload/admin/src/future/pages/Assets/components/FilterBadges.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/AssetsSearchInput.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/tests/AssetActionsMenu.test.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/tests/FolderActionsMenu.test.tsx
+packages/core/upload/admin/src/future/pages/Assets/components/tests/MainAreaContextMenu.test.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/tests/BulkActionsBar.test.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/tests/FolderFormDialog.test.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/tests/AssetsSearchInput.test.tsx
@@ -5304,12 +5313,15 @@ packages/core/upload/admin/src/future/pages/Assets/components/FolderTree/tests/F
 packages/core/upload/admin/src/future/pages/Assets/components/FolderTree/useSpringLoadedExpand.ts
 packages/core/upload/admin/src/future/pages/Assets/components/FolderFormDialog.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/EmptyState.tsx
+packages/core/upload/admin/src/future/pages/Assets/components/MainAreaContextMenu.tsx
 packages/core/upload/admin/src/future/pages/Assets/utils/buildAssetFilters.ts
 packages/core/upload/admin/src/future/pages/Assets/utils/mergeUploadedAssets.ts
+packages/core/upload/admin/src/future/pages/Assets/utils/renderedKeys.ts
 packages/core/upload/admin/src/future/pages/Assets/utils/tests/mergeUploadedAssets.test.ts
 packages/core/upload/admin/src/future/pages/Assets/utils/tests/listQueryKey.test.ts
 packages/core/upload/admin/src/future/pages/Assets/utils/tests/mergeMixedList.test.ts
 packages/core/upload/admin/src/future/pages/Assets/utils/tests/buildAssetFilters.test.ts
+packages/core/upload/admin/src/future/pages/Assets/utils/tests/renderedKeys.test.ts
 packages/core/upload/admin/src/future/pages/Assets/utils/tests/selection.test.ts
 packages/core/upload/admin/src/future/pages/Assets/utils/selection.ts
 packages/core/upload/admin/src/future/pages/Assets/utils/listQueryKey.ts
@@ -5325,6 +5337,7 @@ packages/core/upload/admin/src/future/pages/Assets/tests/FilterBadges.test.tsx
 packages/core/upload/admin/src/future/pages/Assets/tests/AssetsPage.test.tsx
 packages/core/upload/admin/src/future/pages/Assets/hooks/useAssetSearch.ts
 packages/core/upload/admin/src/future/pages/Assets/hooks/useBusyAssets.ts
+packages/core/upload/admin/src/future/pages/Assets/hooks/useListScrollRestoration.ts
 packages/core/upload/admin/src/future/pages/Assets/hooks/useIsAssetDetailsOpen.ts
 packages/core/upload/admin/src/future/pages/Assets/hooks/useAssetSelection.ts
 packages/core/upload/admin/src/future/pages/Assets/hooks/useInfiniteAssets.ts
@@ -5335,6 +5348,7 @@ packages/core/upload/admin/src/future/pages/Assets/hooks/tests/useInfiniteAssets
 packages/core/upload/admin/src/future/pages/Assets/hooks/tests/useInfiniteScrollSentinel.test.ts
 packages/core/upload/admin/src/future/pages/Assets/hooks/tests/useListSort.test.ts
 packages/core/upload/admin/src/future/pages/Assets/hooks/tests/useInfiniteAssets.test.ts
+packages/core/upload/admin/src/future/pages/Assets/hooks/tests/useListScrollRestoration.test.ts
 packages/core/upload/admin/src/future/pages/Assets/hooks/tests/useListFilters.test.ts
 packages/core/upload/admin/src/future/pages/Assets/hooks/tests/useAssetSearch.test.ts
 packages/core/upload/admin/src/future/pages/Assets/hooks/tests/useFolderInfo.test.ts

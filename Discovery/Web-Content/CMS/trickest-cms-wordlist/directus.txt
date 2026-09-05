@@ -10,11 +10,14 @@ contributing.md
 .claude/hooks/prettier.mjs
 .changeset/witty-years-wash.md
 .changeset/orange-crews-stick.md
+.changeset/global-access-cache-ip-key.md
 .changeset/enforce-read-permissions-keys-by-query.md
+.changeset/fair-kv-maxes-rest.md
 .changeset/mailtrap-email-transport.md
 .changeset/tidy-cases-repeat.md
 .changeset/config.json
 .changeset/fix-system-filter-delete-hover.md
+.changeset/tough-numbers-beg.md
 .prettierignore
 ai_policy.md
 Dockerfile
@@ -878,7 +881,9 @@ api/src/ai/tools/assets/index.ts
 api/src/ai/tools/assets/index.test.ts
 api/src/ai/tools/operations/prompt.md
 api/src/ai/tools/operations/index.ts
+api/src/ai/tools/operations/position.ts
 api/src/ai/tools/operations/index.test.ts
+api/src/ai/tools/operations/position.test.ts
 api/src/ai/tools/folders/prompt.md
 api/src/ai/tools/folders/index.ts
 api/src/ai/tools/folders/index.test.ts
@@ -1141,6 +1146,7 @@ api/src/permissions/modules/fetch-inconsistent-field-map/fetch-inconsistent-fiel
 api/src/permissions/modules/fetch-accountability-collection-access/fetch-accountability-collection-access.ts
 api/src/permissions/modules/fetch-accountability-collection-access/fetch-accountability-collection-access.test.ts
 api/src/permissions/modules/fetch-global-access/fetch-global-access.ts
+api/src/permissions/modules/fetch-global-access/fetch-global-access.test.ts
 api/src/permissions/modules/fetch-policies-ip-access/fetch-policies-ip-access.ts
 api/src/permissions/modules/validate-remaining-admin/validate-remaining-admin-users.ts
 api/src/permissions/modules/validate-remaining-admin/validate-remaining-admin-count.ts

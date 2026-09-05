@@ -97,6 +97,7 @@ tests/unit/db/QueryBuilderTest.php
 tests/unit/db/ActiveRecordTest.php
 tests/unit/filters/IpRateLimitIdentityTest.php
 tests/unit/filters/SecFetchSiteFilterTest.php
+tests/unit/elements/AddressElementTest.php
 tests/unit/elements/db/EntryQueryTest.php
 tests/unit/elements/db/ElementQueryTest.php
 tests/unit/elements/db/ElementRelationParamParserTest.php
@@ -207,6 +208,7 @@ tests/unit/services/UsersTest.php
 tests/unit/services/RecordingCommand.php
 tests/unit/services/UserPermissionsTest.php
 tests/unit/services/NestedElementDraftSiteSyncTest.php
+tests/unit/services/ContentBlockNestedInMatrixRevisionTest.php
 tests/unit/services/ImageTransformsTest.php
 tests/unit/enums/ColorEnumTest.php
 tests/unit/validators/UriFormatValidatorTest.php
@@ -277,6 +279,7 @@ tests/gql/data/gql.txt
 tests/gql/_bootstrap.php
 tests/gql/GqlCest.php
 tests/functional/PageRenderChecksCest.php
+tests/functional/WellKnownCest.php
 tests/functional/users/UserActionCest.php
 tests/functional/users/EditUserCest.php
 tests/acceptance.suite.yml
@@ -299,6 +302,7 @@ tests-playwright/tests/matrix/elementindex.test.js
 tests-playwright/tests/matrix/cards.test.js
 tests-playwright/tests/matrix/blocks.test.js
 tests-playwright/tests/elements/inituielements.test.js
+tests-playwright/tests/slideout/index.test.js
 tests-playwright/tests/account/index.test.js
 tests-playwright/tests/navigation/index.test.js
 tests-playwright/tests/elementindex/sorting.test.js
@@ -1323,6 +1327,7 @@ src/controllers/SystemSettingsController.php
 src/controllers/AssetsControllerTrait.php
 src/controllers/ElementIndexesController.php
 src/controllers/DeleteElementsController.php
+src/controllers/WellKnownController.php
 src/controllers/RelationalFieldsController.php
 src/controllers/QueueController.php
 src/controllers/PluginStoreController.php
@@ -1476,6 +1481,7 @@ src/web/AssetManager.php
 src/web/Controller.php
 src/web/CsvResponseFormatter.php
 src/web/TemplateResponseFormatter.php
+src/web/DbSession.php
 src/web/TemplateResponseBehavior.php
 src/web/assets/fabric/FabricAsset.php
 src/web/assets/fabric/dist/fabric.js
@@ -6690,6 +6696,7 @@ src/migrations/m250315_131608_unlimited_authors.php
 src/migrations/m230928_144045_add_subpath_to_volumes.php
 src/migrations/m230616_173810_kill_field_groups.php
 src/migrations/m221101_115859_create_entries_authors_table.php
+src/migrations/m260812_143000_drop_elementactivity_draftid_fk.php
 src/migrations/m230524_000002_entry_type_colors.php
 src/migrations/m260106_130629_directive_schema_components.php
 src/migrations/m230524_220029_global_entry_types.php
@@ -6698,6 +6705,7 @@ src/migrations/m230904_190356_address_fields.php
 src/migrations/m251110_192405_entry_type_ui_label_formats.php
 src/migrations/m250531_183058_content_blocks.php
 src/migrations/m230511_215903_content_refactor.php
+src/migrations/m260610_065719_translatable_alt_text_content.php
 src/migrations/m230531_123004_add_entry_type_show_status_field.php
 src/migrations/BaseEntryTypeMergeMigration.php
 src/migrations/m250206_135036_search_index_queue.php
@@ -6719,6 +6727,7 @@ src/migrations/m250512_164202_asset_mime_types.php
 src/migrations/CreatePhpSessionTable.php
 src/migrations/m240302_212719_solo_preview_targets.php
 src/migrations/m250522_090843_add_deleteEntriesForSite_and_deletePeerEntriesForSite_permissions.php
+src/migrations/m260817_012148_queue_reserve_index.php
 src/migrations/BaseFieldMergeMigration.php
 src/migrations/m231013_185640_changedfields_amend_primary_key.php
 src/migrations/BaseContentRefactorMigration.php

@@ -2,14 +2,9 @@ CONTRIBUTING.md
 pnpm-workspace.yaml
 .oxlintrc.json
 SECURITY.md
-.changeset/hungry-mirrors-play.md
-.changeset/major-lies-check.md
 .changeset/README.md
-.changeset/old-buttons-wave.md
 .changeset/contributors.json
-.changeset/slimy-eggs-play.md
 .changeset/config.json
-.changeset/ready-ideas-chew.md
 .prettierignore
 .npmrc
 tsconfig.json
@@ -935,7 +930,6 @@ examples/graphql-ts-gql/schema.graphql
 examples/graphql-ts-gql/keystone.ts
 examples/graphql-ts-gql/schema.ts
 examples/graphql-ts-gql/prisma.config.ts
-examples/framework-nextjs-app-directory/keystone.db
 examples/framework-nextjs-app-directory/tsconfig.json
 examples/framework-nextjs-app-directory/package.json
 examples/framework-nextjs-app-directory/schema.prisma
@@ -948,9 +942,9 @@ examples/framework-nextjs-app-directory/src/keystone/seed.ts
 examples/framework-nextjs-app-directory/src/keystone/context.ts
 examples/framework-nextjs-app-directory/src/keystone/schema.ts
 examples/framework-nextjs-app-directory/src/app/DocumentRender.tsx
+examples/framework-nextjs-app-directory/src/app/api/graphql/route.ts
 examples/framework-nextjs-app-directory/src/app/page.tsx
 examples/framework-nextjs-app-directory/src/app/layout.tsx
-examples/framework-nextjs-app-directory/src/pages/api/graphql.ts
 examples/framework-nextjs-app-directory/prisma.config.ts
 examples/number-fields/package.json
 examples/number-fields/schema.prisma
@@ -1031,7 +1025,6 @@ examples/custom-session-invalidation/schema.graphql
 examples/custom-session-invalidation/keystone.ts
 examples/custom-session-invalidation/schema.ts
 examples/custom-session-invalidation/prisma.config.ts
-examples/framework-nextjs-pages-directory/keystone.db
 examples/framework-nextjs-pages-directory/tsconfig.json
 examples/framework-nextjs-pages-directory/package.json
 examples/framework-nextjs-pages-directory/next.config.js

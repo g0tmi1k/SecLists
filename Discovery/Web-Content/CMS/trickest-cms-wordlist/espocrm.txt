@@ -1582,6 +1582,7 @@ application/Espo/Repositories/Integration.php
 application/Espo/Repositories/Portal.php
 application/Espo/Repositories/ScheduledJob.php
 application/Espo/Repositories/PhoneNumber.php
+application/Espo/Repositories/Settings.php
 application/Espo/Repositories/ArrayValue.php
 application/Espo/Repositories/Job.php
 application/Espo/Repositories/EmailAddress.php
@@ -4402,6 +4403,7 @@ application/Espo/Core/Templates/Controllers/Base.php
 application/Espo/Core/Templates/Controllers/BasePlus.php
 application/Espo/Core/ApplicationUser.php
 application/Espo/Core/Api/MiddlewareProvider.php
+application/Espo/Core/Api/ConfigDataProvider.php
 application/Espo/Core/Api/ResponseComposer.php
 application/Espo/Core/Api/AuthBuilder.php
 application/Espo/Core/Api/Response.php
@@ -4656,9 +4658,14 @@ application/Espo/Core/MassAction/ServiceResult.php
 application/Espo/Core/MassAction/QueryBuilder.php
 application/Espo/Core/MassAction/MassAction.php
 application/Espo/Core/EntryPoint/EntryPointManager.php
+application/Espo/Core/EntryPoint/MetaParams.php
 application/Espo/Core/EntryPoint/EntryPoint.php
+application/Espo/Core/EntryPoint/Params.php
+application/Espo/Core/EntryPoint/OutputEmitter.php
 application/Espo/Core/EntryPoint/Traits/NoAuth.php
+application/Espo/Core/EntryPoint/ResponseFactory.php
 application/Espo/Core/EntryPoint/Starter.php
+application/Espo/Core/EntryPoint/RequestFactory.php
 application/Espo/Core/Log/DefaultHandlerLoader.php
 application/Espo/Core/Log/DefaultFormatter.php
 application/Espo/Core/Log/HandlerListLoader.php
@@ -8335,6 +8342,7 @@ application/Espo/Resources/metadata/app/templateHelpers.json
 application/Espo/Resources/metadata/app/fileStorage.json
 application/Espo/Resources/metadata/app/adminPanel.json
 application/Espo/Resources/metadata/app/clientRecord.json
+application/Espo/Resources/metadata/app/entryPoints.json
 application/Espo/Resources/metadata/app/jsLibs.json
 application/Espo/Resources/metadata/app/regExpPatterns.json
 application/Espo/Resources/metadata/app/smsProviders.json
@@ -8368,6 +8376,7 @@ application/Espo/Resources/metadata/authenticationMethods/Oidc.json
 application/Espo/Resources/metadata/authenticationMethods/LDAP.json
 application/Espo/Resources/metadata/authenticationMethods/Hmac.json
 application/Espo/Resources/metadata/authenticationMethods/ApiKey.json
+application/Espo/Resources/metadata/entityAcl/Extension.json
 application/Espo/Resources/metadata/entityAcl/OAuthAccount.json
 application/Espo/Resources/metadata/entityAcl/ExternalAccount.json
 application/Espo/Resources/metadata/entityAcl/EmailAccount.json
@@ -8922,6 +8931,7 @@ application/Espo/Classes/Record/Hooks/PipelineStage/BeforeDelete.php
 application/Espo/Classes/Record/Hooks/Pipeline/AfterDelete.php
 application/Espo/Classes/Record/Hooks/Pipeline/AfterSave.php
 application/Espo/Classes/Record/Hooks/Pipeline/BeforeDelete.php
+application/Espo/Classes/Record/Note/OutputFilter.php
 application/Espo/Classes/Record/Note/UpdateInputFilter.php
 application/Espo/Classes/Record/User/OutputFilter.php
 application/Espo/Classes/Record/User/InputFilter.php
@@ -9209,6 +9219,7 @@ schema/metadata/app/templateHelpers.json
 schema/metadata/app/fileStorage.json
 schema/metadata/app/adminPanel.json
 schema/metadata/app/clientRecord.json
+schema/metadata/app/entryPoints.json
 schema/metadata/app/jsLibs.json
 schema/metadata/app/regExpPatterns.json
 schema/metadata/app/smsProviders.json
@@ -9288,6 +9299,7 @@ tests/integration/Espo/Core/Authentication/FailedLoginAttemptsTest.php
 tests/integration/Espo/Core/Authentication/Oidc/UserInfoPopulatorTest.php
 tests/integration/Espo/Core/Authentication/AuthToken/AuthTokenManagerTest.php
 tests/integration/Espo/Core/Authentication/AuthenticationTest.php
+tests/integration/Espo/Core/EntryPoint/EntryPointTest.php
 tests/integration/Espo/Core/Field/Address/AddressFormatterTest.php
 tests/integration/Espo/Core/Field/ValueObjectTest.php
 tests/integration/Espo/Core/ContainerTest.php
@@ -9400,6 +9412,7 @@ tests/unit/Espo/Core/Formula/EvaluatorTest.php
 tests/unit/Espo/Core/Formula/FormulaTest.php
 tests/unit/Espo/Core/Formula/ParserTest.php
 tests/unit/Espo/Core/Formula/ArgumentListTest.php
+tests/unit/Espo/Core/Api/ErrorOutputTest.php
 tests/unit/Espo/Core/Api/RequestTest.php
 tests/unit/Espo/Core/Api/AuthTest.php
 tests/unit/Espo/Core/Api/ResponseTest.php

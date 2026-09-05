@@ -360,6 +360,10 @@ tests/unit/filters/SecFetchSiteFilterTest.php
 unit/filters/SecFetchSiteFilterTest.php
 filters/SecFetchSiteFilterTest.php
 SecFetchSiteFilterTest.php
+tests/unit/elements/AddressElementTest.php
+unit/elements/AddressElementTest.php
+elements/AddressElementTest.php
+AddressElementTest.php
 tests/unit/elements/db/EntryQueryTest.php
 unit/elements/db/EntryQueryTest.php
 elements/db/EntryQueryTest.php
@@ -851,6 +855,10 @@ tests/unit/services/NestedElementDraftSiteSyncTest.php
 unit/services/NestedElementDraftSiteSyncTest.php
 services/NestedElementDraftSiteSyncTest.php
 NestedElementDraftSiteSyncTest.php
+tests/unit/services/ContentBlockNestedInMatrixRevisionTest.php
+unit/services/ContentBlockNestedInMatrixRevisionTest.php
+services/ContentBlockNestedInMatrixRevisionTest.php
+ContentBlockNestedInMatrixRevisionTest.php
 tests/unit/services/ImageTransformsTest.php
 unit/services/ImageTransformsTest.php
 services/ImageTransformsTest.php
@@ -1092,6 +1100,9 @@ GqlCest.php
 tests/functional/PageRenderChecksCest.php
 functional/PageRenderChecksCest.php
 PageRenderChecksCest.php
+tests/functional/WellKnownCest.php
+functional/WellKnownCest.php
+WellKnownCest.php
 tests/functional/users/UserActionCest.php
 functional/users/UserActionCest.php
 users/UserActionCest.php
@@ -1170,6 +1181,10 @@ tests-playwright/tests/elements/inituielements.test.js
 tests/elements/inituielements.test.js
 elements/inituielements.test.js
 inituielements.test.js
+tests-playwright/tests/slideout/index.test.js
+tests/slideout/index.test.js
+slideout/index.test.js
+index.test.js
 tests-playwright/tests/account/index.test.js
 tests/account/index.test.js
 account/index.test.js
@@ -5092,6 +5107,9 @@ ElementIndexesController.php
 src/controllers/DeleteElementsController.php
 controllers/DeleteElementsController.php
 DeleteElementsController.php
+src/controllers/WellKnownController.php
+controllers/WellKnownController.php
+WellKnownController.php
 src/controllers/RelationalFieldsController.php
 controllers/RelationalFieldsController.php
 RelationalFieldsController.php
@@ -5581,6 +5599,9 @@ CsvResponseFormatter.php
 src/web/TemplateResponseFormatter.php
 web/TemplateResponseFormatter.php
 TemplateResponseFormatter.php
+src/web/DbSession.php
+web/DbSession.php
+DbSession.php
 src/web/TemplateResponseBehavior.php
 web/TemplateResponseBehavior.php
 TemplateResponseBehavior.php
@@ -28995,6 +29016,9 @@ m230616_173810_kill_field_groups.php
 src/migrations/m221101_115859_create_entries_authors_table.php
 migrations/m221101_115859_create_entries_authors_table.php
 m221101_115859_create_entries_authors_table.php
+src/migrations/m260812_143000_drop_elementactivity_draftid_fk.php
+migrations/m260812_143000_drop_elementactivity_draftid_fk.php
+m260812_143000_drop_elementactivity_draftid_fk.php
 src/migrations/m230524_000002_entry_type_colors.php
 migrations/m230524_000002_entry_type_colors.php
 m230524_000002_entry_type_colors.php
@@ -29019,6 +29043,9 @@ m250531_183058_content_blocks.php
 src/migrations/m230511_215903_content_refactor.php
 migrations/m230511_215903_content_refactor.php
 m230511_215903_content_refactor.php
+src/migrations/m260610_065719_translatable_alt_text_content.php
+migrations/m260610_065719_translatable_alt_text_content.php
+m260610_065719_translatable_alt_text_content.php
 src/migrations/m230531_123004_add_entry_type_show_status_field.php
 migrations/m230531_123004_add_entry_type_show_status_field.php
 m230531_123004_add_entry_type_show_status_field.php
@@ -29082,6 +29109,9 @@ m240302_212719_solo_preview_targets.php
 src/migrations/m250522_090843_add_deleteEntriesForSite_and_deletePeerEntriesForSite_permissions.php
 migrations/m250522_090843_add_deleteEntriesForSite_and_deletePeerEntriesForSite_permissions.php
 m250522_090843_add_deleteEntriesForSite_and_deletePeerEntriesForSite_permissions.php
+src/migrations/m260817_012148_queue_reserve_index.php
+migrations/m260817_012148_queue_reserve_index.php
+m260817_012148_queue_reserve_index.php
 src/migrations/BaseFieldMergeMigration.php
 migrations/BaseFieldMergeMigration.php
 BaseFieldMergeMigration.php
