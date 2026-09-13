@@ -162,6 +162,9 @@ EmployeeFixtureTrait.php
 tests/Support/ConcurrentDbRaceTrait.php
 Support/ConcurrentDbRaceTrait.php
 ConcurrentDbRaceTrait.php
+tests/Support/SaleFixtureTrait.php
+Support/SaleFixtureTrait.php
+SaleFixtureTrait.php
 tests/Support/ItemFixtureTrait.php
 Support/ItemFixtureTrait.php
 ItemFixtureTrait.php
@@ -200,6 +203,14 @@ Filters/ThrottleTest.php
 ThrottleTest.php
 phpunit.xml.dist
 package-lock.json
+resources/bootswatch/darkly/.gitkeep
+bootswatch/darkly/.gitkeep
+darkly/.gitkeep
+.gitkeep
+resources/bootswatch/flatly/.gitkeep
+bootswatch/flatly/.gitkeep
+flatly/.gitkeep
+.gitkeep
 docker-compose.phpmyadmin.yml
 docker-compose.yml
 writable/debugbar/index.html

@@ -5968,6 +5968,7 @@ tests/integration/Storefront/Theme/fixtures/Apps/theme/Resources/app/storefront/
 tests/integration/Storefront/Theme/fixtures/Apps/theme/Resources/app/storefront/src/scss/base.scss
 tests/integration/Storefront/Theme/fixtures/Apps/theme/Resources/app/storefront/src/assets/icon-pack/custom-icons/activity.svg
 tests/integration/Storefront/Theme/fixtures/Apps/theme/manifest.xml
+tests/integration/Storefront/Theme/DatabaseSalesChannelThemeLoaderTest.php
 tests/integration/Storefront/Theme/Command/ThemeDumpCommandTest.php
 tests/integration/Storefront/Theme/Command/ThemeChangeCommandTest.php
 tests/integration/Storefront/Theme/ThemeLifecycleHandlerTest.php
@@ -6342,6 +6343,7 @@ tests/integration/Core/Checkout/Gateway/SalesChannel/CheckoutGatewayRouteTest.ph
 tests/integration/Core/Checkout/Validation/CustomerVatIdentificationValidatorTest.php
 tests/integration/Core/Checkout/Validation/CustomerEmailUniqueValidatorTest.php
 tests/integration/Core/Checkout/Document/SalesChannel/DocumentRouteTest.php
+tests/integration/Core/Checkout/Document/Aggregate/DocumentBaseConfig/DocumentBaseConfigValidatorTest.php
 tests/integration/Core/Checkout/Document/Renderer/ZugferdCreditNoteRendererTest.php
 tests/integration/Core/Checkout/Document/Renderer/ZugferdCancellationInvoiceRendererTest.php
 tests/integration/Core/Checkout/Document/Renderer/StornoRendererTest.php
@@ -7384,6 +7386,7 @@ tests/integration/Core/Framework/Adapter/Cache/CacheInvalidationSubscriberTest.p
 tests/integration/Core/Framework/Adapter/Cache/InvalidatorStorage/RedisInvalidatorStorageTest.php
 tests/integration/Core/Framework/Adapter/Cache/InvalidatorStorage/MySQLInvalidatorStorageTest.php
 tests/integration/Core/Framework/Adapter/Cache/RedisConnectionFactoryTest.php
+tests/integration/Core/Framework/Adapter/Database/ReplicaConnectionResetterTest.php
 tests/integration/Core/Framework/Adapter/Filesystem/Plugin/CopyBatchInputFactoryTest.php
 tests/integration/Core/Framework/Plugin/KernelPluginLoader/ComposerPluginLoaderTest.php
 tests/integration/Core/Framework/Plugin/KernelPluginLoader/DbalKernelPluginLoaderTest.php
@@ -8342,6 +8345,7 @@ tests/unit/Core/Checkout/Promotion/Cart/PromotionProcessorTest.php
 tests/unit/Core/Checkout/Promotion/Cart/PromotionRedemptionLockerTest.php
 tests/unit/Core/Checkout/Promotion/Cart/CartPromotionsSubscriberTest.php
 tests/unit/Core/Checkout/Promotion/Cart/Error/PromotionDiscountUnknownConditionErrorTest.php
+tests/unit/Core/Checkout/Promotion/Cart/Error/PromotionDiscountZeroValueErrorTest.php
 tests/unit/Core/Checkout/Promotion/Cart/PromotionCalculatorTest.php
 tests/unit/Core/Checkout/Promotion/Cart/Discount/Filter/AdvancedPackageRulesTest.php
 tests/unit/Core/Checkout/Promotion/Cart/Discount/Filter/Sorter/FilterSorterPriceTest.php
@@ -8884,6 +8888,7 @@ tests/unit/Core/Content/Flow/DataAbstractionLayer/Field/FlowTemplateConfigFieldT
 tests/unit/Core/Content/Flow/TransactionFailedExceptionTest.php
 tests/unit/Core/Content/Flow/Api/FlowActionCollectorTest.php
 tests/unit/Core/Content/Flow/Controller/TriggerFlowControllerTest.php
+tests/unit/Core/Content/Flow/FlowServiceConfigTest.php
 tests/unit/Core/Content/Flow/FlowExceptionTest.php
 tests/unit/Core/Content/Flow/Indexing/FlowBuilderTest.php
 tests/unit/Core/Content/Flow/Dispatching/BufferedFlowQueueTest.php
@@ -8973,6 +8978,7 @@ tests/unit/Core/Content/Sitemap/Service/SitemapExporterTest.php
 tests/unit/Core/Content/Sitemap/Service/SitemapListerTest.php
 tests/unit/Core/Content/Sitemap/Service/SitemapSalesChannelLoaderTest.php
 tests/unit/Core/Content/ProductStream/DataAbstractionLayer/ProductStreamIndexerTest.php
+tests/unit/Core/Content/ProductStream/DataAbstractionLayer/ProductStreamFilterChangeSetSubscriberTest.php
 tests/unit/Core/Content/ProductStream/DataAbstractionLayer/ProductStreamWriteResultHelperTest.php
 tests/unit/Core/Content/ProductStream/ScheduledTask/UpdateProductStreamMappingTaskHandlerTest.php
 tests/unit/Core/Content/ProductStream/Service/ProductStreamBuilderTest.php
@@ -9327,6 +9333,7 @@ tests/unit/Core/Content/Product/Subscriber/ProductSubscriberTest.php
 tests/unit/Core/Content/Product/Subscriber/CustomFieldSearchableSubscriberTest.php
 tests/unit/Core/Content/Product/Garan/GaranLabelResolverTest.php
 tests/unit/Core/Content/Product/Garan/GaranLabelTwigFilterTest.php
+tests/unit/Core/Content/Product/Garan/GaranLabelTextFitterTest.php
 tests/unit/Core/Content/Product/Garan/GaranLabelDurationFormatterTest.php
 tests/unit/Core/Content/Product/Garan/GaranLabelRendererTest.php
 tests/unit/Core/Content/Product/Garan/GaranLabelProductValidatorTest.php
@@ -10643,6 +10650,7 @@ tests/unit/Core/Framework/Adapter/Cache/InvalidatorStorage/RedisInvalidatorStora
 tests/unit/Core/Framework/Adapter/Cache/InvalidatorStorage/Message/CleanupOldCacheFoldersHandlerTest.php
 tests/unit/Core/Framework/Adapter/Cache/StampedeProtectionConfiguratorTest.php
 tests/unit/Core/Framework/Adapter/Cache/CacheCompilerPassTest.php
+tests/unit/Core/Framework/Adapter/Database/ReplicaConnectionResetterTest.php
 tests/unit/Core/Framework/Adapter/Database/MySQLFactoryTest.php
 tests/unit/Core/Framework/Adapter/EntityTemplateLoaderTest.php
 tests/unit/Core/Framework/Adapter/Console/ShopwareStyleTest.php
@@ -11137,6 +11145,7 @@ tests/migration/Core/V6_7/Migration1767611523UpdateUnitPriceOrderDeliveryPositio
 tests/migration/Core/V6_7/Migration1786107306AddTranslationPrivilegesTest.php
 tests/migration/Core/V6_7/Migration1768545320RevocationRequestCmsFormTest.php
 tests/migration/Core/V6_7/Migration1782906166RepairUserActiveDefaultTest.php
+tests/migration/Core/V6_7/Migration1788531858FixGaranLabelInOrderConfirmationMailTest.php
 tests/migration/Core/V6_7/Migration1782308630AddBusinessTimeZoneToSalesChannelTest.php
 tests/migration/Core/V6_7/Migration1773826242RenameAgenticCommerceSalesChannelTypeTest.php
 tests/migration/Core/V6_7/Migration1781703825AddSalesChannelFileAclPrivilegesTest.php
@@ -11203,6 +11212,7 @@ tests/migration/Core/V6_7/Migration1772443355InitiallySetRevokedConsentsToDeclin
 tests/migration/Core/V6_7/Migration1782518400AddUnconfirmedAppSecretsToAppTest.php
 tests/migration/Core/V6_7/Migration1768545322AssignRevocationPageToSystemConfigSettingTest.php
 tests/migration/Core/V6_7/Migration1788182786AddDefaultCurrenciesToSalesChannelsTest.php
+tests/migration/Core/V6_7/Migration1788531955MakeProductGuaranteeConfirmedInheritableTest.php
 tests/migration/Core/V6_7/Migration1773647849AlignFlowNameWithEventNameTest.php
 tests/migration/Core/V6_7/Migration1780029093FixProductComparisonTemplateBreadcrumbTest.php
 tests/migration/Core/V6_7/Migration1756068709FixCustomerAddressFirstNameLengthTest.php
@@ -12668,6 +12678,7 @@ src/Storefront/Resources/app/storefront/test/plugin/forms/form-country-state-sel
 src/Storefront/Resources/app/storefront/test/plugin/forms/form-submit-loader-outer-form-submit-button.plugin.template.html
 src/Storefront/Resources/app/storefront/test/plugin/forms/form-submit-loader.plugin.template.html
 src/Storefront/Resources/app/storefront/test/plugin/forms/form-submit-loader-without-loading-spinner.plugin.template.html
+src/Storefront/Resources/app/storefront/test/plugin/quantity-selector/quantity-selector-submit.test.js
 src/Storefront/Resources/app/storefront/test/plugin/quantity-selector/quantity-selector.plugin.test.js
 src/Storefront/Resources/app/storefront/test/plugin/cookie-configuration/cookie-configuration.plugin.test.js
 src/Storefront/Resources/app/storefront/test/plugin/header/account-menu.plugin.test.js
@@ -14144,6 +14155,7 @@ src/Core/Migration/V6_7/Migration1775641887AddDoubleOptInResendInterval.php
 src/Core/Migration/V6_7/Migration1774280952AddUserModifiedToMailTemplate.php
 src/Core/Migration/V6_7/Migration1742199550MeasurementDisplayUnitTable.php
 src/Core/Migration/V6_7/Migration1772626151AppMcpTool.php
+src/Core/Migration/V6_7/Migration1788531858FixGaranLabelInOrderConfirmationMail.php
 src/Core/Migration/V6_7/Migration1762356839AddInternalCommentToStateMachineHistory.php
 src/Core/Migration/V6_7/Migration1782906166RepairUserActiveDefault.php
 src/Core/Migration/V6_7/Migration1768545319RevocationRequestMailTemplate.php
@@ -14259,6 +14271,7 @@ src/Core/Migration/V6_7/Migration1765287397AddConsentTable.php
 src/Core/Migration/V6_7/Migration1737472122TokenUser.php
 src/Core/Migration/V6_7/Migration1767861589AddOpenOffcanvasAfterAddToCartConfigSetting.php
 src/Core/Migration/V6_7/Migration1768233956AddThemeRuntimeConfigUniqueConstraint.php
+src/Core/Migration/V6_7/Migration1788531955MakeProductGuaranteeConfirmedInheritable.php
 src/Core/Migration/V6_7/Migration1720603803RemoveDefaultPaymentMethodRule.php
 src/Core/Migration/V6_7/Migration1764064756AddCustomFieldSearchable.php
 src/Core/Migration/V6_7/Migration1783944800AddGaranLabel.php
@@ -15600,6 +15613,7 @@ src/Core/Checkout/Promotion/Cart/Extension/LockExtension.php
 src/Core/Checkout/Promotion/Cart/PromotionCalculator.php
 src/Core/Checkout/Promotion/Cart/PromotionCodeTuple.php
 src/Core/Checkout/Promotion/Cart/Error/PromotionDiscountUnknownConditionError.php
+src/Core/Checkout/Promotion/Cart/Error/PromotionDiscountZeroValueError.php
 src/Core/Checkout/Promotion/Cart/Error/PromotionExcludedError.php
 src/Core/Checkout/Promotion/Cart/Error/PromotionNotEligibleError.php
 src/Core/Checkout/Promotion/Cart/Error/PromotionNotFoundError.php
@@ -16819,6 +16833,7 @@ src/Core/Content/Content.php
 src/Core/Content/ProductStream/DataAbstractionLayer/ProductStreamWriteResultHelper.php
 src/Core/Content/ProductStream/DataAbstractionLayer/ProductStreamIndexer.php
 src/Core/Content/ProductStream/DataAbstractionLayer/ProductStreamIndexingMessage.php
+src/Core/Content/ProductStream/DataAbstractionLayer/ProductStreamFilterChangeSetSubscriber.php
 src/Core/Content/ProductStream/ProductStreamDefinition.php
 src/Core/Content/ProductStream/ProductStreamCollection.php
 src/Core/Content/ProductStream/ProductStreamEntity.php
@@ -17643,6 +17658,7 @@ src/Core/Content/Product/Garan/GaranLabelProductValidator.php
 src/Core/Content/Product/Garan/GaranLabelTwigFilter.php
 src/Core/Content/Product/Garan/GaranLabelRenderer.php
 src/Core/Content/Product/Garan/GaranLabelDurationFormatter.php
+src/Core/Content/Product/Garan/GaranLabelTextFitter.php
 src/Core/Content/Product/Garan/GaranLabelResolver.php
 src/Core/Content/Product/SearchKeyword/AnalyzedKeyword.php
 src/Core/Content/Product/SearchKeyword/ProductSearchBuilderInterface.php
@@ -20256,6 +20272,7 @@ src/Core/Framework/Adapter/Cache/Http/CacheRelevantRulesResolver.php
 src/Core/Framework/Adapter/Cache/Http/Extension/CacheHashRequiredExtension.php
 src/Core/Framework/Adapter/Cache/Http/Extension/ResolveCacheRelevantRuleIdsExtension.php
 src/Core/Framework/Adapter/Cache/Http/CacheStateValidator.php
+src/Core/Framework/Adapter/Cache/Http/HttpCacheVariantHeaders.php
 src/Core/Framework/Adapter/Cache/Http/Event/BeforeCacheControlEvent.php
 src/Core/Framework/Adapter/Cache/Http/CacheResponseSubscriber.php
 src/Core/Framework/Adapter/Cache/Http/CacheAttribute.php
@@ -20283,6 +20300,7 @@ src/Core/Framework/Adapter/Cache/InvalidatorStorage/MySQLInvalidatorStorage.php
 src/Core/Framework/Adapter/Cache/RedisConnectionFactory.php
 src/Core/Framework/Adapter/Database/ReplicaConnection.php
 src/Core/Framework/Adapter/Database/MySQLFactory.php
+src/Core/Framework/Adapter/Database/ReplicaConnectionResetter.php
 src/Core/Framework/Adapter/Console/ShopwareStyle.php
 src/Core/Framework/Adapter/Filesystem/PrefixFilesystem.php
 src/Core/Framework/Adapter/Filesystem/Exception/DuplicateFilesystemFactoryException.php
@@ -20810,7 +20828,7 @@ src/Administration/Resources/app/administration/test/webpack/assets/ExamplePlugi
 src/Administration/Resources/app/administration/test/webpack/assets/ExamplePluginForTesting/composer.json
 src/Administration/Resources/app/administration/jsconfig.json
 src/Administration/Resources/app/administration/tsconfig.json
-src/Administration/Resources/app/administration/jest.config.ts
+src/Administration/Resources/app/administration/_jest.config.ts
 src/Administration/Resources/app/administration/package.json
 src/Administration/Resources/app/administration/technical-docs/05-global-object/03-context-auth.md
 src/Administration/Resources/app/administration/technical-docs/05-global-object/02-feature-flags-deprecations.md
@@ -25042,6 +25060,7 @@ src/Administration/Resources/app/administration/src/app/component/structure/sw-a
 src/Administration/Resources/app/administration/src/app/component/structure/sw-admin-menu/sw-admin-menu.scss
 src/Administration/Resources/app/administration/src/app/component/structure/sw-admin-menu/sw-admin-menu.spec/create-wrapper.js
 src/Administration/Resources/app/administration/src/app/component/structure/sw-admin-menu/sw-admin-menu.spec/branch-expansion.spec.js
+src/Administration/Resources/app/administration/src/app/component/structure/sw-admin-menu/sw-admin-menu.spec/shortcuts.spec.js
 src/Administration/Resources/app/administration/src/app/component/structure/sw-admin-menu/sw-admin-menu.spec.js
 src/Administration/Resources/app/administration/src/app/component/structure/sw-admin-menu/index.js
 src/Administration/Resources/app/administration/src/app/component/structure/sw-sales-channel-switch/sw-sales-channel-switch.html.twig
@@ -26079,6 +26098,7 @@ src/Administration/Resources/app/administration/src/app/plugin/deprecation.plugi
 src/Administration/Resources/app/administration/src/app/plugin/meteor-sdk-data.plugin.ts
 src/Administration/Resources/app/administration/src/app/plugin/shortcut.plugin.spec.js
 src/Administration/Resources/app/administration/src/app/main.ts
+src/Administration/Resources/app/administration/src/app/assets/scss/module-colors.scss
 src/Administration/Resources/app/administration/src/app/assets/scss/typography.scss
 src/Administration/Resources/app/administration/src/app/assets/scss/global.scss
 src/Administration/Resources/app/administration/src/app/assets/scss/directives/dragdrop.scss

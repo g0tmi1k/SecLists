@@ -504,6 +504,7 @@ extensions/mentions/tests/integration/api/CreatePostWithEmptyContentTest.php
 extensions/mentions/tests/integration/api/PostMentionsTest.php
 extensions/mentions/tests/integration/api/EditPostWithEmptyContentTest.php
 extensions/mentions/tests/integration/api/MentionsDuringSavingTest.php
+extensions/mentions/tests/integration/api/ManyUserMentionsTest.php
 extensions/mentions/tests/integration/api/TagMentionsTest.php
 extensions/mentions/tests/integration/api/NotificationsTest.php
 extensions/mentions/tests/integration/api/UserMentionsTest.php
@@ -1372,6 +1373,7 @@ extensions/messages/views/emails/html/messageReceived.blade.php
 extensions/messages/tests/integration/api/dialogs/UpdateTest.php
 extensions/messages/tests/integration/api/ListTest.php
 extensions/messages/tests/integration/api/dialog_messages/CreateTest.php
+extensions/messages/tests/integration/api/dialog_messages/MentionedPostVisibilityTest.php
 extensions/messages/tests/integration/api/dialog_messages/DeleteTest.php
 extensions/messages/tests/integration/setup.php
 extensions/messages/tests/unit/.gitkeep
@@ -1956,6 +1958,7 @@ framework/core/less/admin/FormSectionGroup.less
 framework/core/less/admin/AnnouncementsPage.less
 framework/core/less/admin/ResetExtensionSettingsModal.less
 framework/core/less/admin/AdvancedPage.less
+framework/core/less/admin/ClearCacheModal.less
 framework/core/less/admin/ExtensionPage.less
 framework/core/less/admin/AlertWidget.less
 framework/core/less/admin/UsersListPage.less
@@ -2318,6 +2321,7 @@ framework/core/js/dist-typings/admin/components/HeaderSecondary.d.ts
 framework/core/js/dist-typings/admin/components/ExtensionPermissionGrid.d.ts
 framework/core/js/dist-typings/admin/components/AnnouncementList.d.ts
 framework/core/js/dist-typings/admin/components/PermissionDropdown.d.ts
+framework/core/js/dist-typings/admin/components/ClearCacheModal.d.ts
 framework/core/js/dist-typings/admin/components/GlobalSearch.d.ts
 framework/core/js/dist-typings/admin/components/FormSection.d.ts
 framework/core/js/dist-typings/admin/components/LoadingModal.d.ts
@@ -2611,6 +2615,7 @@ framework/core/js/src/admin/components/ExtensionBisect.tsx
 framework/core/js/src/admin/components/GlobalSearch.tsx
 framework/core/js/src/admin/components/AlertWidget.tsx
 framework/core/js/src/admin/components/AnnouncementList.tsx
+framework/core/js/src/admin/components/ClearCacheModal.tsx
 framework/core/js/src/admin/components/DashboardPage.tsx
 framework/core/js/src/admin/components/PermissionsPage.tsx
 framework/core/js/src/admin/components/AdminHeader.js
@@ -2831,6 +2836,7 @@ framework/core/tests/integration/api/discussions/ListGroupsQueryCountTest.php
 framework/core/tests/integration/api/discussions/ShowTest.php
 framework/core/tests/integration/api/discussions/ListWithFulltextSearchTest.php
 framework/core/tests/integration/api/discussions/CreateTest.php
+framework/core/tests/integration/api/discussions/EagerLoadedRelationVisibilityTest.php
 framework/core/tests/integration/api/discussions/UpdateTest.php
 framework/core/tests/integration/api/discussions/ListTest.php
 framework/core/tests/integration/api/discussions/ListSortedByTitleTest.php
@@ -2839,6 +2845,7 @@ framework/core/tests/integration/api/discussions/ListPaginationStabilityTest.php
 framework/core/tests/integration/api/discussions/ShowGroupsQueryCountTest.php
 framework/core/tests/integration/api/discussions/PgsqlSearchConfigurationInjectionTest.php
 framework/core/tests/integration/api/discussions/DeletionTest.php
+framework/core/tests/integration/api/EagerLoadedRelationsAreScopedTest.php
 framework/core/tests/integration/api/notifications/UpdateTest.php
 framework/core/tests/integration/api/notifications/ListTest.php
 framework/core/tests/integration/api/notifications/DeleteTest.php
@@ -2850,6 +2857,7 @@ framework/core/tests/integration/api/groups/ListTest.php
 framework/core/tests/integration/api/announcements/ListTest.php
 framework/core/tests/integration/api/authentication/WithApiKeyTest.php
 framework/core/tests/integration/api/authentication/WithTokenTest.php
+framework/core/tests/integration/api/ClearCacheTest.php
 framework/core/tests/integration/api/access_tokens/CreateTest.php
 framework/core/tests/integration/api/access_tokens/ListTest.php
 framework/core/tests/integration/api/access_tokens/PermissionTest.php
@@ -2888,6 +2896,7 @@ framework/core/tests/integration/admin/IndexTest.php
 framework/core/tests/integration/user/AvatarImageValidationTest.php
 framework/core/tests/integration/user/GroupPermissionCacheTest.php
 framework/core/tests/integration/slugger/SlugDriverTest.php
+framework/core/tests/integration/PostEditThrottleTest.php
 framework/core/tests/integration/console/CacheClearCommandTest.php
 framework/core/tests/integration/console/InfoCommandMemoryLimitTest.php
 framework/core/tests/integration/console/MigrateCommandIsolationTest.php
@@ -2939,6 +2948,7 @@ framework/core/tests/integration/frontend/FontAwesomeLoadingTest.php
 framework/core/tests/integration/forum/UpgradePageTest.php
 framework/core/tests/integration/forum/DefaultRouteTest.php
 framework/core/tests/integration/forum/GlobalLogoutTest.php
+framework/core/tests/integration/forum/CustomLessFileAccessTest.php
 framework/core/tests/integration/forum/Auth/ResponseFactoryTest.php
 framework/core/tests/integration/forum/RegisterTest.php
 framework/core/tests/integration/forum/LogoutTest.php
@@ -2963,6 +2973,7 @@ framework/core/tests/unit/Update/UpdateControllerTest.php
 framework/core/tests/unit/Announcements/AnnouncementsFetcherTest.php
 framework/core/tests/unit/Announcements/ListAnnouncementsControllerTest.php
 framework/core/tests/unit/Locale/TranslatorTest.php
+framework/core/tests/unit/Locale/LocaleRevisionTest.php
 framework/core/tests/unit/Locale/TranslatorReferenceResolutionTest.php
 framework/core/tests/unit/Database/AbstractModelCastsTest.php
 framework/core/tests/unit/Database/TablePrefixLimitTest.php
@@ -2971,6 +2982,7 @@ framework/core/tests/unit/Log/Context/RepositoryTest.php
 framework/core/tests/unit/Http/RouteCollectionTest.php
 framework/core/tests/unit/Http/CookieFactoryTest.php
 framework/core/tests/unit/Http/RequestUtilTest.php
+framework/core/tests/unit/Http/EmitterTest.php
 framework/core/tests/unit/Formatter/XsltPolyfillTest.php
 framework/core/tests/unit/User/AbstractPolicyTest.php
 framework/core/tests/unit/User/AvatarUploaderTest.php
@@ -2980,6 +2992,8 @@ framework/core/tests/unit/Frontend/Compiler/FileVersionerTest.php
 framework/core/tests/unit/Frontend/Compiler/LessFontUrlTest.php
 framework/core/tests/unit/Frontend/Compiler/RevisionCompilerTest.php
 framework/core/tests/unit/Frontend/Compiler/AssetsRevisionTest.php
+framework/core/tests/unit/Frontend/Compiler/DatabaseVersionerTest.php
+framework/core/tests/unit/Frontend/AssetManagerTest.php
 framework/core/tests/unit/Frontend/Content/AssetsTest.php
 framework/core/tests/unit/Frontend/RecompileFrontendAssetsTest.php
 framework/core/tests/unit/.gitkeep
@@ -3202,6 +3216,8 @@ framework/core/src/Announcements/AnnouncementsFetcher.php
 framework/core/src/Announcements/Console/RefreshAnnouncementsCommand.php
 framework/core/src/Announcements/Console/WeeklySchedule.php
 framework/core/src/Locale/PrefixedYamlFileLoader.php
+framework/core/src/Locale/CatalogueCache.php
+framework/core/src/Locale/CatalogueCacheFactory.php
 framework/core/src/Locale/LocaleServiceProvider.php
 framework/core/src/Locale/TranslatorInterface.php
 framework/core/src/Locale/Translator.php
@@ -3227,6 +3243,7 @@ framework/core/src/Http/Filter/AccessTokenTypeFilter.php
 framework/core/src/Http/ActorReference.php
 framework/core/src/Http/DeveloperAccessToken.php
 framework/core/src/Http/BatchSlugDriverInterface.php
+framework/core/src/Http/Emitter.php
 framework/core/src/Http/Rememberer.php
 framework/core/src/Http/RememberAccessToken.php
 framework/core/src/Http/RouteCollectionUrlGenerator.php
@@ -3415,6 +3432,7 @@ framework/core/src/Frontend/Compiler/Source/SourceCollector.php
 framework/core/src/Frontend/Compiler/RevisionCompiler.php
 framework/core/src/Frontend/Compiler/Concerns/HasSources.php
 framework/core/src/Frontend/Compiler/FileVersioner.php
+framework/core/src/Frontend/Compiler/DatabaseVersioner.php
 framework/core/src/Frontend/Compiler/VersionerInterface.php
 framework/core/src/Frontend/AddLocaleAssets.php
 framework/core/src/Frontend/Event/AssetsRecompiled.php
@@ -3573,6 +3591,7 @@ framework/core/src/Foundation/InstalledApp.php
 framework/core/src/Foundation/HighMaintenanceModeHandler.php
 framework/core/src/Foundation/Paths.php
 framework/core/src/Foundation/FontAwesome.php
+framework/core/src/Foundation/CacheClearReport.php
 framework/core/src/Foundation/ErrorServiceProvider.php
 framework/core/src/Foundation/AbstractValidator.php
 framework/core/src/Foundation/SiteInterface.php
@@ -3729,6 +3748,7 @@ framework/core/migrations/2018_01_11_102100_change_registration_tokens_created_a
 framework/core/migrations/2018_09_15_041340_add_users_indicies.php
 framework/core/migrations/2023_08_19_000000_create_unsubscribe_tokens_table.php
 framework/core/migrations/2024_05_05_000001_convert_preferences_to_json_in_users.php
+framework/core/migrations/2026_09_09_000000_create_asset_revisions_table.php
 framework/core/migrations/2023_10_23_000000_drop_post_number_index_column_from_discussions_table.php
 framework/core/migrations/2018_01_18_134500_change_password_tokens_add_foreign_keys.php
 framework/core/migrations/2022_05_20_000002_add_created_at_to_group_permission_table.php

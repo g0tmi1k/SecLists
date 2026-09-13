@@ -10,12 +10,18 @@ contributing.md
 .claude/hooks/prettier.mjs
 .changeset/witty-years-wash.md
 .changeset/orange-crews-stick.md
+.changeset/narrow-file-upload-sudo-write.md
 .changeset/global-access-cache-ip-key.md
 .changeset/enforce-read-permissions-keys-by-query.md
 .changeset/fair-kv-maxes-rest.md
+.changeset/seven-aliens-tease.md
 .changeset/mailtrap-email-transport.md
+.changeset/plenty-lamps-wave.md
+.changeset/humble-kings-smile.md
 .changeset/tidy-cases-repeat.md
+.changeset/silver-swans-bake.md
 .changeset/config.json
+.changeset/legal-berries-open.md
 .changeset/fix-system-filter-delete-hover.md
 .changeset/tough-numbers-beg.md
 .prettierignore
@@ -1123,6 +1129,7 @@ api/src/services/revisions.ts
 api/src/services/access.ts
 api/src/services/collections.ts
 api/src/services/settings.ts
+api/src/services/comments.test.ts
 api/src/services/versions.test.ts
 api/src/services/items.test.ts
 api/src/services/assets/name-deduper.test.ts
@@ -3296,6 +3303,7 @@ sdk/tests/rest/read-users.test.ts
 sdk/tests/rest/create-items.test.ts
 sdk/tests/rest/schema-snapshot.test.ts
 sdk/tests/fields.test-d.ts
+sdk/tests/nested-partial.test-d.ts
 sdk/tests/merge-collection.test-d.ts
 sdk/tests/no-schema.test-d.ts
 sdk/tests/relations.test-d.ts
