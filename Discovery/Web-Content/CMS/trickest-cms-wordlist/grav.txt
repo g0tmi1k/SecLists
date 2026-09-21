@@ -636,6 +636,7 @@ system/src/Grav/Framework/Uri/UriFactory.php
 system/src/Grav/Installer/InstallException.php
 system/src/Grav/Installer/Versions.php
 system/src/Grav/Installer/YamlUpdater.php
+system/src/Grav/Installer/updates/2.1.6_2026-09-14_0.php
 system/src/Grav/Installer/updates/1.8.0_2026-08-13_0.php
 system/src/Grav/Installer/updates/1.8.0_2026-06-15_0.php
 system/src/Grav/Installer/updates/1.7.0_2020-11-20_1.php
@@ -648,6 +649,8 @@ system/src/Grav/Installer/updates/1.8.0_2026-06-30_1.php
 system/src/Grav/Installer/updates/1.8.0_2026-06-26_0.php
 system/src/Grav/Installer/updates/1.8.0_2026-04-15_0.php
 system/src/Grav/Installer/updates/1.8.0_2026-08-12_0.php
+system/src/Grav/Installer/updates/2.1.8_2026-09-18_0.php
+system/src/Grav/Installer/updates/2.1.5_2026-09-14_0.php
 system/src/Grav/Installer/VersionUpdate.php
 system/src/Grav/Installer/VersionUpdater.php
 system/src/Grav/Installer/Install.php
@@ -699,6 +702,7 @@ tests/unit/Grav/Common/Twig/TwigAutoescapeCompatTest.php
 tests/unit/Grav/Common/Twig/TwigSetEscaperCompatTest.php
 tests/unit/Grav/Common/Twig/TwigForkPatchesTest.php
 tests/unit/Grav/Common/Scheduler/SchedulerDirectoryModeTest.php
+tests/unit/Grav/Common/ContainerInitializedTest.php
 tests/unit/Grav/Common/InflectorTest.php
 tests/unit/Grav/Common/UriTest.php
 tests/unit/Grav/Common/GravOutputBuffersTest.php
@@ -709,6 +713,7 @@ tests/unit/Grav/Common/Markdown/ParsedownTest.php
 tests/unit/Grav/Common/Markdown/ParsedownExtraTest.php
 tests/unit/Grav/Common/Markdown/TableExtensionsTest.php
 tests/unit/Grav/Common/Markdown/MarkdownExtensionTest.php
+tests/unit/Grav/Common/File/CompiledFileTest.php
 tests/unit/Grav/Common/Config/EnvTest.php
 tests/unit/Grav/Common/ComposerTest.php
 tests/unit/Grav/Common/DebuggerFlexRenderHintsTest.php
@@ -736,9 +741,12 @@ tests/unit/Grav/Common/Security/TwigContentXssOutputTest.php
 tests/unit/Grav/Common/Security/MediaActionAllowlistTest.php
 tests/unit/Grav/Common/Security/TwigContentDiagnosticsTest.php
 tests/unit/Grav/Common/Security/BlueprintExtendsProvenanceTest.php
+tests/unit/Grav/Common/ThemesTest.php
 tests/unit/Grav/Common/BrowserTest.php
 tests/unit/Grav/Common/Data/PageBlueprintContentTest.php
+tests/unit/Grav/Common/Data/ValidationNumberTest.php
 tests/unit/Grav/Common/Data/GroupBlueprintSecurityTest.php
+tests/unit/Grav/Common/Data/ValidationDatetimeTest.php
 tests/unit/Grav/Common/Data/ValidationLengthTest.php
 tests/unit/Grav/Common/Data/BlueprintTest.php
 tests/unit/Grav/Common/Language/LanguageCodesTest.php
@@ -750,6 +758,8 @@ tests/unit/Grav/Common/Helpers/ExcerptsTest.php
 tests/unit/Grav/Common/Page/Markdown/MarkdownOutputPageSourceTest.php
 tests/unit/Grav/Common/Page/Markdown/MarkdownOutputTest.php
 tests/unit/Grav/Common/Page/PagesTest.php
+tests/unit/Grav/Common/Page/Medium/ImageMediumAlternativesFormatTest.php
+tests/unit/Grav/Common/Page/Medium/MediumMagicCallTest.php
 tests/unit/Grav/Common/Page/Medium/ImageMediumUrlTest.php
 tests/unit/Grav/Common/Page/Medium/MediaPlayerAttributesTest.php
 tests/unit/Grav/Common/Page/Medium/MediaMetadataQueryTest.php
@@ -759,10 +769,14 @@ tests/unit/Grav/Common/Page/PageUrlExtensionTest.php
 tests/unit/Grav/Common/Page/PageUrlCanonicalTest.php
 tests/unit/Grav/Common/Processors/InitializeProcessorTest.php
 tests/unit/Grav/Common/UtilsTest.php
+tests/unit/Grav/Common/GPM/LicensesTest.php
 tests/unit/Grav/Common/GPM/UpgraderFamilyTest.php
+tests/unit/Grav/Common/GPM/InstallerDestinationTest.php
 tests/unit/Grav/Common/GPM/GPMTest.php
+tests/unit/Grav/Common/DebuggerDeprecationsTest.php
 tests/unit/Grav/Common/AssetsTest.php
 tests/unit/Grav/Console/Gpm/InstallCommandTest.php
+tests/unit/Grav/Console/Gpm/UpdateCommandDiagnosticsTest.php
 tests/unit/Grav/Console/Gpm/SelfupgradeCommandTest.php
 tests/unit/Grav/Framework/File/Formatter/CsvFormatterTest.php
 tests/unit/Grav/Framework/Filesystem/FilesystemTest.php

@@ -287,6 +287,7 @@ tests/e2e/tests/i18n/create-publish-fetch-per-locale.spec.ts
 tests/e2e/tests/i18n/localized-fields.spec.ts
 tests/e2e/tests/i18n/editview.spec.ts
 tests/e2e/tests/media-library/cancel-deletion.spec.ts
+tests/e2e/tests/media-library/upload-and-attach.spec.ts
 tests/e2e/tests/media-library/future/drag-drop-shallow.spec.ts
 tests/e2e/tests/media-library/future/page-objects/AssetsPage.ts
 tests/e2e/tests/media-library/future/filters.spec.ts
@@ -314,6 +315,7 @@ tests/api/core/content-manager/search.test.api.js
 tests/api/core/content-manager/api/number-of-draft-relations.test.api.js
 tests/api/core/content-manager/api/draft-relations-non-dp-i18n.test.api.ts
 tests/api/core/content-manager/api/relations-non-dp-edit-view.test.api.ts
+tests/api/core/content-manager/api/hidden-content-type-relation-mainfield.test.api.js
 tests/api/core/content-manager/api/document-metadata.test.api.js
 tests/api/core/content-manager/api/relations-available-status.test.api.ts
 tests/api/core/content-manager/api/basic-dp.test.api.js
@@ -513,6 +515,7 @@ tests/api/core/admin/admin-project-settings.test.api.js
 tests/api/core/admin/admin-sessions-management.test.api.ts
 tests/api/core/admin/ee/provider-options.test.api.js
 tests/api/core/admin/ee/audit-logs/audit-logs.test.api.ts
+tests/api/core/admin/ee/audit-logs/tokens.test.api.ts
 tests/api/core/admin/ee/provider-login.test.api.js
 tests/api/core/admin/admin-sessions-auth.test.api.ts
 tests/api/core/admin/admin-user.test.api.js
@@ -574,6 +577,7 @@ tests/api/plugins/graphql/relation-order.test.api.js
 tests/api/plugins/graphql/cors.test.api.js
 tests/api/plugins/graphql/publication-filter.test.api.js
 tests/api/plugins/graphql/utils.test.api.js
+tests/api/plugins/graphql/custom-resolver-dp-relations.test.api.js
 tests/api/plugins/graphql/repeatable-component-order.test.api.js
 tests/api/plugins/graphql/collection-relation-order.test.api.js
 tests/api/plugins/graphql/single-type.test.api.js
@@ -2736,6 +2740,7 @@ packages/core/utils/src/__tests__/morph.test.ts
 packages/core/utils/src/__tests__/has-published-version-param.test.ts
 packages/core/utils/src/__tests__/sessions.test.ts
 packages/core/utils/src/__tests__/provider-factory.test.ts
+packages/core/utils/src/__tests__/stream-to-buffer.test.ts
 packages/core/utils/src/__tests__/sort-query.test.ts
 packages/core/utils/src/__tests__/package-manager.test.ts
 packages/core/utils/src/__tests__/sanitize-input.test.ts
@@ -3286,7 +3291,10 @@ packages/core/content-type-builder/admin/src/components/AIChat/lib/transforms/sc
 packages/core/content-type-builder/admin/src/components/AIChat/lib/transforms/schemas/toCTB.ts
 packages/core/content-type-builder/admin/src/components/AIChat/hooks/useTranslations.ts
 packages/core/content-type-builder/admin/src/components/AIChat/hooks/useFigmaUpload.ts
+packages/core/content-type-builder/admin/src/components/AIChat/hooks/usePrefetchAIToken.ts
 packages/core/content-type-builder/admin/src/components/AIChat/hooks/useAIFetch.ts
+packages/core/content-type-builder/admin/src/components/AIChat/hooks/tests/useAIFetch.test.ts
+packages/core/content-type-builder/admin/src/components/AIChat/hooks/tests/usePrefetchAIToken.test.ts
 packages/core/content-type-builder/admin/src/components/AIChat/hooks/useLastSeenSchemas.ts
 packages/core/content-type-builder/admin/src/components/AIChat/hooks/useCodeUpload.ts
 packages/core/content-type-builder/admin/src/components/AIChat/hooks/useChatTitle.ts
@@ -3817,6 +3825,7 @@ packages/core/core/src/services/__tests__/content-source-maps.test.ts
 packages/core/core/src/services/__tests__/event-hub.test.ts
 packages/core/core/src/services/__tests__/ai.test.ts
 packages/core/core/src/services/__tests__/content-api-permissions.test.ts
+packages/core/core/src/services/__tests__/cron.test.ts
 packages/core/core/src/services/__tests__/core-store.test.ts
 packages/core/core/src/services/__tests__/session-manager.test.ts
 packages/core/core/src/services/__tests__/session-manager-jwt-config.test.ts
@@ -4032,6 +4041,8 @@ packages/core/admin/server/src/services/metrics.ts
 packages/core/admin/server/src/services/api-token.ts
 packages/core/admin/server/src/services/passport/local-strategy.ts
 packages/core/admin/server/src/services/content-type.ts
+packages/core/admin/server/src/audit-logs/tokens.ts
+packages/core/admin/server/src/audit-logs/__tests__/tokens.test.ts
 packages/core/admin/server/src/migrations/database/migrate-prefered-language-dk-to-da.ts
 packages/core/admin/tsconfig.json
 packages/core/admin/.gitattributes
@@ -4196,6 +4207,7 @@ packages/core/admin/admin/src/features/tests/ConfigurationProvider.test.tsx
 packages/core/admin/admin/src/features/tests/Tracking.test.tsx
 packages/core/admin/admin/src/features/tests/Widgets.test.tsx
 packages/core/admin/admin/src/features/tests/Notifications.test.tsx
+packages/core/admin/admin/src/features/tests/Auth.test.tsx
 packages/core/admin/admin/src/features/Notifications.tsx
 packages/core/admin/admin/src/features/Tracking.tsx
 packages/core/admin/admin/src/features/BackButton.tsx
@@ -4216,11 +4228,13 @@ packages/core/admin/admin/src/utils/cookies.ts
 packages/core/admin/admin/src/utils/normalizeAPIError.ts
 packages/core/admin/admin/src/utils/rulesEngine.ts
 packages/core/admin/admin/src/utils/retryDynamicImport.ts
+packages/core/admin/admin/src/utils/unsavedChangesRegistry.ts
 packages/core/admin/admin/src/utils/urls.ts
 packages/core/admin/admin/src/utils/deviceId.ts
 packages/core/admin/admin/src/utils/tests/urls.test.ts
 packages/core/admin/admin/src/utils/tests/jwt.test.ts
 packages/core/admin/admin/src/utils/tests/normalizeAPIError.test.ts
+packages/core/admin/admin/src/utils/tests/unsavedChangesRegistry.test.ts
 packages/core/admin/admin/src/utils/tests/baseQuery.test.ts
 packages/core/admin/admin/src/utils/tests/resizeHandlers.test.ts
 packages/core/admin/admin/src/utils/tests/strings.test.ts
@@ -4245,6 +4259,7 @@ packages/core/admin/admin/src/StrapiApp.tsx
 packages/core/admin/admin/src/core/utils/basename.ts
 packages/core/admin/admin/src/core/utils/tests/createHook.test.ts
 packages/core/admin/admin/src/core/utils/createHook.ts
+packages/core/admin/admin/src/core/store/tests/configure.test.ts
 packages/core/admin/admin/src/core/store/configure.ts
 packages/core/admin/admin/src/core/store/hooks.ts
 packages/core/admin/admin/src/core/apis/rbac.ts
@@ -4465,10 +4480,11 @@ packages/core/admin/admin/src/translations/it.json
 packages/core/admin/admin/src/translations/de.json
 packages/core/admin/admin/src/translations/uk.json
 packages/core/admin/admin/src/hooks/useClipboard.ts
-packages/core/admin/admin/src/hooks/useIdleSessionLogout.ts
+packages/core/admin/admin/src/hooks/useRegisterUnsavedChanges.ts
 packages/core/admin/admin/src/hooks/useContentTypes.ts
 packages/core/admin/admin/src/hooks/useInjectReducer.ts
 packages/core/admin/admin/src/hooks/useAdminRoles.ts
+packages/core/admin/admin/src/hooks/useSessionKeepalive.ts
 packages/core/admin/admin/src/hooks/useRBAC.ts
 packages/core/admin/admin/src/hooks/useLicenseLimitNotification.ts
 packages/core/admin/admin/src/hooks/usePrev.ts
@@ -4490,9 +4506,9 @@ packages/core/admin/admin/src/hooks/tests/useInjectReducer.test.tsx
 packages/core/admin/admin/src/hooks/tests/useDeviceType.test.tsx
 packages/core/admin/admin/src/hooks/tests/useElementOnScreen.test.tsx
 packages/core/admin/admin/src/hooks/tests/useContentTypes.test.ts
+packages/core/admin/admin/src/hooks/tests/useSessionKeepalive.test.ts
 packages/core/admin/admin/src/hooks/tests/useRBAC.test.ts
 packages/core/admin/admin/src/hooks/tests/useMediaQuery.test.tsx
-packages/core/admin/admin/src/hooks/tests/useIdleSessionLogout.test.ts
 packages/core/admin/admin/src/hooks/tests/useEnterprise.test.ts
 packages/core/admin/admin/src/hooks/tests/useSettingsMenu.test.ts
 packages/core/admin/admin/src/hooks/tests/useWarnIfUnsavedChanges.test.ts
@@ -4589,6 +4605,7 @@ packages/core/admin/ee/admin/src/pages/SettingsPage/constants.ts
 packages/core/admin/ee/admin/src/pages/SettingsPage/pages/ApplicationInfoPage/components/AIUsage.tsx
 packages/core/admin/ee/admin/src/pages/SettingsPage/pages/ApplicationInfoPage/components/AdminSeatInfo.tsx
 packages/core/admin/ee/admin/src/pages/SettingsPage/pages/ApplicationInfoPage/components/tests/AdminSeatInfo.test.tsx
+packages/core/admin/ee/admin/src/pages/SettingsPage/pages/ApplicationInfoPage/components/tests/AIUsage.test.tsx
 packages/core/admin/ee/admin/src/pages/SettingsPage/pages/Webhooks/components/EventsTable.tsx
 packages/core/admin/ee/admin/src/pages/SettingsPage/pages/Users/components/CreateActionEE.tsx
 packages/core/admin/ee/admin/src/pages/SettingsPage/pages/Users/components/ModalForm.tsx
@@ -4953,6 +4970,7 @@ packages/core/upload/server/src/bootstrap.ts
 packages/core/upload/server/src/graphql.ts
 packages/core/upload/server/src/config.ts
 packages/core/upload/server/src/services/extensions/index.ts
+packages/core/upload/server/src/services/extensions/__tests__/unsign-media.test.ts
 packages/core/upload/server/src/services/extensions/__tests__/sign-media.test.ts
 packages/core/upload/server/src/services/extensions/utils.ts
 packages/core/upload/server/src/services/ai-metadata-jobs.ts
@@ -4980,6 +4998,8 @@ packages/core/upload/server/src/services/weekly-metrics.ts
 packages/core/upload/server/src/services/api-upload-folder.ts
 packages/core/upload/server/src/services/image-manipulation.ts
 packages/core/upload/server/src/services/ai-metadata.ts
+packages/core/upload/server/src/migrations/__tests__/unsign-richtext-and-blocks-urls.test.ts
+packages/core/upload/server/src/migrations/unsign-richtext-and-blocks-urls.ts
 packages/core/upload/.gitattributes
 packages/core/upload/.eslintrc.cjs
 packages/core/upload/package.json
@@ -5282,12 +5302,10 @@ packages/core/upload/admin/src/hooks/useFolder.ts
 packages/core/upload/admin/src/hooks/useMediaLibraryPermissions.ts
 packages/core/upload/admin/src/hooks/useEditAsset.ts
 packages/core/upload/admin/src/hooks/useFolderStructure.ts
-packages/core/upload/admin/src/future/components/BetaNotice.tsx
 packages/core/upload/admin/src/future/components/Drawer.tsx
 packages/core/upload/admin/src/future/components/tests/UploadProgressDialog.test.tsx
 packages/core/upload/admin/src/future/components/tests/TruncatedText.test.tsx
 packages/core/upload/admin/src/future/components/tests/Drawer.test.tsx
-packages/core/upload/admin/src/future/components/tests/BetaNotice.test.tsx
 packages/core/upload/admin/src/future/components/UploadProgressDialog.tsx
 packages/core/upload/admin/src/future/components/TruncatedText.tsx
 packages/core/upload/admin/src/future/utils/itemSource.ts
@@ -5601,6 +5619,7 @@ packages/core/database/src/query/helpers/order-by.ts
 packages/core/database/src/query/helpers/join.ts
 packages/core/database/src/query/helpers/search.ts
 packages/core/database/src/query/__tests__/status-sort-distinct.test.ts
+packages/core/database/src/query/__tests__/relation-subquery.test.ts
 packages/core/database/src/types/index.ts
 packages/core/database/src/dialects/dialect.ts
 packages/core/database/src/dialects/index.ts
@@ -5738,6 +5757,7 @@ packages/plugins/documentation/server/src/services/helpers/utils/clean-schema-at
 packages/plugins/documentation/server/src/services/helpers/utils/routes.ts
 packages/plugins/documentation/server/src/services/helpers/utils/get-api-responses.ts
 packages/plugins/documentation/server/src/services/helpers/utils/__tests__/query-params.test.ts
+packages/plugins/documentation/server/src/services/helpers/utils/__tests__/clean-schema-attributes.test.ts
 packages/plugins/documentation/server/src/services/helpers/utils/pascal-case.ts
 packages/plugins/documentation/server/src/services/helpers/index.ts
 packages/plugins/documentation/server/src/services/helpers/build-api-endpoint-path.ts
@@ -6237,6 +6257,7 @@ packages/plugins/i18n/server/src/controllers/ai-localization-jobs.ts
 packages/plugins/i18n/server/src/controllers/index.ts
 packages/plugins/i18n/server/src/controllers/__tests__/locales.test.ts
 packages/plugins/i18n/server/src/controllers/__tests__/content-types.test.ts
+packages/plugins/i18n/server/src/controllers/__tests__/settings.test.ts
 packages/plugins/i18n/server/src/controllers/__tests__/iso-locales.test.ts
 packages/plugins/i18n/server/src/controllers/validate-locale-creation.ts
 packages/plugins/i18n/server/src/controllers/locales.ts
@@ -6248,6 +6269,7 @@ packages/plugins/i18n/server/src/constants/index.ts
 packages/plugins/i18n/server/src/constants/__tests__/index.test.ts
 packages/plugins/i18n/server/src/constants/iso-locales.json
 packages/plugins/i18n/server/src/services/ai-localizations.ts
+packages/plugins/i18n/server/src/services/ai-translations-strapi-managed.ts
 packages/plugins/i18n/server/src/services/content-types.ts
 packages/plugins/i18n/server/src/services/iso-locales.ts
 packages/plugins/i18n/server/src/services/ai-localization-jobs.ts
@@ -6256,12 +6278,14 @@ packages/plugins/i18n/server/src/services/localizations.ts
 packages/plugins/i18n/server/src/services/index.ts
 packages/plugins/i18n/server/src/services/__tests__/localizations.test.ts
 packages/plugins/i18n/server/src/services/__tests__/ai-localizations.test.ts
+packages/plugins/i18n/server/src/services/__tests__/ai-translations.test.ts
 packages/plugins/i18n/server/src/services/__tests__/metrics.test.ts
 packages/plugins/i18n/server/src/services/__tests__/locales.test.ts
 packages/plugins/i18n/server/src/services/__tests__/__snapshots__/iso-locales.test.ts.snap
 packages/plugins/i18n/server/src/services/__tests__/fill-from-locale.test.ts
 packages/plugins/i18n/server/src/services/__tests__/content-types.test.ts
 packages/plugins/i18n/server/src/services/__tests__/iso-locales.test.ts
+packages/plugins/i18n/server/src/services/ai-translations.ts
 packages/plugins/i18n/server/src/services/metrics.ts
 packages/plugins/i18n/server/src/services/locales.ts
 packages/plugins/i18n/server/src/services/sanitize/index.ts
@@ -6349,6 +6373,7 @@ packages/plugins/i18n/admin/src/translations/fr.json
 packages/plugins/i18n/admin/src/translations/ko.json
 packages/plugins/i18n/admin/src/translations/de.json
 packages/plugins/i18n/admin/src/translations/uk.json
+packages/plugins/i18n/admin/src/hooks/useAITranslations.ts
 packages/plugins/i18n/admin/src/hooks/useAILocalizationJobsPolling.ts
 packages/plugins/i18n/admin/src/hooks/useI18n.ts
 packages/plugins/i18n/admin/src/hooks/tests/useI18n.test.ts

@@ -3309,6 +3309,7 @@ dev/tests/integration/testsuite/Magento/ConfigurableProduct/Controller/Adminhtml
 dev/tests/integration/testsuite/Magento/ConfigurableProduct/etc/extension_attributes.xml
 dev/tests/integration/testsuite/Magento/ConfigurableProduct/Block/Cart/Item/Renderer/ConfigurableTest.php
 dev/tests/integration/testsuite/Magento/ConfigurableProduct/Block/Adminhtml/Product/Composite/Fieldset/ConfigurableTest.php
+dev/tests/integration/testsuite/Magento/ConfigurableProduct/Block/Adminhtml/Product/Steps/BulkTest.php
 dev/tests/integration/testsuite/Magento/ConfigurableProduct/Block/Adminhtml/Product/Steps/AttributeValuesTest.php
 dev/tests/integration/testsuite/Magento/ConfigurableProduct/Block/Adminhtml/Product/Edit/Tab/Variations/Config/MatrixTest.php
 dev/tests/integration/testsuite/Magento/ConfigurableProduct/Block/Product/ProductList/UpsellTest.php
@@ -4329,7 +4330,7 @@ dev/tests/integration/testsuite/Magento/Sales/_files/order_rollback.php
 dev/tests/integration/testsuite/Magento/Sales/_files/customer_multiple_invoices_with_two_products_and_custom_options_rollback.php
 dev/tests/integration/testsuite/Magento/Sales/_files/customers_with_invoices.php
 dev/tests/integration/testsuite/Magento/Sales/CustomerData/LastOrderedItemsTest.php
-dev/tests/integration/testsuite/Magento/Sales/Plugin/SearchCriteria/FulltextFilterPluginTest.php
+dev/tests/integration/testsuite/Magento/Sales/Ui/Component/Listing/FulltextFilterTest.php
 dev/tests/integration/testsuite/Magento/Sales/Plugin/Model/ResourceModel/Order/DataProvider/OrdersCollectionFilters.php
 dev/tests/integration/testsuite/Magento/Sales/Model/InvoiceEmailSenderHandlerTest.php
 dev/tests/integration/testsuite/Magento/Sales/Model/CronJob/CleanExpiredOrdersTest.php
@@ -4509,6 +4510,7 @@ dev/tests/integration/testsuite/Magento/UrlRewrite/_files/url_rewrites_rollback.
 dev/tests/integration/testsuite/Magento/UrlRewrite/_files/url_rewrite_not_existing_entity.php
 dev/tests/integration/testsuite/Magento/UrlRewrite/_files/url_rewrite_not_existing_entity_rollback.php
 dev/tests/integration/testsuite/Magento/UrlRewrite/_files/url_rewrites.php
+dev/tests/integration/testsuite/Magento/UrlRewrite/DbSchemaTest.php
 dev/tests/integration/testsuite/Magento/UrlRewrite/Model/Storage/DbStorageTest.php
 dev/tests/integration/testsuite/Magento/UrlRewrite/Model/UrlFinderInterfaceTest.php
 dev/tests/integration/testsuite/Magento/UrlRewrite/Model/StoreSwitcher/RewriteUrlTest.php
@@ -4548,6 +4550,7 @@ dev/tests/integration/testsuite/Magento/Reports/Model/ResourceModel/Report/Sold/
 dev/tests/integration/testsuite/Magento/Reports/Model/ResourceModel/Report/Product/Viewed/CollectionTest.php
 dev/tests/integration/testsuite/Magento/Reports/Model/ResourceModel/Review/Product/CollectionTest.php
 dev/tests/integration/testsuite/Magento/Reports/Model/ResourceModel/Review/Customer/CollectionTest.php
+dev/tests/integration/testsuite/Magento/Reports/Model/ResourceModel/Quote/CollectionTest.php
 dev/tests/integration/testsuite/Magento/Reports/Model/ResourceModel/Product/Lowstock/CollectionTest.php
 dev/tests/integration/testsuite/Magento/Reports/Model/Product/DataRetrieverTest.php
 dev/tests/integration/testsuite/Magento/Eav/Setup/EavSetupTest.php
@@ -15145,6 +15148,7 @@ app/code/Magento/CatalogImportExport/etc/module.xml
 app/code/Magento/CatalogImportExport/etc/config.xml
 app/code/Magento/CatalogImportExport/README.md
 app/code/Magento/CatalogImportExport/LICENSE.txt
+app/code/Magento/CatalogImportExport/Block/Adminhtml/Export/MandatoryAttributesNotice.php
 app/code/Magento/CatalogImportExport/Test/Unit/Model/Export/ProductTest.php
 app/code/Magento/CatalogImportExport/Test/Unit/Model/Export/StubProduct.php
 app/code/Magento/CatalogImportExport/Test/Unit/Model/Indexer/Product/Flat/Plugin/ImportTest.php
@@ -15211,6 +15215,10 @@ app/code/Magento/CatalogImportExport/Test/Mftf/Test/AdminExportSimpleProductWith
 app/code/Magento/CatalogImportExport/Test/Mftf/Data/ImportData.xml
 app/code/Magento/CatalogImportExport/registration.php
 app/code/Magento/CatalogImportExport/i18n/en_US.csv
+app/code/Magento/CatalogImportExport/view/adminhtml/templates/export/mandatory_attributes_notice.phtml
+app/code/Magento/CatalogImportExport/view/adminhtml/layout/adminhtml_export_index.xml
+app/code/Magento/CatalogImportExport/view/adminhtml/web/css/source/_module.less
+app/code/Magento/CatalogImportExport/view/adminhtml/web/js/mandatory-notice-toggle.js
 app/code/Magento/CatalogImportExport/composer.json
 app/code/Magento/CatalogImportExport/Model/StockItemImporter.php
 app/code/Magento/CatalogImportExport/Model/Export/Product.php
@@ -15427,6 +15435,7 @@ app/code/Magento/Indexer/Block/Backend/Grid/Column/Renderer/ScheduleStatus.php
 app/code/Magento/Indexer/Block/Backend/Grid/Column/Renderer/Status.php
 app/code/Magento/Indexer/Block/Backend/Grid/Column/Renderer/Scheduled.php
 app/code/Magento/Indexer/Block/Backend/Grid/ItemsUpdater.php
+app/code/Magento/Indexer/Test/Unit/Setup/RecurringTest.php
 app/code/Magento/Indexer/Test/Unit/Controller/Adminhtml/Indexer/MassInvalidateTest.php
 app/code/Magento/Indexer/Test/Unit/Controller/Adminhtml/Indexer/ListActionTest.php
 app/code/Magento/Indexer/Test/Unit/Controller/Adminhtml/Indexer/MassOnTheFlyTest.php
@@ -20876,6 +20885,7 @@ app/code/Magento/CatalogUrlRewrite/Observer/UrlRewriteHandler.php
 app/code/Magento/CatalogUrlRewrite/Observer/CategorySaveRewritesHistorySetterObserver.php
 app/code/Magento/CatalogUrlRewrite/Observer/ProductProcessUrlRewriteSavingObserver.php
 app/code/Magento/CatalogUrlRewrite/Observer/ClearProductUrlsObserver.php
+app/code/Magento/CatalogUrlRewrite/Observer/CategoryUrlPathOrphanOverrideCleanupObserver.php
 app/code/Magento/CatalogUrlRewrite/Observer/CategoryProcessUrlRewriteMovingObserver.php
 app/code/Magento/CatalogUrlRewrite/Observer/CategoryProcessUrlRewriteSavingObserver.php
 app/code/Magento/CatalogUrlRewrite/Observer/ProductProcessUrlRewriteRemovingObserver.php
@@ -28854,6 +28864,7 @@ app/code/Magento/Sales/Ui/Component/Listing/Column/PurchasedPrice.php
 app/code/Magento/Sales/Ui/Component/Listing/Column/Status.php
 app/code/Magento/Sales/Ui/Component/Listing/Column/Price.php
 app/code/Magento/Sales/Ui/Component/Listing/Column/CustomerGroup.php
+app/code/Magento/Sales/Ui/Component/Listing/FulltextFilter.php
 app/code/Magento/Sales/view/adminhtml/requirejs-config.js
 app/code/Magento/Sales/view/adminhtml/templates/order/details.phtml
 app/code/Magento/Sales/view/adminhtml/templates/order/address/form.phtml
@@ -29130,7 +29141,6 @@ app/code/Magento/Sales/view/frontend/web/js/orders-returns.js
 app/code/Magento/Sales/view/frontend/web/js/view/last-ordered-items.js
 app/code/Magento/Sales/view/frontend/web/js/gift-message.js
 app/code/Magento/Sales/Plugin/ApplyStoreEmailConfigToSalesEmail.php
-app/code/Magento/Sales/Plugin/SearchCriteria/FulltextFilterPlugin.php
 app/code/Magento/Sales/Plugin/ShippingLabelConverter.php
 app/code/Magento/Sales/Plugin/Webapi/OrderResponseNullKeysPlugin.php
 app/code/Magento/Sales/Plugin/OrderGrid/CountryNameToCodeFilter.php
@@ -33704,6 +33714,7 @@ app/code/Magento/Customer/Test/Unit/Model/Customer/NotificationStorageTest.php
 app/code/Magento/Customer/Test/Unit/Model/Backend/CustomerTest.php
 app/code/Magento/Customer/Test/Unit/Model/Plugin/ValidateCaptchaTest.php
 app/code/Magento/Customer/Test/Unit/Model/Plugin/CustomerRepository/TransactionWrapperTest.php
+app/code/Magento/Customer/Test/Unit/Model/Plugin/UpdateCustomerTest.php
 app/code/Magento/Customer/Test/Unit/Model/Plugin/CustomerFlushFormKeyTest.php
 app/code/Magento/Customer/Test/Unit/Model/Plugin/CustomerNotificationTest.php
 app/code/Magento/Customer/Test/Unit/Model/Plugin/SaveCustomerGroupExcludedWebsiteTest.php
@@ -35649,6 +35660,7 @@ app/code/Magento/ImportExport/Plugin/DeferCacheCleaningUntilImportIsComplete.php
 app/code/Magento/ImportExport/composer.json
 app/code/Magento/ImportExport/Model/Import.php
 app/code/Magento/ImportExport/Model/LocalizedFileName.php
+app/code/Magento/ImportExport/Model/Export/MandatoryAttributesProvider.php
 app/code/Magento/ImportExport/Model/Export/AbstractEntity.php
 app/code/Magento/ImportExport/Model/Export/Config/SchemaLocator.php
 app/code/Magento/ImportExport/Model/Export/Config/Converter.php
@@ -41064,6 +41076,7 @@ lib/internal/Magento/Framework/Mail/Test/Unit/TransportTest.php
 lib/internal/Magento/Framework/Mail/Test/Unit/Template/TransportBuilderTest.php
 lib/internal/Magento/Framework/Mail/Test/Unit/Template/TransportBuilderByStoreTest.php
 lib/internal/Magento/Framework/Mail/Test/Unit/Template/FactoryTest.php
+lib/internal/Magento/Framework/Mail/Test/Unit/MimeMessageTest.php
 lib/internal/Magento/Framework/Mail/Test/Unit/AddressTest.php
 lib/internal/Magento/Framework/Mail/Test/Unit/EmailMessageTest.php
 lib/internal/Magento/Framework/Mail/Test/Unit/MessageTest.php
