@@ -1552,6 +1552,7 @@ wp-admin/includes/class-wp-privacy-policy-content.php
 wp-admin/includes/class-wp-ms-sites-list-table.php
 wp-admin/includes/user.php
 wp-admin/includes/class-wp-filesystem-ftpsockets.php
+wp-admin/includes/secrets-site-health.php
 wp-admin/includes/edit-tag-messages.php
 wp-admin/includes/class-wp-screen.php
 wp-admin/includes/class-wp-ms-users-list-table.php
@@ -1893,6 +1894,19 @@ wp-includes/class-wp-roles.php
 wp-includes/option.php
 wp-includes/class-wp-image-editor.php
 wp-includes/ms-blogs.php
+wp-includes/secrets/class-wp-secret-version.php
+wp-includes/secrets/interface-wp-secrets-store.php
+wp-includes/secrets/class-wp-secrets-config-key-provider.php
+wp-includes/secrets/interface-wp-secrets-keyring.php
+wp-includes/secrets/class-wp-secrets-key-manager.php
+wp-includes/secrets/class-wp-secret.php
+wp-includes/secrets/interface-wp-secrets-provider.php
+wp-includes/secrets/class-wp-secrets-broken-provider.php
+wp-includes/secrets/class-wp-secrets-libsodium-provider.php
+wp-includes/secrets/class-wp-secrets-broken-keyring.php
+wp-includes/secrets/class-wp-secrets-option-store.php
+wp-includes/secrets/class-wp-secrets-cipher.php
+wp-includes/secrets/class-wp-secrets-broken-store.php
 wp-includes/class-wp-comment-query.php
 wp-includes/template-canvas.php
 wp-includes/rss-functions.php
@@ -2527,7 +2541,6 @@ wp-includes/widgets.php
 wp-includes/class-wp-http-ixr-client.php
 wp-includes/embed.php
 wp-includes/class-json.php
-wp-includes/class-wp-admin-notice-collector.php
 wp-includes/class-wp-comment.php
 wp-includes/class-wp-classic-to-block-menu-converter.php
 wp-includes/capabilities.php
@@ -3426,6 +3439,7 @@ wp-includes/class-wp-walker.php
 wp-includes/class-wp-http-requests-hooks.php
 wp-includes/theme.php
 wp-includes/class-wp-oembed.php
+wp-includes/secrets.php
 wp-includes/update.php
 wp-includes/load.php
 wp-includes/class-wp-block-parser-frame.php
@@ -3447,7 +3461,10 @@ wp-includes/class-wp-http-encoding.php
 wp-includes/interactivity-api/class-wp-interactivity-api-directives-processor.php
 wp-includes/interactivity-api/interactivity-api.php
 wp-includes/interactivity-api/class-wp-interactivity-api.php
+wp-includes/interactivity-api/class-wp-interactivity-dangerous-html.php
 wp-includes/block-editor.php
+wp-includes/abilities/class-wp-abilities-users.php
+wp-includes/abilities/class-wp-abilities-content.php
 wp-includes/abilities/class-wp-abilities-settings.php
 wp-includes/atomlib.php
 wp-includes/style-engine.php

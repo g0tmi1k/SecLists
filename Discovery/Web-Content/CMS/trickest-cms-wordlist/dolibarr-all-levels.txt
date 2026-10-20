@@ -24943,6 +24943,10 @@ htdocs/core/js/editinplace.js
 core/js/editinplace.js
 js/editinplace.js
 editinplace.js
+htdocs/core/js/customreports.js
+core/js/customreports.js
+js/customreports.js
+customreports.js
 htdocs/core/js/lib_tooltip-freeze-by-alt-keypress.js
 core/js/lib_tooltip-freeze-by-alt-keypress.js
 js/lib_tooltip-freeze-by-alt-keypress.js
@@ -34257,6 +34261,9 @@ printbox.php
 htdocs/takepos/index.php
 takepos/index.php
 index.php
+htdocs/takepos/creditnote_apply.php
+takepos/creditnote_apply.php
+creditnote_apply.php
 htdocs/takepos/send.php
 takepos/send.php
 send.php
@@ -66134,6 +66141,9 @@ LinkTest.php
 test/phpunit/RepositoryTest.php
 phpunit/RepositoryTest.php
 RepositoryTest.php
+test/phpunit/AiMcpApiBridgeProjectsTest.php
+phpunit/AiMcpApiBridgeProjectsTest.php
+AiMcpApiBridgeProjectsTest.php
 test/phpunit/PaiementTest.php
 phpunit/PaiementTest.php
 PaiementTest.php
@@ -66965,6 +66975,10 @@ agent-power.toml
 skills/skill-doli-devmodule/SKILL.md
 skill-doli-devmodule/SKILL.md
 SKILL.md
+.agents/skills/skill-doli-translation/SKILL.md
+skills/skill-doli-translation/SKILL.md
+skill-doli-translation/SKILL.md
+SKILL.md
 .agents/skills/skill-doli-test-hurl/SKILL.md
 skills/skill-doli-test-hurl/SKILL.md
 skill-doli-test-hurl/SKILL.md
@@ -67456,6 +67470,9 @@ fixaltlanguages.sh
 dev/tools/apstats.php
 tools/apstats.php
 apstats.php
+dev/tools/github_authors_and_commits_bydate.sh
+tools/github_authors_and_commits_bydate.sh
+github_authors_and_commits_bydate.sh
 dev/tools/dolibarr-postgres2mysql.php
 tools/dolibarr-postgres2mysql.php
 dolibarr-postgres2mysql.php

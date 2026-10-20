@@ -3865,6 +3865,7 @@ htdocs/core/js/lib_foot_search_tool.js
 htdocs/core/js/lib_foot.js.php
 htdocs/core/js/lib_photosresize.js
 htdocs/core/js/editinplace.js
+htdocs/core/js/customreports.js
 htdocs/core/js/lib_tooltip-freeze-by-alt-keypress.js
 htdocs/core/js/dst.js
 htdocs/core/js/lib_notification.js.php
@@ -5804,6 +5805,7 @@ htdocs/multicurrency/class/multicurrency.class.php
 htdocs/multicurrency/multicurrency_rate.php
 htdocs/takepos/printbox.php
 htdocs/takepos/index.php
+htdocs/takepos/creditnote_apply.php
 htdocs/takepos/send.php
 htdocs/takepos/README.md
 htdocs/takepos/smpcb.php
@@ -13206,6 +13208,7 @@ test/phpunit/XCalLibTest.php
 test/phpunit/MoTest.php
 test/phpunit/LinkTest.php
 test/phpunit/RepositoryTest.php
+test/phpunit/AiMcpApiBridgeProjectsTest.php
 test/phpunit/PaiementTest.php
 test/phpunit/FichinterTest.php
 test/phpunit/BookKeepingTest.php
@@ -13453,6 +13456,7 @@ ChangeLog
 .agents/AGENTS.md
 .agents/agents/agent-power.toml
 .agents/skills/skill-doli-devmodule/SKILL.md
+.agents/skills/skill-doli-translation/SKILL.md
 .agents/skills/skill-doli-test-hurl/SKILL.md
 .agents/skills/skill-doli-code-review/SKILL.md
 .agents/skills/skill-doli-upmerge/SKILL.md
@@ -13560,6 +13564,7 @@ dev/initdemo/initdemo.sh
 dev/lockedfiles.txt
 dev/tools/fixaltlanguages.sh
 dev/tools/apstats.php
+dev/tools/github_authors_and_commits_bydate.sh
 dev/tools/dolibarr-postgres2mysql.php
 dev/tools/test/testperf.php
 dev/tools/test/testtcpdf.php

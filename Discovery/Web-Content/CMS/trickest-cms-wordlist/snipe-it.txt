@@ -24,6 +24,7 @@ docker-compose.yml
 stubs/test.stub
 stubs/test.unit.stub
 AGENTS.md
+_ide_helper_models.php
 webpack.mix.js
 artisan
 LICENSE
@@ -45,7 +46,6 @@ package-lock.json
 phpstan-baseline.neon
 Dockerfile.fpm-alpine
 pint.json
-MULTI_FIELDSET_DESIGN.md
 database/seeders/AccessorySeeder.php
 database/seeders/DatabaseSeeder.php
 database/seeders/.gitkeep
@@ -423,6 +423,7 @@ database/migrations/2026_08_03_147000_rename_transaction_fields_to_legacy_on_inv
 database/migrations/2013_11_20_130248_create_status_labels.php
 database/migrations/2016_11_24_160405_add_missing_target_type_to_logs_table.php
 database/migrations/2026_08_20_010000_add_reservation_dates_to_checkout_requests.php
+database/migrations/2026_10_15_175207_add_archived_to_components_table.php
 database/migrations/2023_04_26_160235_add_warranty_url_to_manufacturers.php
 database/migrations/2015_07_31_015430_add_accepted_to_assets.php
 database/migrations/2015_02_11_104406_migrate_create_requests_table.php
@@ -637,18 +638,31 @@ dev.docker-compose.yml
 tests/Feature/Components/ComponentForceDeletedImageHookTest.php
 tests/Feature/Components/Ui/ComponentIndexTest.php
 tests/Feature/Components/Ui/CloneComponentTest.php
+tests/Feature/Components/Ui/OrdersTabBadgeTest.php
 tests/Feature/Components/Ui/ComponentCheckoutRequestingUserTest.php
 tests/Feature/Components/Ui/StoreComponentWithFullMultipleCompanySupportTest.php
+tests/Feature/Components/Ui/BulkCheckinComponentsTest.php
+tests/Feature/Components/Ui/ArchivedComponentCheckoutGuardTest.php
+tests/Feature/Components/Ui/BulkComponentsFmcsScopingTest.php
 tests/Feature/Components/Ui/ShowComponentTest.php
 tests/Feature/Components/Ui/AdjustComponentQuantityTest.php
 tests/Feature/Components/Ui/EditComponentTest.php
+tests/Feature/Components/Ui/BulkDeleteComponentsTest.php
 tests/Feature/Components/Ui/DeleteComponentTest.php
+tests/Feature/Components/Ui/BulkEditComponentsTest.php
 tests/Feature/Components/Ui/BulkFulfillComponentTest.php
+tests/Feature/Components/Ui/SoftDeletedComponentViewTest.php
+tests/Feature/Components/Ui/RestoreComponentTest.php
+tests/Feature/Components/ComponentDeleteLoggingTest.php
+tests/Feature/Components/ComponentArchiveValidationTest.php
 tests/Feature/Components/ComponentObserverOrderTest.php
 tests/Feature/Components/Api/ComponentIndexTest.php
+tests/Feature/Components/Api/ComponentIndexBulkSelectableTest.php
 tests/Feature/Components/Api/DeleteComponentTest.php
 tests/Feature/Components/Api/ComponentAssetsTest.php
 tests/Feature/Components/Api/ComponentFileTest.php
+tests/Feature/Components/Api/ComponentIndexArchivedTest.php
+tests/Feature/Components/Api/ComponentIndexDeletedActionsTest.php
 tests/Feature/Components/Api/ComponentUpdateTest.php
 tests/Feature/Components/Api/AdjustComponentQuantityApiTest.php
 tests/Feature/Fmcs/FmcsStrictBulkAssetEditTest.php
@@ -686,6 +700,7 @@ tests/Feature/Assets/Ui/CheckinCheckoutCounters.php
 tests/Feature/Assets/Ui/AssetBySerialTest.php
 tests/Feature/Assets/Ui/StoreAssetWithFullMultipleCompanySupportTest.php
 tests/Feature/Assets/Ui/BulkEditAssetsTest.php
+tests/Feature/Assets/OrderByJobTitleTest.php
 tests/Feature/Assets/Api/StoreAssetCheckoutPermissionTest.php
 tests/Feature/Assets/Api/UploadedFilesNoteSanitizationTest.php
 tests/Feature/Assets/Api/BulkAuditAssetsTest.php
@@ -723,6 +738,7 @@ tests/Feature/Maintenances/Ui/BulkMaintenanceActionsTest.php
 tests/Feature/Maintenances/Ui/ShowMaintenanceTest.php
 tests/Feature/Maintenances/Ui/MaintenanceIndexTest.php
 tests/Feature/Maintenances/Api/MaintenanceTypesTest.php
+tests/Feature/Maintenances/Api/MaintenanceCompletedByMassAssignmentTest.php
 tests/Feature/Maintenances/Api/MaintenancePaginationTest.php
 tests/Feature/Maintenances/Api/MaintenanceTypesPaginationTest.php
 tests/Feature/Maintenances/Api/IndexMaintenanceTest.php
@@ -750,8 +766,10 @@ tests/Feature/Manufacturers/Api/CreateManufacturersTest.php
 tests/Feature/Manufacturers/Api/DeleteManufacturersTest.php
 tests/Feature/Manufacturers/ManufacturerForceDeletedImageHookTest.php
 tests/Feature/Helpers/CheckLowInventoryTest.php
+tests/Feature/Authentication/LoginFailureRedirectTest.php
 tests/Feature/Authentication/TwoFactorRateLimitTest.php
 tests/Feature/Authentication/PersonalAccessTokenTwoFactorGuardTest.php
+tests/Feature/Authentication/OpenRedirectGuardsTest.php
 tests/Feature/Authentication/CheckUserIsActivatedApiTest.php
 tests/Feature/Authentication/StorageProxyBypassesTwoFactorTest.php
 tests/Feature/Authentication/LoginBackUrlSanitizationTest.php
@@ -760,6 +778,7 @@ tests/Feature/Authentication/SamlRelayStateSanitizationTest.php
 tests/Feature/Authentication/LoginTest.php
 tests/Feature/Authentication/RemoteUserHeaderSpoofingTest.php
 tests/Feature/Authentication/OidcApiAuthTest.php
+tests/Feature/Authentication/SamlSloRedirectGuardTest.php
 tests/Feature/Suppliers/Ui/IndexSuppliersTest.php
 tests/Feature/Suppliers/Ui/UpdateSupplierTest.php
 tests/Feature/Suppliers/Ui/BulkDeleteSuppliersTest.php
@@ -808,6 +827,7 @@ tests/Feature/SyncAdapters/AppleBusinessManager/ModelImageEnrichmentTest.php
 tests/Feature/SyncAdapters/AppleBusinessManager/ActivationLockEnrichmentTest.php
 tests/Feature/SyncAdapters/AppleBusinessManager/AppleCareEnrichmentTest.php
 tests/Feature/SyncAdapters/ExternalInventorySurfaceTest.php
+tests/Feature/SyncAdapters/UnifiAccess/UnifiAccessAdapterTest.php
 tests/Feature/SyncAdapters/UserAssignmentTest.php
 tests/Feature/SyncAdapters/GroupCompanyMappingTest.php
 tests/Feature/SyncAdapters/Osctrl/OsctrlAdapterTest.php
@@ -818,6 +838,7 @@ tests/Feature/SyncAdapters/WorkspaceOne/WorkspaceOneAdapterTest.php
 tests/Feature/SyncAdapters/WorkspaceOne/WorkspaceOnePushTest.php
 tests/Feature/SyncAdapters/Mosyle/MosylePushTest.php
 tests/Feature/SyncAdapters/Mosyle/MosyleAdapterTest.php
+tests/Feature/SyncAdapters/DefaultFieldsetAutoCreateTest.php
 tests/Feature/SyncAdapters/Landscape/LandscapeAdapterTest.php
 tests/Feature/SyncAdapters/NewBuiltInAdaptersRenderTest.php
 tests/Feature/SyncAdapters/Intune/IntuneAdminExtrasTest.php
@@ -841,6 +862,7 @@ tests/Feature/Checkins/Ui/AccessoryCheckinTest.php
 tests/Feature/Checkins/Api/AssetCheckinByTagTest.php
 tests/Feature/Checkins/Api/AssetCheckinTest.php
 tests/Feature/Checkins/Api/ComponentCheckinTest.php
+tests/Feature/Checkins/Api/AssetCheckinConcurrencyGuardTest.php
 tests/Feature/Checkins/Api/LicenseCheckInTest.php
 tests/Feature/Checkins/Api/AccessoryCheckinTest.php
 tests/Feature/Console/SendInventoryAlertsTest.php
@@ -886,6 +908,7 @@ tests/Feature/Blade/CheckboxInlineTest.php
 tests/Feature/Blade/RadioRowTest.php
 tests/Feature/Blade/InfoPanelNotesTest.php
 tests/Feature/Blade/CheckboxRowTest.php
+tests/Feature/Scim/PatchEmployeeNumberValueFilterTest.php
 tests/Feature/Scim/CreateMultipleGroupsTest.php
 tests/Feature/Scim/CreateGroupWithMembersTest.php
 tests/Feature/Scim/ScimActivationGuardTest.php
@@ -939,6 +962,7 @@ tests/Feature/CheckoutAcceptances/AcceptanceStorageFailureTest.php
 tests/Feature/CheckoutAcceptances/PendingAcceptanceQuantityOnCheckinTest.php
 tests/Feature/CheckoutAcceptances/EulaMailAutoEmbedInjectionTest.php
 tests/Feature/PredefinedKits/Ui/CreatePredefinedKitTest.php
+tests/Feature/PredefinedKits/Ui/CheckoutKitPivotColumnsTest.php
 tests/Feature/PredefinedKits/Ui/CheckoutKitFmcsTest.php
 tests/Feature/PredefinedKits/Ui/UpdateKitItemsAuthorizationTest.php
 tests/Feature/PredefinedKits/Ui/ShowPredefinedKitTest.php
@@ -1260,6 +1284,7 @@ tests/Feature/StatusLabels/Ui/CreateStatusLabelTest.php
 tests/Feature/StatusLabels/Api/DashboardPieChartAuthTest.php
 tests/Feature/StatusLabels/Api/DeleteStatusLabelsTest.php
 tests/Feature/StatusLabels/Api/BulkSelectableTest.php
+tests/Feature/Api/IndexSortRegressionTest.php
 tests/Feature/Api/EnforceApiUserAgentTest.php
 tests/Feature/Reporting/ActivityReportPageAuthTest.php
 tests/Feature/Reporting/DeleteAcceptanceAuthorizationTest.php
@@ -1294,12 +1319,14 @@ tests/Feature/Requests/Ui/RequestableCheckboxPersistenceTest.php
 tests/Feature/Requests/PurgePendingRequestsTest.php
 tests/Feature/Requests/AssetModelRequestGateTest.php
 tests/Feature/Requests/Api/IndexCheckoutRequestsTest.php
+tests/Feature/Requests/Api/RequestableTransformerFieldLeakTest.php
 tests/Feature/Security/FilenameTraversalMitigationTest.php
 tests/Concerns/TestsPermissionsRequirement.php
 tests/Concerns/TestsFullMultipleCompaniesSupport.php
 tests/TestCase.php
 tests/CreatesApplication.php
 tests/Unit/SnipeTranslatorTest.php
+tests/Unit/Components/ComponentQueryBuilderArchivedScopeTest.php
 tests/Unit/DatabaseSslConfigurationTest.php
 tests/Unit/Importer/ImporterEncodingTest.php
 tests/Unit/Importer/AssetImportTest.php
@@ -1365,6 +1392,7 @@ tests/Unit/CompanyScopingTest.php
 tests/Unit/TrustedProxiesTest.php
 tests/Unit/CustomFieldTest.php
 tests/Unit/UserTest.php
+tests/Unit/Rules/RequestableArchivedMutexTest.php
 tests/Unit/Rules/CssColorTest.php
 tests/Unit/Rules/AllowedUploadExtensionTest.php
 tests/Unit/Rules/ExternalUrlTest.php
@@ -1539,6 +1567,7 @@ resources/views/blade/table/labels.blade.php
 resources/views/blade/table/files.blade.php
 resources/views/blade/table/models.blade.php
 resources/views/blade/table/bulk-actions.blade.php
+resources/views/blade/table/bulk-components.blade.php
 resources/views/blade/table/accessories.blade.php
 resources/views/blade/table/bulk-assets.blade.php
 resources/views/blade/table/bulk-depreciations.blade.php
@@ -1601,6 +1630,7 @@ resources/views/blade/button/audit.blade.php
 resources/views/blade/button/label.blade.php
 resources/views/blade/button/checkin.blade.php
 resources/views/blade/button/checkout.blade.php
+resources/views/blade/button/modal-add.blade.php
 resources/views/blade/button/info-panel-toggle.blade.php
 resources/views/blade/button/clone.blade.php
 resources/views/blade/shiftclick.blade.php
@@ -1685,6 +1715,7 @@ resources/views/blade/input/accessory-select.blade.php
 resources/views/blade/input/consumable-select.blade.php
 resources/views/blade/input/user-select.blade.php
 resources/views/blade/input/select2-checkboxes.blade.php
+resources/views/blade/input/currency-select.blade.php
 resources/views/blade/notifications.blade.php
 resources/views/groups/index.blade.php
 resources/views/groups/edit.blade.php
@@ -1828,11 +1859,13 @@ resources/views/modals/new-label-setup.blade.php
 resources/views/maintenances/index.blade.php
 resources/views/maintenances/edit.blade.php
 resources/views/maintenances/view.blade.php
+resources/views/components/bulk-edit.blade.php
 resources/views/components/index.blade.php
 resources/views/components/edit.blade.php
 resources/views/components/checkin.blade.php
 resources/views/components/checkout.blade.php
 resources/views/components/view.blade.php
+resources/views/components/bulk-delete.blade.php
 resources/views/settings/general.blade.php
 resources/views/settings/google.blade.php
 resources/views/settings/label-edit.blade.php
@@ -8553,6 +8586,7 @@ app/Providers/ValidationServiceProvider.php
 app/Providers/SettingsServiceProvider.php
 app/Providers/BreadcrumbsServiceProvider.php
 app/Helpers/PublicIpCheck.php
+app/Helpers/CurrencyHelper.php
 app/Helpers/IconHelper.php
 app/Helpers/StorageHelper.php
 app/Helpers/Helper.php
@@ -8579,6 +8613,8 @@ app/SyncAdapters/SyncsHostFromRecord.php
 app/SyncAdapters/AppleBusinessManager/AppleBusinessManagerClient.php
 app/SyncAdapters/AppleBusinessManager/AppleDBImageFetcher.php
 app/SyncAdapters/AppleBusinessManager/AppleBusinessManagerAdapter.php
+app/SyncAdapters/UnifiAccess/UnifiAccessAdapter.php
+app/SyncAdapters/UnifiAccess/UnifiAccessClient.php
 app/SyncAdapters/HostInventoryRecord.php
 app/SyncAdapters/Osctrl/OsctrlClient.php
 app/SyncAdapters/Osctrl/OsctrlAdapter.php
@@ -8765,6 +8801,7 @@ app/Http/Controllers/ProfileController.php
 app/Http/Controllers/CustomFieldsetsController.php
 app/Http/Controllers/Components/ComponentsController.php
 app/Http/Controllers/Components/ComponentCheckinController.php
+app/Http/Controllers/Components/BulkComponentsController.php
 app/Http/Controllers/Components/ComponentCheckoutController.php
 app/Http/Controllers/GroupsController.php
 app/Http/Controllers/DepartmentsController.php
@@ -8791,7 +8828,6 @@ app/Http/Controllers/LabelsController.php
 app/Http/Controllers/CompaniesController.php
 app/Http/Controllers/ModalController.php
 app/Http/Controllers/ReportTemplatesController.php
-app/Http/Controllers/BulkAccessoriesController.php
 app/Http/Controllers/BulkSuppliersController.php
 app/Http/Controllers/Consumables/ConsumablesController.php
 app/Http/Controllers/Consumables/ConsumableCheckoutController.php
@@ -8806,6 +8842,7 @@ app/Http/Controllers/CategoriesController.php
 app/Http/Controllers/BulkMaintenancesController.php
 app/Http/Controllers/HealthController.php
 app/Http/Controllers/LocationsController.php
+app/Http/Controllers/SyncAdapterController.php
 app/Http/Controllers/QrCodeController.php
 app/Http/Controllers/NotesController.php
 app/Http/Controllers/DashboardController.php
@@ -8817,6 +8854,7 @@ app/Http/Controllers/Users/UsersController.php
 app/Http/Controllers/UploadedFilesController.php
 app/Http/Controllers/Accessories/AccessoryCheckinController.php
 app/Http/Controllers/Accessories/AccessoryCheckoutController.php
+app/Http/Controllers/Accessories/BulkAccessoriesController.php
 app/Http/Controllers/Accessories/AccessoriesController.php
 app/Http/Controllers/MaintenancesController.php
 app/Http/Controllers/Controller.php
@@ -9054,7 +9092,30 @@ app/Models/Ldap.php
 app/Models/Location.php
 app/Models/Checkoutable.php
 app/Models/Component.php
+app/Models/Builders/LicenseSeatQueryBuilder.php
+app/Models/Builders/LicenseQueryBuilder.php
+app/Models/Builders/ComponentAssignmentQueryBuilder.php
+app/Models/Builders/PredefinedKitQueryBuilder.php
+app/Models/Builders/StatuslabelQueryBuilder.php
+app/Models/Builders/ManufacturerQueryBuilder.php
+app/Models/Builders/AccessoryQueryBuilder.php
+app/Models/Builders/ConsumableQueryBuilder.php
+app/Models/Builders/DepartmentQueryBuilder.php
+app/Models/Builders/ComponentQueryBuilder.php
+app/Models/Builders/AccessoryCheckoutQueryBuilder.php
+app/Models/Builders/UserQueryBuilder.php
+app/Models/Builders/LocationQueryBuilder.php
+app/Models/Builders/GroupQueryBuilder.php
+app/Models/Builders/SupplierQueryBuilder.php
+app/Models/Builders/DepreciationQueryBuilder.php
+app/Models/Builders/CompanyQueryBuilder.php
+app/Models/Builders/AssetQueryBuilder.php
 app/Models/Builders/MaintenanceQueryBuilder.php
+app/Models/Builders/CheckoutRequestQueryBuilder.php
+app/Models/Builders/ActionlogQueryBuilder.php
+app/Models/Builders/AssetModelQueryBuilder.php
+app/Models/Builders/CategoryQueryBuilder.php
+app/Models/Builders/CheckoutAcceptanceQueryBuilder.php
 app/Models/Supplier.php
 app/Models/CompanyableChildScope.php
 app/Models/LicenseSeat.php
@@ -9200,6 +9261,7 @@ app/Rules/ExternalUrl.php
 app/Rules/AssetCannotBeCheckedOutToNondeployableStatus.php
 app/Rules/RegexEncrypted.php
 app/Rules/IPv4Encrypted.php
+app/Rules/RequestableArchivedMutex.php
 app/Rules/UserCannotSwitchCompaniesIfItemsAssigned.php
 app/Rules/BooleanEncrypted.php
 app/Rules/IPEncrypted.php
@@ -9210,6 +9272,7 @@ app/Rules/AlphaEncrypted.php
 app/Rules/MacEncrypted.php
 app/Rules/IPv6Encrypted.php
 app/Listeners/.gitkeep
+app/Listeners/RegenerateIdeHelperAfterMigrate.php
 app/Listeners/CheckoutablesCheckedOutInBulkListener.php
 app/Listeners/FulfillCheckoutRequestListener.php
 app/Listeners/LogListener.php

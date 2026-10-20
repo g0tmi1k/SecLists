@@ -1853,6 +1853,7 @@ core/tests/Drupal/KernelTests/Core/Extension/ModuleInstallerTest.php
 core/tests/Drupal/KernelTests/Core/Extension/ModuleConfigureRouteTest.php
 core/tests/Drupal/KernelTests/Core/Extension/FileIncludeGadgetChainTest.php
 core/tests/Drupal/KernelTests/Core/Extension/Command/ExtensionInstallCommandTest.php
+core/tests/Drupal/KernelTests/Core/Extension/Command/ExtensionUninstallCommandTest.php
 core/tests/Drupal/KernelTests/Core/Extension/ModuleHandlerTest.php
 core/tests/Drupal/KernelTests/Core/Extension/ThemeExtensionListTest.php
 core/tests/Drupal/KernelTests/Core/Extension/ExtensionAvailableConstraintValidatorTest.php
@@ -2672,6 +2673,7 @@ core/tests/Drupal/Tests/Core/StringTranslation/TranslationManagerTest.php
 core/tests/Drupal/Tests/Core/Installer/InstallerExtensionListDeprecationTest.php
 core/tests/Drupal/Tests/Core/Error/DrupalLogErrorTest.php
 core/tests/Drupal/Tests/Core/Condition/ConditionAccessResolverTraitTest.php
+core/tests/Drupal/Tests/Core/Condition/ConditionPluginBaseTest.php
 core/tests/Drupal/Tests/Core/PreWarm/CachePreWarmerTest.php
 core/tests/Drupal/Tests/Core/Command/BootableCommandTraitTest.php
 core/tests/Drupal/Tests/Core/Command/DrupalConsoleLoggerTest.php
@@ -13115,6 +13117,7 @@ core/lib/Drupal/Core/Form/ConfirmFormInterface.php
 core/lib/Drupal/Core/Form/FormStateValuesTrait.php
 core/lib/Drupal/Core/Form/SubformStateInterface.php
 core/lib/Drupal/Core/Form/FormBuilderInterface.php
+core/lib/Drupal/Core/Form/FormSelectOptions.php
 core/lib/Drupal/Core/Form/FormBase.php
 core/lib/Drupal/Core/Form/ConfigTarget.php
 core/lib/Drupal/Core/Form/ConfigFormBaseTrait.php
@@ -14360,6 +14363,7 @@ core/lib/Drupal/Core/Extension/Plugin/Validation/Constraint/ExtensionAvailableCo
 core/lib/Drupal/Core/Extension/module.api.php
 core/lib/Drupal/Core/Extension/ThemeInstallerInterface.php
 core/lib/Drupal/Core/Extension/Command/ExtensionListCommand.php
+core/lib/Drupal/Core/Extension/Command/ExtensionUninstallCommand.php
 core/lib/Drupal/Core/Extension/Command/ExtensionInstallCommand.php
 core/lib/Drupal/Core/Extension/InstallRequirementsInterface.php
 core/lib/Drupal/Core/Extension/ModuleRequiredByThemesUninstallValidator.php

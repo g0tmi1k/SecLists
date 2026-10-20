@@ -243,6 +243,8 @@ erpnext/selling/sidebar/selling/selling.json
 erpnext/selling/selling_dashboard/selling/selling.json
 erpnext/selling/report/customers_without_any_sales_transactions/__init__.py
 erpnext/selling/report/customers_without_any_sales_transactions/customers_without_any_sales_transactions.json
+erpnext/selling/report/customers_without_any_sales_transactions/customers_without_any_sales_transactions.js
+erpnext/selling/report/customers_without_any_sales_transactions/test_customers_without_any_sales_transactions.py
 erpnext/selling/report/customers_without_any_sales_transactions/customers_without_any_sales_transactions.py
 erpnext/selling/report/lost_quotations/__init__.py
 erpnext/selling/report/lost_quotations/lost_quotations.json
@@ -313,6 +315,7 @@ erpnext/selling/report/sales_order_trends/sales_order_trends.js
 erpnext/selling/report/sales_order_trends/sales_order_trends.py
 erpnext/selling/report/sales_order_trends/sales_order_trends.json
 erpnext/selling/report/address_and_contacts/__init__.py
+erpnext/selling/report/address_and_contacts/test_address_and_contacts.py
 erpnext/selling/report/address_and_contacts/address_and_contacts.json
 erpnext/selling/report/address_and_contacts/address_and_contacts.js
 erpnext/selling/report/address_and_contacts/address_and_contacts.py
@@ -758,6 +761,7 @@ erpnext/buying/doctype/buying_settings/buying_settings.js
 erpnext/buying/doctype/buying_settings/buying_settings.json
 erpnext/buying/doctype/supplier/__init__.py
 erpnext/buying/doctype/supplier/README.md
+erpnext/buying/doctype/supplier/supplier_overview.py
 erpnext/buying/doctype/supplier/patches/__init__.py
 erpnext/buying/doctype/supplier/patches/migrate_supplier_portal_users.py
 erpnext/buying/doctype/supplier/supplier.py
@@ -893,6 +897,7 @@ erpnext/utilities/product.py
 erpnext/utilities/doctype/rename_tool/__init__.py
 erpnext/utilities/doctype/rename_tool/README.md
 erpnext/utilities/doctype/rename_tool/rename_tool.js
+erpnext/utilities/doctype/rename_tool/test_rename_tool.py
 erpnext/utilities/doctype/rename_tool/rename_tool.json
 erpnext/utilities/doctype/rename_tool/rename_tool.py
 erpnext/utilities/doctype/__init__.py
@@ -964,6 +969,7 @@ erpnext/assets/report/fixed_asset_register/fixed_asset_register.py
 erpnext/assets/report/fixed_asset_register/fixed_asset_register.js
 erpnext/assets/report/asset_maintenance/__init__.py
 erpnext/assets/report/asset_maintenance/asset_maintenance.json
+erpnext/assets/report/asset_maintenance/test_asset_maintenance.py
 erpnext/assets/assets_dashboard/asset/asset.json
 erpnext/assets/doctype/__init__.py
 erpnext/assets/doctype/asset_finance_book/__init__.py
@@ -2495,6 +2501,7 @@ erpnext/accounts/report/bank_reconciliation_statement/bank_reconciliation_statem
 erpnext/accounts/report/bank_reconciliation_statement/bank_reconciliation_statement.html
 erpnext/accounts/report/bank_reconciliation_statement/bank_reconciliation_statement.py
 erpnext/accounts/report/bank_reconciliation_statement/bank_reconciliation_statement.json
+erpnext/accounts/report/order_billing_as_on.py
 erpnext/accounts/report/received_items_to_be_billed/__init__.py
 erpnext/accounts/report/received_items_to_be_billed/received_items_to_be_billed.py
 erpnext/accounts/report/received_items_to_be_billed/test_received_items_to_be_billed.py
@@ -4084,6 +4091,7 @@ erpnext/patches/v16_0/set_default_close_opportunity_after_days.py
 erpnext/patches/v16_0/recalculate_purchase_receipt_billing_status.py
 erpnext/patches/v16_0/migrate_tax_withholding_data.py
 erpnext/patches/v16_0/populate_budget_distribution_total.py
+erpnext/patches/v16_0/scope_voice_call_settings_to_desk_users.py
 erpnext/patches/v16_0/update_company_custom_field_in_bin.py
 erpnext/patches/v16_0/fix_subcontracting_titles.py
 erpnext/patches/v16_0/migrate_subscription_generate_invoice_at.py
@@ -4780,14 +4788,10 @@ erpnext/setup/workspace/erpnext_settings/erpnext_settings.json
 erpnext/setup/workspace/home/home.json
 erpnext/setup/module_onboarding/organization_onboarding/organization_onboarding.json
 erpnext/setup/demo_data/supplier_group.json
-erpnext/setup/demo_data/purchase_order.json
 erpnext/setup/demo_data/customer_group.json
-erpnext/setup/demo_data/journal_entry.json
-erpnext/setup/demo_data/payment_entry.json
 erpnext/setup/demo_data/supplier.json
 erpnext/setup/demo_data/customer.json
 erpnext/setup/demo_data/item.json
-erpnext/setup/demo_data/sales_order.json
 erpnext/setup/demo_data/item_group.json
 erpnext/setup/setup_wizard/__init__.py
 erpnext/setup/setup_wizard/setup_wizard.py
@@ -5238,6 +5242,7 @@ erpnext/controllers/tests/test_price_list_currency.py
 erpnext/controllers/tests/test_qty_based_taxes.py
 erpnext/controllers/tests/test_item_wise_tax_details.py
 erpnext/controllers/tests/test_item_close_sales_order.py
+erpnext/controllers/tests/test_mapped_discounts.py
 erpnext/controllers/tests/test_mapper.py
 erpnext/controllers/tests/test_item_close_update_items.py
 erpnext/controllers/tests/test_website_list_for_contact.py
@@ -5528,9 +5533,9 @@ erpnext/public/images/v16/erpnext.svg
 erpnext/public/images/pos.svg
 erpnext/public/scss/erpnext-web.bundle.scss
 erpnext/public/scss/order-page.scss
-erpnext/public/scss/customer_overview.scss
 erpnext/public/scss/website.scss
 erpnext/public/scss/erpnext.bundle.scss
+erpnext/public/scss/party_overview.scss
 erpnext/public/scss/erpnext.scss
 erpnext/public/scss/erpnext_email.bundle.scss
 erpnext/public/scss/point-of-sale.scss
@@ -5584,6 +5589,7 @@ erpnext/public/js/plant_floor_visual/visual_plant.js
 erpnext/public/js/customer_overview.js
 erpnext/public/js/bom_configurator/bom_configurator.bundle.js
 erpnext/public/js/stock_balance_report.js
+erpnext/public/js/party_overview.js
 erpnext/public/js/sms_manager.js
 erpnext/public/js/event.js
 erpnext/public/js/templates/crm_notes.html
@@ -5601,6 +5607,7 @@ erpnext/public/js/controllers/transaction.js
 erpnext/public/js/sales_order_proforma.js
 erpnext/public/js/stock_analytics.js
 erpnext/public/js/subcontracting_inward_report_filters.js
+erpnext/public/js/supplier_overview.js
 erpnext/public/js/erpnext.bundle.js
 erpnext/public/js/financial_statements.js
 erpnext/public/icons/pos-icons.svg
@@ -5681,6 +5688,7 @@ erpnext/www/book-appointment/verify/__init__.py
 erpnext/www/payment_setup_certification.py
 erpnext/www/payment_setup_certification.html
 erpnext/www/all-products/__init__.py
+erpnext/www/test_banking.py
 erpnext/www/lms/__init__.py
 erpnext/www/shop-by-category/__init__.py
 erpnext/www/support/__init__.py
